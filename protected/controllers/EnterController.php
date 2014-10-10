@@ -33,37 +33,33 @@ class EnterController extends Controller
        /* if (!Yii::app()->user->isGuest) {
             throw new CException('Вы уже зарегистрированы!');
          } else {*/
-            if (!empty($_POST['login'])) {
+         if (!empty($_POST['login'])) {
 				
 				
                 /*$form->attributes = array('login' => $_POST['login'],'password' => $_POST['password']);*/
-				$form->login = $_POST['login'];
-				$form->password = $_POST['password'];
+			$form->login = $_POST['login'];
+			$form->password = $_POST['password'];
 				
-				if (isset($_POST['rememberMe']))
-				{
-					$form->rememberMe = $_POST['rememberMe'];
-				}
+			if (isset($_POST['rememberMe']))
+			{
+				$form->rememberMe = $_POST['rememberMe'];
+			}
  
                     // Проверяем правильность данных
-                    if($form->validate()) {
+            if($form->validate()) {
                         // если всё ок - кидаем на панель
-                        //
-						echo '/panel/index';
-                    } 
-					else {
-						$this->renderPartial('/enter/error', array('form' => $form));
-					}
-          }
-
-		 /*echo '/panel/index';*/
-     /*         $this->render('login', array('form' => $form));
-        }*/
+                      //
+				echo '/panel/index';
+            } 
+			else {
+				$this->renderPartial('/enter/error', array('form' => $form));
+			}
+        }
     }
 	public function actionLogout()
     {
 		Yii::app()->user->logout();
-		echo '/enter/index';
+		Yii::app()->request->redirect(Yii::app()->user->returnUrl);
     }    
 
 	/**

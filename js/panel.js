@@ -29,18 +29,7 @@ $(document).ready(function () {
 	}
 	
 	$('#'+id+'').addClass('active');
-	
-	$('.exit').click(function(){
-							
-		$.ajax({
-			type: "POST",
-			url: "/enter/logout",
-			success: function(msg){
-					window.location = msg;	
-			}
-       });
-	});
-	
+		
 	$('.sidebar-menu li a').click (function(){
 		$('.sidebar-menu li a').removeClass('active');
 		$(this).addClass('active');
