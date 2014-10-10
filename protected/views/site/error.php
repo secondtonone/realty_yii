@@ -1,0 +1,2 @@
+<?php
+CHtml::errorSummary($form);

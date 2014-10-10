@@ -1,0 +1,94 @@
+.status-bar {
+	width: 300px;
+	height:755px;
+	float:left;
+}
+.status-bar .caption {
+	background: #353535;
+	font-size: 14px;
+	color: #FFFFFF;
+	padding: 10px;
+	margin-bottom:10px;
+}
+.user-list {
+	padding-right: 15px;
+	min-height:700px;
+}
+.user-list .list-preloader {
+	background-image: url("../img/preloader.gif");
+	background-repeat: no-repeat;
+	background-size:contain;
+	height: 32px;
+	width: 32px;
+	display:block;
+	margin: auto;
+	position:relative;
+	top:50%;
+	bottom:0;
+	left:0;
+	right:0;
+}
+.user-list .user {
+	background: #FAFAFA;
+	font-size: 12px;
+	color: #FFFFFF;
+	padding: 5px;
+	margin-bottom:5px;
+}
+.user-list .user:hover {
+	background: #E8E8E8;
+	cursor:pointer;
+}
+.user-list .online {
+	color: #353535;
+}
+.user-list .offline {
+	color: #E02222;
+}
+.user .marker {
+	font-size: 12px;
+	color: #FFFFFF;
+	padding: 7px;
+	display:inline-block;
+	font-weight:600;
+}
+.user .wrap {
+	width:200px;
+	float:right;
+	overflow:hidden;
+}
+.user .login {
+	width:180px;
+	height: 15px;
+}
+.user .name {
+	width:180px;
+	height: 15px;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.user .online {
+	background: #353535;
+}
+.user .online::after {
+	content: 'online';
+}
+.user .offline {
+	background: #E02222;
+}
+.user .offline::after {
+	content: 'offline';
+}
+.wrapper-content {
+	margin-left: 310px;
+}
+.wrapper-content .ui-jqgrid-titlebar {
+    height: 18px;
+}
+.icon-notification::after {
+	content: " ";
+}
+.icon-archive::after {
+	content: " ";
+}
