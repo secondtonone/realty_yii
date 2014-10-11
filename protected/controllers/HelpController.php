@@ -1,6 +1,6 @@
 <?php
 
-class HelpController extends Controller
+class HelpController extends CController
 {
 	/**
 	 * This is the default 'index' action that is invoked

@@ -1,6 +1,5 @@
 <?php
-
-class EnterController extends Controller
+class EnterController extends CController
 {
 	/**
 	 * This is the default 'index' action that is invoked
@@ -49,7 +48,9 @@ class EnterController extends Controller
             if($form->validate()) {
                         // если всё ок - кидаем на панель
                       //
+
 				echo '/panel/index';
+
             } 
 			else {
 				$this->renderPartial('/enter/error', array('form' => $form));
@@ -58,8 +59,8 @@ class EnterController extends Controller
     }
 	public function actionLogout()
     {
-		Yii::app()->user->logout();
-		Yii::app()->request->redirect(Yii::app()->user->returnUrl);
+		$logout= new UserLogOut;
+		$logout->unauthenticate();
     }    
 
 	/**

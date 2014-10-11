@@ -1,6 +1,6 @@
 <?php
 
-class PanelController extends Controller
+class PanelController extends CController
 {
 	/**
 	 * This is the default 'index' action that is invoked
@@ -39,27 +39,10 @@ class PanelController extends Controller
 		}
 	}
 	
-	public function actionLogin()
+	public function actionUpdateStatus()
     {
-		 /*$form = new User();
-         
-        // Проверяем является ли пользователь гостем
-        // ведь если он уже зарегистрирован - формы он не должен увидеть.
-        if (!Yii::app()->user->isGuest) {
-            throw new CException('Вы уже зарегистрированы!');
-         } else {
-            if (!empty($_POST['User'])) {
-                $form->attributes = $_POST['User'];
-                $form->verifyCode = $_POST['User']['verifyCode'];
- 
-                    // Проверяем правильность данных
-                    if($form->validate('login')) {
-                        // если всё ок - кидаем на главную страницу
-                        $this->redirect(Yii::app()->homeUrl);
-                     } 
-            } 
-            $this->render('login', array('form' => $form));
-        }*/
+		$system = new SystemOption();
+		$system->updateStatus();
     }    
 
 	/**

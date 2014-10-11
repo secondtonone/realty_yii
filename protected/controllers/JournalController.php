@@ -1,6 +1,6 @@
 <?php
 
-class JournalController extends Controller
+class JournalController extends CController
 {
 	/**
 	 * This is the default 'index' action that is invoked

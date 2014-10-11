@@ -41,10 +41,10 @@ class User extends CActiveRecord
             // в $identity->errorCode
       
                 // Теперь мы проверяем есть ли ошибка..    
-                switch($identity->errorCode)
-                {
+            switch($identity->errorCode)
+            {
                     // Если ошибки нету...
-                     case UserIdentity::ERROR_NONE: {
+                 case UserIdentity::ERROR_NONE: {
                         // Данная строчка говорит что надо выдать пользователю
                         // соответствующие куки о том что он зарегистрирован, срок действий
                          // у которых указан вторым параметром.

@@ -2004,7 +2004,7 @@ EOD;
 				foreach($errors as $error)
 				{
 					if($error!='')
-						$content.="<div>$error</div>";
+						$content.="$error";
 					if($firstError)
 						break;
 				}
@@ -2016,7 +2016,7 @@ EOD;
 				$header='';
 			if(!isset($htmlOptions['class']))
 				$htmlOptions['class']=self::$errorSummaryCss;
-			return self::tag('div',$htmlOptions,"$content");
+			return $content;
 		}
 		else
 			return '';

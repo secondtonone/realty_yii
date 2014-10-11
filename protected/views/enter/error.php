@@ -1,1 +1,1 @@
-﻿<?php echo 'Ошибка!';echo CHtml::errorSummary($form);
+<?php echo CHtml::errorSummary($form);

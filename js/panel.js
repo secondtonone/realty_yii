@@ -7,8 +7,7 @@ $(document).ready(function () {
 	function activityTime () {
 		$.ajax({
 			type: "POST",
-			url: "/app/scripts/journal/journal_modify.php",
-			data:"q=1",
+			url: "/panel/updatestatus",
 			async: false
 			});
 	}

@@ -2218,3 +2218,694 @@ Stack trace:
 REQUEST_URI=/app/scripts/journal/journal_modify.php
 HTTP_REFERER=http://example.com/help/index
 ---
+2014/10/11 11:59:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/
+---
+2014/10/11 11:59:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 12:04:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 12:09:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 12:14:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 12:19:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 12:21:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 12:21:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 12:21:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/stats/index
+---
+2014/10/11 12:27:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/stats/index
+---
+2014/10/11 12:32:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/stats/index
+---
+2014/10/11 12:36:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 12:41:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 12:46:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 12:51:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 12:56:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:01:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:06:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:11:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:16:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:21:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:26:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:31:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:36:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:41:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:46:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 13:46:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:49:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 13:50:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:52:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 13:52:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:54:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 13:54:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 13:55:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 13:57:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 14:07:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 14:11:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "﻿".' in E:\xampp\htdocs\example.com\www\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(270): CController->missingAction('???')
+#1 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('???')
+#2 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('enter/???/panel...')
+#3 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/enter/%EF%BB%BF/panel/index
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/10/11 14:11:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 14:11:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 14:16:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 14:19:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 14:19:16 [error] [php] Missing argument 1 for CUserIdentity::__construct(), called in E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php on line 61 and defined (E:\xampp\htdocs\example.com\www\framework\web\auth\CUserIdentity.php:43)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\xampp\htdocs\example.com\www\framework\web\CController.php(286): EnterController->runAction()
+#2 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): EnterController->runActionWithFilters()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): EnterController->run()
+#4 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\xampp\htdocs\example.com\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/enter/logout
+in E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php (61)
+in E:\xampp\htdocs\example.com\www\index.php (13)
+2014/10/11 14:19:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/10/11 14:26:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 14:26:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 14:26:25 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "User._id".' in E:\xampp\htdocs\example.com\www\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\db\ar\CActiveRecord.php(145): CComponent->__get('_id')
+#1 E:\xampp\htdocs\example.com\www\protected\models\User.php(73): CActiveRecord->__get('_id')
+#2 E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php(62): User->unauthenticate()
+#3 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): EnterController->actionLogout()
+#4 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 E:\xampp\htdocs\example.com\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('logout')
+#8 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('enter/logout')
+#9 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#10 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/enter/logout
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 14:26:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/10/11 14:28:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 14:28:29 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 14:29:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "﻿".' in E:\xampp\htdocs\example.com\www\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(270): CController->missingAction('???')
+#1 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('???')
+#2 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('enter/???/panel...')
+#3 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/enter/%EF%BB%BF/panel/index
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/10/11 14:29:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 14:29:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 14:29:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/stats/index
+---
+2014/10/11 14:39:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "﻿".' in E:\xampp\htdocs\example.com\www\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(270): CController->missingAction('???')
+#1 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('???')
+#2 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('enter/???/panel...')
+#3 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/enter/%EF%BB%BF/panel/index
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/10/11 14:39:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 14:39:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 17:15:57 [error] [php] Object of class User could not be converted to string (E:\xampp\htdocs\example.com\www\protected\views\enter\error.php:3)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(869): EnterController->renderFile()
+#1 E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php(58): EnterController->renderPartial()
+#2 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): EnterController->actionLogin()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 E:\xampp\htdocs\example.com\www\framework\web\CController.php(286): EnterController->runAction()
+#5 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): EnterController->runActionWithFilters()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): EnterController->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 E:\xampp\htdocs\example.com\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/enter/login
+in E:\xampp\htdocs\example.com\www\protected\views\enter\error.php (3)
+in E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php (58)
+in E:\xampp\htdocs\example.com\www\index.php (13)
+2014/10/11 17:16:38 [error] [php] Missing argument 1 for CModel::getError(), called in E:\xampp\htdocs\example.com\www\framework\base\CComponent.php on line 111 and defined (E:\xampp\htdocs\example.com\www\framework\base\CModel.php:371)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\protected\views\enter\error.php(3): User->__get()
+#1 E:\xampp\htdocs\example.com\www\framework\web\CBaseController.php(126): require()
+#2 E:\xampp\htdocs\example.com\www\framework\web\CBaseController.php(95): EnterController->renderInternal()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(869): EnterController->renderFile()
+#4 E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php(58): EnterController->renderPartial()
+#5 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): EnterController->actionLogin()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(286): EnterController->runAction()
+#8 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): EnterController->runActionWithFilters()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): EnterController->run()
+#10 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 E:\xampp\htdocs\example.com\www\index.php(13): CWebApplication->run()
+REQUEST_URI=/enter/login
+in E:\xampp\htdocs\example.com\www\protected\views\enter\error.php (3)
+in E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php (58)
+in E:\xampp\htdocs\example.com\www\index.php (13)
+2014/10/11 17:51:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 17:53:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 17:54:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 17:57:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 17:58:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 18:16:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 18:18:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 18:20:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 18:27:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 18:30:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 18:31:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 18:31:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "﻿".' in E:\xampp\htdocs\example.com\www\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(270): CController->missingAction('???')
+#1 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('???')
+#2 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('enter/???/panel...')
+#3 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/enter/%EF%BB%BF/panel/index
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/10/11 18:31:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/11 18:31:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/journal/journal_modify.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/jou...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/journal/journal_modify.php
+HTTP_REFERER=http://example.com/help/index
+---
+2014/10/11 20:34:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "app/scripts/lists/notes.php".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('app/scripts/lis...')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/app/scripts/lists/notes.php
+HTTP_REFERER=http://example.com/
+---

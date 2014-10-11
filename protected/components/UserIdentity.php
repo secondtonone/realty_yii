@@ -35,12 +35,23 @@ class UserIdentity extends CUserIdentity
              // указан верно. 
              $this->_id=$record->id_user;
 			 $this->setState('right', $record->id_right);
+			 $this->setState('login', $record->login);
+			 $date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+			/* private $query = 'UPDATE `users` SET `browser`=?,`online`=?,`time_activity`=NOW()+INTERVAL 2 HOUR WHERE `id_user`=?';*/
+			 $update = User::model()->updateAll(array('browser'=>$_SERVER['HTTP_USER_AGENT'],'online'=>'online','time_activity'=>$date),'id_user=:id_user',array(':id_user'=>$this->_id));
+			 
+			 $journal = new Journal;
+			 $journal->id_user=$this->_id;
+			 $journal->id_type_event=1;
+			 $journal->time_event=$date;
+			 $journal->save();
+			 
              // В errorCode сохраняем что ошибок нет
              $this->errorCode=self::ERROR_NONE;
          }
          return !$this->errorCode;
      }
-  
+	   
      public function getId()
      {
          return $this->_id;

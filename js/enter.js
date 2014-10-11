@@ -19,7 +19,8 @@ $(document).ready(function () {
 			url: "/enter/login",
 			data: formData,
 			success: function(msg){
-				if (msg.length>14)
+					
+				if (msg.length>13)
 				{
 					$(".enter-preloader").hide();
 					$("#execute").hide();
