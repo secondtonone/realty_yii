@@ -65,10 +65,10 @@ return array(
 			'charset' => 'utf8',
 		),
 		
-		'errorHandler'=>array(
+		/*'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'enter/index',
-		),
+		),*/
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(

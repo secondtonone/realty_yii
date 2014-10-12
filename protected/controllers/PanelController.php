@@ -39,14 +39,26 @@ class PanelController extends CController
 		}
 	}
 	
+	public function actionAdminCheckData()
+    {
+		$system = new SystemOption();
+		$system->adminCheckData($_POST['login']);
+    }  
+	
 	public function actionUpdateStatus()
     {
 		$system = new SystemOption();
 		$system->updateStatus();
-    }    
+    }
+	public function actionAutocomplete()
+    {
+		$arguments = array('term'=>$_POST['term'],'r'=>$_POST['r'],'param'=>$_POST['param']);
+		$system = new SystemOption();
+	
+		$system->autocomplete($arguments);
 
+    }     
 	/**
 	 * This is the action to handle external exceptions.
 	 */
-	
 }
