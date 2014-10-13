@@ -12,6 +12,7 @@ return array(
 	// preloading 'log' component
 	'preload'=>array('log'),
 	'sourceLanguage' => 'ru',
+	'charset'=>'UTF-8',
 
 	// autoloading model and component classes
 	'import'=>array(

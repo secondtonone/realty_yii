@@ -49,7 +49,10 @@ class EnterController extends CController
                         // если всё ок - кидаем на панель
                       //
 
-				echo '/panel/index';
+
+				$response=array('redirect' => '/panel/index','error' =>'');			
+				echo json_encode($response);
+
 
             } 
 			else {

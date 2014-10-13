@@ -52,7 +52,14 @@ class PanelController extends CController
     }
 	public function actionAutocomplete()
     {
-		$arguments = array('term'=>$_POST['term'],'r'=>$_POST['r'],'param'=>$_POST['param']);
+		if(isset($_POST['param']))
+		{
+			$arguments = array('term'=>$_POST['term'],'r'=>$_POST['r'],'param'=>$_POST['param']);
+		}
+		else
+		{
+			$arguments = array('term'=>$_POST['term'],'r'=>$_POST['r']);
+		}
 		$system = new SystemOption();
 	
 		$system->autocomplete($arguments);

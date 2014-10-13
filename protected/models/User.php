@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class User extends CActiveRecord
 {
 	public $rememberMe;

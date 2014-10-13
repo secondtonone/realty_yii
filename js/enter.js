@@ -19,18 +19,22 @@ $(document).ready(function () {
 			url: "/enter/login",
 			data: formData,
 			success: function(msg){
-					
-				if (msg.length>13)
+				
+				var response=JSON.parse(msg),
+					error=response.error,
+					redirect=response.redirect;
+				
+				if (error)
 				{
 					$(".enter-preloader").hide();
 					$("#execute").hide();
 					$('#entering').css({'display' : 'inline-block'});
 					$(".display-error").show();
-					$(".message").html(msg);
+					$(".message").html(error);
 				}
 				else
 				{
-					window.location = msg;
+					window.location = redirect;
 				}
 				
 			}
