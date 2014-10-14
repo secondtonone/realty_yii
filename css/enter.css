@@ -166,7 +166,10 @@
 }
 
 .login .content .form-actions .btn:hover { 
-	background-color: rgba(25,25,25,0.9)  !important;
+	background-color: #E02222 !important;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,0.0);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.0); 
+    box-shadow: 0 0 10px rgba(0,0,0,0.0);
 }
 
 .login .content .form-actions .btn .enter-preloader { 

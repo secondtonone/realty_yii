@@ -1,4 +1,4 @@
-﻿<div class="login">
+<div class="login">
 	<div class="header">
     	<a class="logo" href="#"></a>
     </div>

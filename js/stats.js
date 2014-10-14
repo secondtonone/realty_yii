@@ -1,15 +1,5 @@
 $(document).ready(function () {
-	var term="мат";
-	$.ajax({
-			type: "POST",
-			url: "/panel/autocomplete",
-			data:"term="+term+"&r=street&param=2461",
-			success: function(msg){
-					
-				alert(msg);
-			}
-       });
-		
+	
     $('#container').highcharts({
         title: {
             text: 'Квартиры',

@@ -39,11 +39,35 @@ class PanelController extends CController
 		}
 	}
 	
-	public function actionAdminCheckData()
+	public function actionCheckLogin()
     {
 		$system = new SystemOption();
-		$system->adminCheckData($_POST['login']);
-    }  
+		$system->checkLogin($_POST['login']);
+    }
+	public function actionCheckObject()
+    {
+		$arguments = array();
+		
+		foreach ($_POST as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+		
+		$system = new SystemOption();
+		$system->checkObject($arguments);
+    }
+	public function actionCheckClient()
+    {
+		$arguments = array();
+		
+		foreach ($_POST as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+
+		$system = new SystemOption();
+		$system->checkClient($arguments);
+    }      
 	
 	public function actionUpdateStatus()
     {
@@ -52,19 +76,28 @@ class PanelController extends CController
     }
 	public function actionAutocomplete()
     {
-		if(isset($_POST['param']))
+		$arguments = array();
+		
+		foreach ($_POST as $key=>$value)
 		{
-			$arguments = array('term'=>$_POST['term'],'r'=>$_POST['r'],'param'=>$_POST['param']);
-		}
-		else
-		{
-			$arguments = array('term'=>$_POST['term'],'r'=>$_POST['r']);
-		}
+        	$arguments[$key]=$value;
+    	}
+		
 		$system = new SystemOption();
 	
 		$system->autocomplete($arguments);
 
-    }     
+    }
+	public function actionNotes()
+    {
+		$system = new SystemOption();
+		$system->notes();
+    }
+	public function actionLists()
+    {
+		$system = new SystemOption();
+		$system->userLists();
+    }      
 	/**
 	 * This is the action to handle external exceptions.
 	 */

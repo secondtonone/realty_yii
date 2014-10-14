@@ -5,7 +5,7 @@ $(document).ready(function(){
 	{	
 		var lists = $.ajax({
 					type: "POST",
-					url: "/app/scripts/lists/user_lists.php",
+					url: "/panel/lists",
 					data: "q=1",
 					async: false
 				}).responseText,
@@ -17,7 +17,7 @@ $(document).ready(function(){
 	{	
 		return $.ajax({
 					type: "POST",
-					url: "/app/scripts/lists/notes.php",
+					url: "/panel/notes",
 					data: "q=1",
 					async: false
 				}).responseText;
@@ -44,11 +44,12 @@ $(document).ready(function(){
 		$(e).autocomplete({
         	source: function(request, response) {
 				$.ajax({
-					url: "/app/scripts/lists/autocomplete.php?q=street",
+					url: "/panel/autocomplete",
 					dataType: "json",
 					data: {
+						q:'street',
 						term : request.term,
-						id_city : $("input#id_city").val()
+						param : $("input#id_city").val()
 					},
 					success: function(data) {
 						response(data);
@@ -69,7 +70,7 @@ $(document).ready(function(){
 	}
 	function getCity(e) {
         $(e).autocomplete({
-          source: "/app/scripts/lists/autocomplete.php?q=city",
+          source: "/panel/autocomplete?q=city",
           minLength: 1,
           focus: function (event, ui) {
             $(e).val(ui.item.label);
@@ -128,8 +129,8 @@ $(document).ready(function(){
 				
 					$.ajax({  
 							type: "POST",  
-							url: "/app/scripts/lists/user_checkdata.php",  
-							data: 'q=1&number='+number+'&id_street='+id_street+'&house_number='+house_number+'&id_category='+id_category+'&room_count='+room_count+'&id_planning='+id_planning+'&floor='+floor_obj,
+							url: "/panel/checkobject",  
+							data: 'number='+number+'&id_street='+id_street+'&house_number='+house_number+'&id_category='+id_category+'&room_count='+room_count+'&id_planning='+id_planning+'&floor='+floor_obj,
 							success: function(msg){
 								if (msg.length!=0)
 								{
@@ -531,8 +532,8 @@ $(document.body).on('change','#id_planning', function() {
 				
 				$.ajax({  
 						type: "POST",  
-						url: "/app/scripts/lists/user_checkdata.php",  
-						data: 'q=2&number='+number+'&id_category='+id_category+'&id_planning='+id_planning,
+						url: "/panel/checkclient",  
+						data: 'number='+number+'&id_category='+id_category+'&id_planning='+id_planning,
 						success: function(msg){
 							if (msg.length!=0)
 							{

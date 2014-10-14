@@ -4,7 +4,7 @@ $(document).ready(function(){
 	{	
 		var lists = $.ajax({
 					type: "POST",
-					url: "/app/scripts/lists/user_lists.php",
+					url: "/panel/lists",
 					data: "q=1",
 					async: false
 				}).responseText,
@@ -16,7 +16,7 @@ $(document).ready(function(){
 	{	
 		return $.ajax({
 					type: "POST",
-					url: "/app/scripts/lists/notes.php",
+					url: "/panel/notes",
 					data: "q=1",
 					async: false
 				}).responseText;
@@ -25,11 +25,12 @@ $(document).ready(function(){
 		  $(e).autocomplete({
           source: function(request, response) {
 				$.ajax({
-					url: "/app/scripts/lists/autocomplete.php?q=street",
+					url: "/panel/autocomplete",
 					dataType: "json",
 					data: {
+						q:'street',
 						term : request.term,
-						id_city : $("input#id_city").val()
+						param : $("input#id_city").val()
 					},
 					success: function(data) {
 						response(data);
@@ -50,7 +51,7 @@ $(document).ready(function(){
 	}
 	function getCity(e) {
         $(e).autocomplete({
-          source: "/app/scripts/lists/autocomplete.php?q=city",
+          source: "/panel/autocomplete?q=city",
           minLength: 1,
           focus: function (event, ui) {
             $(e).val(ui.item.label);
@@ -449,7 +450,7 @@ $("#users").jqGrid({
 		$("#"+pager_id+"_left table.navtable tbody tr").append ('Передача покупателей: <input id="id_user_sub" type="hidden"/><input id="name_user_sub" type="text" placeholder="Кому" name="user"/><button id="hand-over-sub" title="Передать покупателей другому менеджеру">Передать</button>');
 		
 		 $('#name_user_sub').autocomplete({
-          source: "/app/scripts/lists/autocomplete.php?q=user",
+          source: "/panel/autocomplete?q=user",
           minLength: 1,
           focus: function (event, ui) {
             $(e).val(ui.item.label);
@@ -631,7 +632,7 @@ $("#pager2_left table.navtable tbody tr").append('Статус: <select class="a
 		});
 		
  $('#pager_left #name_user').autocomplete({
-          source: "/app/scripts/lists/autocomplete.php?q=user",
+          source: "/panel/autocomplete?q=user",
           minLength: 1,
           focus: function (event, ui) {
             $(e).val(ui.item.label);
@@ -685,7 +686,7 @@ $(document.body).on('keyup','#login', function() {
 		if(login.length > 5){
 			$.ajax({  
 					type: "POST",  
-					url: "/app/scripts/lists/admin_checkdata.php",  
+					url: "/panel/checklogin",  
 					data: 'q=1&login='+login,
 					success: function(msg){
 						if (msg.length!=0)

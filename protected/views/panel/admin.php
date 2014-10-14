@@ -1,4 +1,4 @@
-﻿    <div class="preloader"></div>
+<div class="preloader"></div>
     <div class="page-content">
         <div class="content">
             <div class="table">

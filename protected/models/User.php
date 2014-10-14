@@ -12,6 +12,13 @@ class User extends CActiveRecord
     {
         return 'users';
     }
+	public function attributeLabels()
+	{
+		return array(
+			'login' => 'Логин',
+			'password' => 'Пароль',
+		);
+	}
 	public function rules()
     {
          return array(

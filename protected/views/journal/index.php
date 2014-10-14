@@ -1,4 +1,4 @@
-﻿    <div class="page-content">
+    <div class="page-content">
     	<div class="status-bar">
         	<div class="caption"><i class="icon icon-user"></i>Пользователи</div>
             <div class="user-list">

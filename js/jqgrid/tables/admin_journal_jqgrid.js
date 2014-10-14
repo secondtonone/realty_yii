@@ -4,7 +4,7 @@ $(document).ready(function(){
 	{	
 		var lists = $.ajax({
 					type: "POST",
-					url: "/app/scripts/lists/user_lists.php",
+					url: "/panel/lists",
 					data: "q=1",
 					async: false
 				}).responseText,

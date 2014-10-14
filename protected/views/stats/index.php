@@ -1,4 +1,4 @@
-﻿<div class="page-content">
+<div class="page-content">
     <div class="stat-container">
         <div class="caption"><i class="icon line-chart"></i>Квартиры</div>
         <div id="container">
