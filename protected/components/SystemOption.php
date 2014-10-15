@@ -12,6 +12,8 @@ class SystemOption
 	}
 	public function checkClient($arguments)
     {
+		$connection=Yii::app()->db; 
+		
 		$status=1;
 		
 		$sql='SELECT `id_client` FROM `clients` WHERE `number`=:number AND `id_category`=:id_category AND `id_planning`=:id_planning AND `id_status`=:id_status';
@@ -36,6 +38,8 @@ class SystemOption
     } 
 	public function checkObject($arguments)
     {
+		$connection=Yii::app()->db; 
+		
 		$sql='SELECT o.`id_object` FROM `objects` o LEFT JOIN `objects_owners` ow ON o.`id_owner`= ow.`id_owner` WHERE o.`id_street`=:id_street AND o.`house_number`=:house_number AND o.`id_category`=:id_category AND o.`room_count`=:room_count AND o.`id_planning`=:id_planning AND o.`floor`=:floor AND ow.`number`=:number';
 		$command=$connection->createCommand($sql);
 		$command->bindParam(':id_street',$arguments['id_street'],PDO::PARAM_STR);
@@ -61,8 +65,6 @@ class SystemOption
 	 
 	public function autocomplete($arguments) 
     {
-		
-		
 		$connection=Yii::app()->db; 
 		
 		$response=array();
@@ -162,10 +164,6 @@ class SystemOption
 		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
 		
 		$update = User::model()->updateAll(array('online'=>'online','time_activity'=>$date),'id_user=:id_user',array(':id_user'=>Yii::app()->user->id));	
-	}
-	public function userCheckData() 
-    {
-		
 	}
 	public function userLists() 
     {

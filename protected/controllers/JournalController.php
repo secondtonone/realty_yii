@@ -33,28 +33,39 @@ class JournalController extends CController
 		}
 	}
 	
-	public function actionLogin()
-    {
-		 /*$form = new User();
-         
-        // Проверяем является ли пользователь гостем
-        // ведь если он уже зарегистрирован - формы он не должен увидеть.
-        if (!Yii::app()->user->isGuest) {
-            throw new CException('Вы уже зарегистрированы!');
-         } else {
-            if (!empty($_POST['User'])) {
-                $form->attributes = $_POST['User'];
-                $form->verifyCode = $_POST['User']['verifyCode'];
- 
-                    // Проверяем правильность данных
-                    if($form->validate('login')) {
-                        // если всё ок - кидаем на главную страницу
-                        $this->redirect(Yii::app()->homeUrl);
-                     } 
-            } 
-            $this->render('login', array('form' => $form));
-        }*/
-    }    
+	public function actionGetEvents()
+	{
+		if (empty($_POST['filters']))
+		{
+			$filters='';
+		}
+		else
+		{
+			$filters=$_POST['filters'];
+		}
+		
+		$admin = new AdminGetData();
+		$admin->getEvents($_POST['page'],$_POST['rows'],$_POST['sidx'],$_POST['sord'],$_POST['_search'],$filters);
+	}
+	public function actionGetNotifications()
+	{
+		if (empty($_POST['filters']))
+		{
+			$filters='';
+		}
+		else
+		{
+			$filters=$_POST['filters'];
+		}
+		
+		$admin = new AdminGetData();
+		$admin->getNotifications($_POST['page'],$_POST['rows'],$_POST['sidx'],$_POST['sord'],$_POST['_search'],$filters);
+	}
+	public function actionGetOnlineUsers()
+	{
+		$admin = new AdminGetData();
+		$admin->getOnlineUsers();
+	}
 
 	/**
 	 * This is the action to handle external exceptions.

@@ -14,7 +14,7 @@
             </div>
             <div class="lower-content">
             	<div class="table">
-                    <table id="journal"></table> 
+                    <table id="journalevent"></table> 
                     <div id="pager2"></div> 
                 </div>
             </div>

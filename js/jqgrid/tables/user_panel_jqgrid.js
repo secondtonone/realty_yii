@@ -161,7 +161,7 @@ $(document).ready(function(){
 
 	
 $("#objects").jqGrid({
-            url:"/app/scripts/jqgrid/user_getdata.php?q=1",
+            url:"/panel/getobjects",
             datatype: 'json',
             mtype: 'POST',
             colNames:['#','','Собственник','Телефон','ID Город','Город','Улица','Улица','№ дома','Тип здания','Категория','Кол-во комнат','Планировка','Этаж','Этажность','Тип этажности','Площадь, м. кв.','Статус','Статус по времени','Цена','Цена с комиссией','','Менеджер','Дата','','Ремонт','Окна','Счетчики'],
@@ -291,7 +291,7 @@ $("#objects").jqGrid({
 				initMap(object);
 				
 				$("#"+subgrid_table_id).jqGrid({
-				url:"/app/scripts/jqgrid/user_getdata.php?q=3&id_object="+row_id,
+				url:"/panel/getsubobjects?id_object="+row_id,
 				datatype: "json",
 				mtype: 'GET',
 				colNames: ['Ремонт','Окна','Счетчики','Дата изменения цены','',''],
@@ -543,10 +543,8 @@ $(document.body).on('change','#id_planning', function() {
 				});
 		}
 	});
-
-
 $("#clients").jqGrid({
-            url:"/app/scripts/jqgrid/user_getdata.php?q=2",
+            url:"/panel/getclients",
             datatype: 'json',
             mtype: 'POST',
             colNames:['#','Покупатель','Телефон','ID Город','Город','Категория','Планировка','Этажность','Цена','Статус по времени','Статус','','Менеджер','Дата',''],

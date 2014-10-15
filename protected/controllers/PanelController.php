@@ -38,7 +38,35 @@ class PanelController extends CController
 			$this->redirect(array('enter/index'));
 		}
 	}
+	//---------------------------SystemOption-------------------------------
+	public function actionAutocomplete()
+    {
+		$arguments = array(/*'term'=>$_GET['term']*/);
+		
+		foreach ($_GET as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+		
+		/*$arguments=array('term'=>$_GET['term']);*/
+		
+		$system = new SystemOption();
 	
+		$system->autocomplete($arguments);
+
+    }
+	public function actionCheckClient()
+    {
+		$arguments = array();
+		
+		foreach ($_POST as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+
+		$system = new SystemOption();
+		$system->checkClient($arguments);
+    } 
 	public function actionCheckLogin()
     {
 		$system = new SystemOption();
@@ -56,49 +84,91 @@ class PanelController extends CController
 		$system = new SystemOption();
 		$system->checkObject($arguments);
     }
-	public function actionCheckClient()
-    {
-		$arguments = array();
-		
-		foreach ($_POST as $key=>$value)
-		{
-        	$arguments[$key]=$value;
-    	}
-
-		$system = new SystemOption();
-		$system->checkClient($arguments);
-    }      
-	
-	public function actionUpdateStatus()
+	public function actionLists()
     {
 		$system = new SystemOption();
-		$system->updateStatus();
-    }
-	public function actionAutocomplete()
-    {
-		$arguments = array();
-		
-		foreach ($_POST as $key=>$value)
-		{
-        	$arguments[$key]=$value;
-    	}
-		
-		$system = new SystemOption();
-	
-		$system->autocomplete($arguments);
-
-    }
+		$system->userLists();
+    }   
 	public function actionNotes()
     {
 		$system = new SystemOption();
 		$system->notes();
     }
-	public function actionLists()
+	public function actionUpdateStatus()
     {
 		$system = new SystemOption();
-		$system->userLists();
-    }      
-	/**
-	 * This is the action to handle external exceptions.
-	 */
+		$system->updateStatus();
+    }
+	//---------------------------admin/userGetData-------------------------------
+	public function actionGetClients()
+	{
+		if(Yii::app()->user->right == 'admin')
+		{
+			if (!isset($_GET['filters']))
+			{
+				$filters='';
+			}
+			else
+			{
+				$filters=$_GET['filters'];
+			}
+				
+			$admin = new AdminGetData();
+			$admin->getClients($_GET['page'],$_GET['rows'],$_GET['sidx'],$_GET['sord'],$_GET['_search'],$filters,$_GET['id_user']);
+		}
+		else if (Yii::app()->user->right == 'user')
+		{
+			if (!isset($_POST['filters']))
+			{
+				$filters='';
+			}
+			else
+			{
+				$filters=$_POST['filters'];
+			}
+			
+			$user = new UserGetData();
+			$user->getClients($_POST['page'],$_POST['rows'],$_POST['sidx'],$_POST['sord'],$_POST['_search'],$filters);
+		}
+	}
+	public function actionGetObjects()
+	{
+		if (!isset($_POST['filters']))
+		{
+			$filters='';
+		}
+		else
+		{
+			$filters=$_POST['filters'];
+		}
+		if(Yii::app()->user->right == 'admin')
+		{
+			$admin = new AdminGetData();
+			$admin->getObjects($_POST['page'],$_POST['rows'],$_POST['sidx'],$_POST['sord'],$_POST['_search'],$filters);
+		}
+		else if (Yii::app()->user->right == 'user')
+		{
+			$user = new UserGetData();
+			$user->getObjects($_POST['page'],$_POST['rows'],$_POST['sidx'],$_POST['sord'],$_POST['_search'],$filters);
+		}
+	}
+	public function actionGetUsers()
+	{
+		if (!isset($_POST['filters']))
+		{
+			$filters='';
+		}
+		else
+		{
+			$filters=$_POST['filters'];
+		}
+			
+		$admin = new AdminGetData();
+		$admin->getUsers($_POST['page'],$_POST['rows'],$_POST['sidx'],$_POST['sord'],$_POST['_search'],$filters);
+	}
+	public function actionGetSubObjects()
+	{
+		$user = new UserGetData();
+		$user->getSubObjects($_GET['id_object']);
+	}
 }

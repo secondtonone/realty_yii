@@ -20,7 +20,7 @@ class UserIdentity extends CUserIdentity
     public function authenticate()
     {
          // Есть ли указанный пользователь в базе данных
-         $record=User::model()->findByAttributes(array('login'=>$this->username));
+         $record=User::model()->findByAttributes(array('login'=>$this->username,'active'=>1));
          if($record===null)
              // Если нету - сохраняем в errorCode ошибку.
              $this->errorCode=self::ERROR_USERNAME_INVALID;

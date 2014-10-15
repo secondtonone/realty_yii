@@ -33,7 +33,7 @@ $(document).ready(function(){
 	{	
 		return $.ajax({
 					type: "POST",
-					url: "/app/scripts/jqgrid/admin_journal_getdata.php?q=3",
+					url: "/journal/getonlineusers",
 					async: false
 				}).responseText;
 	}
@@ -54,7 +54,7 @@ $(document).ready(function(){
 		selectType={value:selectList.rows.type,sopt:['eq']};
 	
 $("#notifications").jqGrid({
-            url:"/app/scripts/jqgrid/admin_journal_getdata.php?q=1",
+            url:"/journal/getnotifications",
             datatype: 'json',
             mtype: 'POST',
             colNames:['#','Текст сообщения','Статус'],
@@ -182,8 +182,8 @@ $("#pager_left table.navtable tbody tr").append('Статус: <select class="ac
 			});
 		});
 
-$("#journal").jqGrid({
-            url:"/app/scripts/jqgrid/admin_journal_getdata.php?q=2",
+$("#journalevent").jqGrid({
+            url:"/journal/getevents",
             datatype: 'json',
             mtype: 'POST',
             colNames:['#','ID Пользователя','Пользователь','Действие','Время'],
@@ -208,10 +208,10 @@ $("#journal").jqGrid({
 
 $('.user-list').on('click','.user',function(){
 		var id_user=$(this).attr('id'),
-			mypostdata = $("#journal").jqGrid('getGridParam', 'postData');
+			mypostdata = $("#journalevent").jqGrid('getGridParam', 'postData');
 			mypostdata.filters='{"groupOp":"AND","rules":[{"field":"id_user","op":"eq","data":'+id_user+'}]}';
-			$("#journal").jqGrid('setGridParam', {postData: mypostdata, search:true});
-			$("#journal").trigger("reloadGrid");
+			$("#journalevent").jqGrid('setGridParam', {postData: mypostdata, search:true});
+			$("#journalevent").trigger("reloadGrid");
 	});
 
 

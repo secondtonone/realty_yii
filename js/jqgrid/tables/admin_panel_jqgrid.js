@@ -131,7 +131,7 @@ $(document).ready(function(){
 	$(".preloader").hide();
 	
 $("#objects").jqGrid({
-            url:"/app/scripts/jqgrid/admin_getdata.php?q=1",
+            url:"/panel/getobjects",
             datatype: 'json',
             mtype: 'POST',
             colNames:['#','','Собственник','Телефон','Город','Город','Улица','Улица','№ дома','Тип здания','Категория','Кол-во комнат','Планировка','Этаж','Этажность','Тип этажности','Площадь, м. кв.','Статус','Статус по времени','Цена','Цена с комиссией','ID Менеджера','Менеджер','Дата','','Ремонт','Окна','Счетчики'],
@@ -196,7 +196,7 @@ $("#objects").jqGrid({
 				initMap(object);
 				
 				$("#"+subgrid_table_id).jqGrid({
-				url:"/app/scripts/jqgrid/user_getdata.php?q=3&id_object="+row_id,
+				url:"/panel/getsubobjects?id_object="+row_id,
 				datatype: "json",
 				mtype: 'GET',
 				colNames: ['Ремонт','Окна','Счетчики','Дата изменения цены','',''],
@@ -301,7 +301,7 @@ $("#objects").jqGrid({
 $("#pager_left table.navtable tbody tr").append ('Передача объектов: <input id="id_user" type="hidden"/><input id="name_user" type="text" placeholder="Кому" name="user"/><button id="hand-over" title="Передать объекты другому менеджеру">Передать</button>');
 
 $("#users").jqGrid({
-            url:"/app/scripts/jqgrid/admin_getdata.php?q=2",
+            url:"/panel/getusers",
             datatype: 'json',
             mtype: 'POST',
             colNames:['#','Логин','Пароль','Пароль','Статус','Уровень прав','Пользователь','Телефон','Активность','Время последней активности'],
@@ -356,7 +356,7 @@ $("#users").jqGrid({
 				$("#"+subgrid_id).html("<div class='subgridform'><table id='"+subgrid_table_id+"' class='scroll'></table><div id='"+pager_id+"' class='scroll'></div></div>");
 				
 				$("#"+subgrid_table_id).jqGrid({
-				url:"/app/scripts/jqgrid/admin_getdata.php?q=3&id_user="+row_id,
+				url:"/panel/getclients?id_user="+row_id,
 				datatype: "json",
 				mtype: 'GET',
 				colNames: ['#','Покупатель','Телефон','ID Город','Город','Категория','Планировка','Этажность','Цена','Статус по времени','Статус','','Дата',''],
