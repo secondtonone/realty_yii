@@ -50,12 +50,6 @@ class SystemOption
 		$command->bindParam(':floor',$arguments['floor'],PDO::PARAM_STR);
 		$command->bindParam(':number',$arguments['number'],PDO::PARAM_STR);
 		$rows=$command->queryAll();
-				
-		/*$res = $dbh->prepare('SELECT o.`id_object` FROM `objects` o LEFT JOIN `objects_owners` ow ON o.`id_owner`= ow.`id_owner` WHERE o.`id_street`=? AND o.`house_number`=? AND o.`id_category`=? AND o.`room_count`=? AND o.`id_planning`=? AND o.`floor`=? AND ow.`number`=?');
-			
-		$res->execute(array($_POST['id_street'],$_POST['house_number'],$_POST['id_category'],$_POST['room_count'],$_POST['id_planning'],$_POST['floor'],$_POST['number']));
-			
-		$row = $res->fetch(PDO::FETCH_ASSOC);*/
 							
 		if (!empty($rows)) 
 		{
@@ -163,7 +157,7 @@ class SystemOption
     {
 		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
 		
-		$update = User::model()->updateAll(array('online'=>'online','time_activity'=>$date),'id_user=:id_user',array(':id_user'=>Yii::app()->user->id));	
+		$update = User::model()->updateAll(array('online'=>'online','time_activity'=>$date),'id_user=:id_user',array(':id_user'=>Yii::app()->user->getId()));	
 	}
 	public function userLists() 
     {

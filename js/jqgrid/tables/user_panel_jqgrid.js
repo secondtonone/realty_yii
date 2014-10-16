@@ -207,7 +207,7 @@ $("#objects").jqGrid({
 			subGrid: true,
 			multiselect: true,
 			toolbar: [true,"top"],
-			editurl: '/app/scripts/jqgrid/user_modifydata.php?q=1',
+			editurl: '/panel/usermodifyobjects',
 			rowattr: function (row) {
 				
 					if (row.edit_enable =="0") { 
@@ -306,7 +306,7 @@ $("#objects").jqGrid({
 				rowNum:20,
 				sortname: 'id_renovation',
 				sortorder: "asc",
-				editurl: '/app/scripts/jqgrid/user_modifydata.php?q=3&id_object='+row_id,
+				editurl: '/panel/usermodifysubobject?id_object='+row_id,
 				onSelectRow: function(id) {
 					
 					var rowData = $(this).jqGrid('getRowData',id);
@@ -458,7 +458,7 @@ $("#objects").jqGrid({
 							id_user = rowData.id_user;
 						$.ajax({  
 						type: "POST",  
-						url: "/app/scripts/jqgrid/user_modifydata.php?q=1",  
+						url: "/panel/usermodifyobjects",  
 						data: 'oper=selloutstatus&id_object='+cl+'&id_status='+id_status+'&id_user='+id_user,
 						success: function(msg){
 									if(msg.length == 0)
@@ -504,7 +504,7 @@ $("#objects").jqGrid({
 							id_user = rowData.id_user;
 						$.ajax({  
 						type: "POST",  
-						url: "/app/scripts/jqgrid/user_modifydata.php?q=1",  
+						url: "/panel/usermodifyobjects",  
 						data: 'oper=timestatus&id_object='+cl+'&id_status='+id_status+'&id_user='+id_user,
 						success: function(msg){
 								if(msg.length == 0)
@@ -642,7 +642,7 @@ $("#clients").jqGrid({
 				$("#objects").jqGrid('setGridParam', {postData: mypostdata, search:true});
 				$("#objects").trigger("reloadGrid");
 				},
-			editurl: '/app/scripts/jqgrid/user_modifydata.php?q=2'
+			editurl: '/panel/usermodifyclients'
         }).navGrid('#pager2',{view:false, del:false, add:true, edit:true, search:true},{width:390,reloadAfterSubmit:true, beforeShowForm: function(form) { 
 		
 			$('#name', form).attr({"title":"ФИО в формате: Иванов Иван Иванович"});
@@ -752,7 +752,7 @@ $("#clients").jqGrid({
 							id_user = rowData.id_user;
 						$.ajax({  
 						type: "POST",  
-						url: "/app/scripts/jqgrid/user_modifydata.php?q=2",  
+						url: "/panel/usermodifyclients",  
 						data: 'oper=activestatus&id_client='+cl+'&id_status='+id_status+'&id_user='+id_user,
 						success: function(msg){
 									if(msg.length == 0)
@@ -799,7 +799,7 @@ $("#clients").jqGrid({
 							id_user = rowData.id_user;
 						$.ajax({  
 						type: "POST",  
-						url: "/app/scripts/jqgrid/user_modifydata.php?q=2",  
+						url: "/panel/usermodifyclients",  
 						data: 'oper=timestatus&id_client='+cl+'&id_status='+id_status+'&id_user='+id_user,
 						success: function(msg){
 								if(msg.length == 0)

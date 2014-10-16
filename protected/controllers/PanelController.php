@@ -41,14 +41,12 @@ class PanelController extends CController
 	//---------------------------SystemOption-------------------------------
 	public function actionAutocomplete()
     {
-		$arguments = array(/*'term'=>$_GET['term']*/);
+		$arguments = array();
 		
 		foreach ($_GET as $key=>$value)
 		{
         	$arguments[$key]=$value;
     	}
-		
-		/*$arguments=array('term'=>$_GET['term']);*/
 		
 		$system = new SystemOption();
 	
@@ -170,5 +168,88 @@ class PanelController extends CController
 	{
 		$user = new UserGetData();
 		$user->getSubObjects($_GET['id_object']);
+	}
+	//---------------------------SystemOption-------------------------------
+	public function actionUserModifyClients()
+	{
+		$arguments = array();
+		
+		foreach ($_POST as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+		
+		$user = new UserModifyData();
+		
+		switch ($arguments['oper'])
+		{
+			case "add":
+			{
+				$user->addClient($arguments);
+				break;
+			}
+			case "edit":
+			{
+				$user->editClient($arguments);
+				break;
+			}
+			case "activestatus":
+			{
+				$user->editActiveStatus($arguments);
+				break;
+			}
+			case "timestatus":
+			{
+				$user->editClientTimeStatus($arguments);
+				break;
+			}
+		}
+	}
+	public function actionUserModifyObjects()
+	{
+		$arguments = array();
+		
+		foreach ($_POST as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+		
+		$user = new UserModifyData();
+		
+		switch ($arguments['oper'])
+		{
+			case "add":
+			{
+				$user->addObject($arguments);
+				break;
+			}
+			case "edit":
+			{
+				$user->editObject($arguments);
+				break;
+			}
+			case "selloutstatus":
+			{
+				$user->editSellOutStatus($arguments);
+				break;
+			}
+			case "timestatus":
+			{
+				$user->editTimeStatus($arguments);
+				break;
+			}
+		}
+	}
+	public function actionUserModifySubObject()
+	{
+		$arguments = array('id_object'=>$_GET['id_object']);
+		
+		foreach ($_POST as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+		
+		$user = new UserModifyData();
+		$user->editSubObject($arguments);
 	}
 }

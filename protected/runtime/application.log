@@ -4657,3 +4657,56 @@ Stack trace:
 REQUEST_URI=/app/scripts/jqgrid/user_modifydata.php?q=1
 HTTP_REFERER=http://example.com/panel/index
 ---
+2014/10/16 20:31:16 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1500000','1600000','33',NOW()+INTERVAL 2 HOUR,NOW()+INTERVAL 2 HOUR)' at line 1. Выполнявшийся SQL-запрос: INSERT INTO `objects`(`id_owner`,`id_city`, `id_street`, `house_number`,`id_building`, `id_category`, `room_count`, `id_planning`, `floor`,`number_of_floor`,`id_floor_status`, `space`, `id_renovation`, `id_window`, `id_counter`, `id_sell_out_status`, `id_time_status`, `price`, `market_price`, `id_user`, `date`,`date_change`) VALUES (:lastid,:id_city,:id_street,:house_number,:id_building,:id_category,:room_count,:id_planning,:floor,:number_of_floor,:id_floor_status,:space,:id_renovation,:id_window,:id_counter,:id_sell_out_status,:id_time_status,,:price,:market_price,:id_user,NOW()+INTERVAL 2 HOUR,NOW()+INTERVAL 2 HOUR).
+in E:\xampp\htdocs\example.com\www\protected\components\UserModifyData.php (96)
+in E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php (188)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/16 20:31:16 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1500000','1600000','33',NOW()+INTERVAL 2 HOUR,NOW()+INTERVAL 2 HOUR)' at line 1. The SQL statement executed was: INSERT INTO `objects`(`id_owner`,`id_city`, `id_street`, `house_number`,`id_building`, `id_category`, `room_count`, `id_planning`, `floor`,`number_of_floor`,`id_floor_status`, `space`, `id_renovation`, `id_window`, `id_counter`, `id_sell_out_status`, `id_time_status`, `price`, `market_price`, `id_user`, `date`,`date_change`) VALUES (:lastid,:id_city,:id_street,:house_number,:id_building,:id_category,:room_count,:id_planning,:floor,:number_of_floor,:id_floor_status,:space,:id_renovation,:id_window,:id_counter,:id_sell_out_status,:id_time_status,,:price,:market_price,:id_user,NOW()+INTERVAL 2 HOUR,NOW()+INTERVAL 2 HOUR)' in E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:358
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\protected\components\UserModifyData.php(96): CDbCommand->execute()
+#1 E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php(188): UserModifyData->addObject(Array)
+#2 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): PanelController->actionUserModifyObjects()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\xampp\htdocs\example.com\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('usermodifyobjec...')
+#7 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('panel/usermodif...')
+#8 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 E:\xampp\htdocs\example.com\www\index.php(12): CApplication->run()
+#10 {main}
+REQUEST_URI=/panel/usermodifyobjects
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/16 20:46:45 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::execute(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1500000','1600000','33','2014-10-16 22:46:45','2014-10-16 22:46:45')' at line 1. Выполнявшийся SQL-запрос: INSERT INTO `objects`(`id_owner`,`id_city`, `id_street`, `house_number`,`id_building`, `id_category`, `room_count`, `id_planning`, `floor`,`number_of_floor`,`id_floor_status`, `space`, `id_renovation`, `id_window`, `id_counter`, `id_sell_out_status`, `id_time_status`, `price`, `market_price`, `id_user`, `date`,`date_change`) VALUES (:lastid,:id_city,:id_street,:house_number,:id_building,:id_category,:room_count,:id_planning,:floor,:number_of_floor,:id_floor_status,:space,:id_renovation,:id_window,:id_counter,:id_sell_out_status,:id_time_status,,:price,:market_price,:id_user,:date,:date_change).
+in E:\xampp\htdocs\example.com\www\protected\components\UserModifyData.php (97)
+in E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php (188)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/16 20:46:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''1500000','1600000','33','2014-10-16 22:46:45','2014-10-16 22:46:45')' at line 1. The SQL statement executed was: INSERT INTO `objects`(`id_owner`,`id_city`, `id_street`, `house_number`,`id_building`, `id_category`, `room_count`, `id_planning`, `floor`,`number_of_floor`,`id_floor_status`, `space`, `id_renovation`, `id_window`, `id_counter`, `id_sell_out_status`, `id_time_status`, `price`, `market_price`, `id_user`, `date`,`date_change`) VALUES (:lastid,:id_city,:id_street,:house_number,:id_building,:id_category,:room_count,:id_planning,:floor,:number_of_floor,:id_floor_status,:space,:id_renovation,:id_window,:id_counter,:id_sell_out_status,:id_time_status,,:price,:market_price,:id_user,:date,:date_change)' in E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:358
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\protected\components\UserModifyData.php(97): CDbCommand->execute()
+#1 E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php(188): UserModifyData->addObject(Array)
+#2 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): PanelController->actionUserModifyObjects()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\xampp\htdocs\example.com\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('usermodifyobjec...')
+#7 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('panel/usermodif...')
+#8 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 E:\xampp\htdocs\example.com\www\index.php(12): CApplication->run()
+#10 {main}
+REQUEST_URI=/panel/usermodifyobjects
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/16 21:51:23 [error] [php] Undefined variable: command (E:\xampp\htdocs\example.com\www\protected\components\UserModifyData.php:109)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\xampp\htdocs\example.com\www\framework\web\CController.php(286): PanelController->runAction()
+#2 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): PanelController->runActionWithFilters()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): PanelController->run()
+#4 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#5 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#6 E:\xampp\htdocs\example.com\www\index.php(12): CWebApplication->run()
+REQUEST_URI=/panel/usermodifyclients
+in E:\xampp\htdocs\example.com\www\protected\components\UserModifyData.php (109)
+in E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php (198)
+in E:\xampp\htdocs\example.com\www\index.php (12)
