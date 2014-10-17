@@ -2,7 +2,7 @@ $(document).ready(function () {
 	
 	var	path=window.location.pathname.toString(),
 	    arrPath=path.split('/'),
-		id=arrPath[1];
+		id=(arrPath[1])?arrPath[1]:'panel';
 
 	function activityTime () {
 		$.ajax({
@@ -33,8 +33,6 @@ $(document).ready(function () {
 		$('.sidebar-menu li a').removeClass('active');
 		$(this).addClass('active');
 	});
-	
-	
 	
 	$( ".sidebar-menu" ).accordion({
 		active: false,	

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 class SystemOption
 {
@@ -23,12 +23,6 @@ class SystemOption
 		$command->bindParam(':id_planning',$arguments['id_planning'],PDO::PARAM_STR);
 		$command->bindParam(':id_status',$status,PDO::PARAM_STR);
 		$rows=$command->queryAll();
-		
-		/*$res = $dbh->prepare('SELECT `id_client` FROM `clients` WHERE `number`=? AND `id_category`=? AND `id_planning`=? AND `id_status`=?');
-			
-		$res->execute(array($_POST['number'],$_POST['id_category'],$_POST['id_planning'],1));
-			
-		$row = $res->fetch(PDO::FETCH_ASSOC);*/
 							
 		if (!empty($rows)) 
 		{
@@ -76,10 +70,7 @@ class SystemOption
 				$command->bindParam(':term',$term,PDO::PARAM_STR);
 				$command->bindParam(':city',$param,PDO::PARAM_INT);
 				$rows=$command->queryAll();
-		
-				/*$res = $dbh->prepare("SELECT `id_street`, `name_street` FROM `objects_street` WHERE `name_street` LIKE ? AND `city_id`=(SELECT `city_id` FROM `geo_city` WHERE `id_city`=?)");
-				$res->execute(array("%$term%",$_GET['id_city']));*/
-				
+					
 				foreach($rows as $row) 
 				{
 					$response[]=array('value' => $row["id_street"],'label' =>$row["name_street"]);
@@ -92,9 +83,6 @@ class SystemOption
 				$command=$connection->createCommand($sql);
 				$command->bindParam(":term",$term,PDO::PARAM_STR);
 				$rows=$command->queryAll();
-		
-				/*$res = $dbh->prepare("SELECT `id_city`, `name_city` FROM `geo_city` WHERE `name_city` LIKE ?");
-				$res->execute(array("%$term%"));*/
 				
 				foreach($rows as $row)
 				{
@@ -109,10 +97,6 @@ class SystemOption
 				$command->bindValue(":id_right",'user',PDO::PARAM_STR);
 				$command->bindParam(":term",$term,PDO::PARAM_STR);
 				$rows=$command->queryAll();
-		
-				/*$res = $dbh->prepare("SELECT `id_user`, `name` FROM `users` WHERE `name` LIKE ?");
-				
-				$res->execute(array("%$term%"));*/
 				
 				foreach($rows as $row)
 				{

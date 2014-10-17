@@ -34,9 +34,15 @@ return array(
 
 	// application components
 	'components'=>array(
+		'authManager' => array(
+            // Будем использовать свой менеджер авторизации
+            /*'class' => 'PhpAuthManager',*/
+            // Роль по умолчанию. Все, кто не админы, модераторы и юзеры — гости.
+            'defaultRoles' => array('guest'),
+        ),
 		'user'=>array(
 			// enable cookie-based authentication
-			'allowAutoLogin'=>true,
+			'allowAutoLogin'=>false,
 			'loginUrl'=>array('enter/index')
 		),
 		// uncomment the following to enable URLs in path-format
@@ -91,9 +97,7 @@ return array(
 			   'mainjs' => array(
 					// Где искать подключаемые файлы JS и CSS
 					'baseUrl' => '/js/',
-					// Если включен дебаг-режим, то подключает /js/highcharts/highcharts.src.js
-					// Иначе /js/highcharts/highcharts.js
-					'js'=>array('jquery-1.10.2.js',/*'tooltip.js',*/'sticky.full.js','jquery.slimscroll.js'),
+					'js'=>array('jquery-1.10.2.js','sticky.full.js','jquery.slimscroll.js'),
 				  
 				),
 				'enterjs' => array(
@@ -141,7 +145,7 @@ return array(
 					'baseUrl' => '/js/',
 					// Если включен дебаг-режим, то подключает /js/highcharts/highcharts.src.js
 					// Иначе /js/highcharts/highcharts.js
-					'js'=>array('panel.js','highcharts-custom.js','stats.js'),
+					'js'=>array('panel.js','сhart.js','stats.js'),
 				  
 				),
 				'helpjs' => array(

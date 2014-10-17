@@ -292,7 +292,7 @@ $("#objects").jqGrid({
 			
 			}},{width:380,reloadAfterSubmit:true,zIndex:99},{width:490,reloadAfterSubmit:true,multipleSearch:true,zIndex:99,closeAfterSearch:true},{width:380,reloadAfterSubmit:true,zIndex:99}).navSeparatorAdd("#pager",{sepclass:"ui-separator",sepcontent: ''}).navButtonAdd("#pager",{caption:"",buttonicon:"ui-icon-document", onClickButton:
 	                         function () { 
-          $("#objects").jqGrid('excelExport',{"url":"/app/scripts/jqgrid/admin_exportdata.php?q=1"});
+          $("#objects").jqGrid('excelExport',{"url":"/panel/adminexport"});
        } , position: "last", title:"Экспорт в Excel", cursor: "pointer"}).navSeparatorAdd("#pager",{sepclass:"ui-separator",sepcontent: ''});
 	   
 	   $("#objects").jqGrid('gridResize', { minWidth: 1150,maxWidth: 1800});

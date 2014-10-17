@@ -1,6 +1,9 @@
 <?php
 class User extends CActiveRecord
 {
+	const ROLE_ADMIN = 'admin';
+    const ROLE_USER = 'user';
+	const ROLE_GUEST = 'guest';
 	public $rememberMe;
 	            
     public static function model($className=__CLASS__)

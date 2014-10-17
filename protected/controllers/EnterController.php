@@ -43,19 +43,13 @@ class EnterController extends CController
 			{
 				$form->rememberMe = $_POST['rememberMe'];
 			}
- 
-                    // Проверяем правильность данных
-            if($form->validate()) {
-                        // если всё ок - кидаем на панель
-                      //
-
-
+            if($form->validate()) 
+			{
 				$response=array('redirect' => '/panel/index','error' =>'');			
 				echo json_encode($response);
-
-
             } 
-			else {
+			else 
+			{
 				$this->renderPartial('/enter/error', array('form' => $form));
 			}
         }

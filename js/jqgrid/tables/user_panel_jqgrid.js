@@ -412,7 +412,7 @@ $("#objects").jqGrid({
 			}},{width:380,reloadAfterSubmit:true,zIndex:99},{width:490,reloadAfterSubmit:true,multipleSearch:true,zIndex:99,closeAfterSearch:true},{width:380,reloadAfterSubmit:true,zIndex:99} 
 		).navSeparatorAdd("#pager",{sepclass:"ui-separator",sepcontent: ''}).navButtonAdd("#pager",{caption:"",buttonicon:"ui-icon-document", onClickButton:
 	                         function () { 
-          $("#objects").jqGrid('excelExport',{"url":"/app/scripts/jqgrid/user_exportdata.php?q=1"});
+          $("#objects").jqGrid('excelExport',{"url":"/panel/userexport?q=objects"});
        } , position: "last", title:"Экспорт в Excel", cursor: "pointer"}).navSeparatorAdd("#pager",{sepclass:"ui-separator",sepcontent: ''}); 
 	   
 	    $("#edit_objects").addClass('ui-state-disabled'); 
@@ -703,7 +703,7 @@ $("#clients").jqGrid({
 			}
 			}},{width:390,reloadAfterSubmit:true},{width:525,reloadAfterSubmit:true,multipleSearch:true,closeAfterSearch:true},{width:390,reloadAfterSubmit:true}).navSeparatorAdd("#pager2",{sepclass:"ui-separator",sepcontent: ''}).navButtonAdd("#pager2",{caption:"",buttonicon:"ui-icon-document", onClickButton:
 	                         function () { 
-          $("#clients").jqGrid('excelExport',{"url":"/app/scripts/jqgrid/user_exportdata.php?q=2"});
+          $("#clients").jqGrid('excelExport',{"url":"/panel/userexport?q=clients"});
        } , position: "last", title:"Экспорт в Excel", cursor: "pointer"}).navSeparatorAdd("#pager2",{sepclass:"ui-separator",sepcontent: ''});
 	   
 	   $("#edit_clients").addClass('ui-state-disabled'); 

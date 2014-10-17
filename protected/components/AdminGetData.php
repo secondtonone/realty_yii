@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 class AdminGetData
 {
@@ -75,12 +75,6 @@ class AdminGetData
 				}
 			}
 		}
-						 
-		//определяем количество записей в таблице
-		/*$rows = $dbh->prepare('SELECT COUNT(*) AS count FROM `clients` c WHERE c.`id_user`=?'.$qWhere);
-		$rows->execute(array($_GET["id_user"]));
-			
-		$totalRows = $rows->fetch(PDO::FETCH_ASSOC);*/
 		
 		$sql='SELECT COUNT(*) FROM `clients` c WHERE c.`id_user`=:id_user'.$qWhere;
 		$command=$connection->createCommand($sql);
@@ -90,9 +84,6 @@ class AdminGetData
 		$command->reset();
 					
 		$firstRowIndex = $curPage * $rowsPerPage - $rowsPerPage;
-		//получаем список из базы
-		/*$res = $dbh->prepare('SELECT c.`id_client`, c.`name`, c.`number`,c.`id_city`,ct.`name_city`, c.`id_category`, c.`id_planning`, c.`id_floor_status`,c.`price`, c.`id_time_status`,c.`id_status`, c.`id_user`, c.`date` FROM `clients` c LEFT JOIN `geo_city` ct ON c.`id_city`= ct.`id_city` WHERE c.`id_user`=? '.$qWhere.' ORDER BY '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage);
-		$res->execute(array($_GET["id_user"]));*/
 		
 		$sql='SELECT c.`id_client`, c.`name`, c.`number`,c.`id_city`,ct.`name_city`, c.`id_category`, c.`id_planning`, c.`id_floor_status`,c.`price`, c.`id_time_status`,c.`id_status`, c.`id_user`, c.`date` FROM `clients` c LEFT JOIN `geo_city` ct ON c.`id_city`= ct.`id_city` WHERE c.`id_user`=:id_user '.$qWhere.' ORDER BY '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage;
 		$command=$connection->createCommand($sql);
@@ -183,21 +174,12 @@ class AdminGetData
 				}
 			}
 		}
-						 
-		//определяем количество записей в таблице
-		/*$rows = $dbh->prepare('SELECT COUNT(*) AS count FROM `users_journal` '.$qWhere.'');
-		$rows->execute(array());
-			
-		$totalRows = $rows->fetch(PDO::FETCH_ASSOC);*/
 		
 		$sql='SELECT COUNT(*) FROM `users_journal` u'.$qWhere;
 		$command=$connection->createCommand($sql);
 		$totalRows = $command->queryScalar();
 					
 		$firstRowIndex = $curPage * $rowsPerPage - $rowsPerPage;
-			//получаем список из базы
-		/*$res = $dbh->prepare('SELECT j.`id_event`,u.`id_user`, u.`name`, j.`id_type_event`, j.`time_event` FROM `users_journal` j LEFT JOIN `users` u ON j.`id_user`= u.`id_user` '.$qWhere.' ORDER BY '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage);
-		$res->execute(array());*/
 		
 		$command->reset();
 			//получаем список из базы
@@ -281,20 +263,12 @@ class AdminGetData
 			}
 		}
 					 
-		//определяем количество записей в таблице
-		/*$rows = $dbh->prepare('SELECT COUNT(`id_notification`) AS count FROM `notifications` n '.$qWhere);
-		$rows->execute(array());
-			
-		$totalRows = $rows->fetch(PDO::FETCH_ASSOC);*/
-		
+	
 		$sql='SELECT COUNT(`id_notification`) FROM `notifications` n '.$qWhere;
 		$command=$connection->createCommand($sql);
 		$totalRows = $command->queryScalar();
 
 		$firstRowIndex = $curPage * $rowsPerPage - $rowsPerPage;
-		//получаем список из базы
-		/*$res = $dbh->prepare('SELECT n.`id_notification`, n.`text_notification`, n.`id_status` FROM `notifications` n '.$qWhere.' ORDER BY '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage);
-		$res->execute(array());*/
 		
 		$command->reset();
 			//получаем список из базы

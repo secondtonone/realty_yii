@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 class AdminModifyData 
 {
 	//-------------------------------For Object----------------------------------
@@ -21,14 +21,8 @@ class AdminModifyData
 		}
 		if($arguments['id_sell_out_status']==2)
 		{
-			/*$query=$dbh->prepare('INSERT INTO `users_journal`(`id_user`, `id_type_event`,`time_event`) VALUES (?,?,NOW()+INTERVAL 2 HOUR)');
-				
-			$query->execute(array($arguments['id_user'],3));*/
-			$journal = new Journal;
-			$journal->id_user=$arguments['id_user'];
-			$journal->id_type_event=3;
-			$journal->time_event=$date;
-			$journal->save();	
+			$journal = new EventJournaling;
+			$journal->userSellsObject(Yii::app()->user->getId());
 		}
 		
 		$sql='SELECT o.`price`,o.`market_price`,o.`date_change` FROM `objects` o WHERE o.`id_object`=:id_object';
@@ -37,17 +31,9 @@ class AdminModifyData
 		$command->bindParam(':id_object',$arguments['id'],PDO::PARAM_STR);
 		$row=$command->queryRow();
 		$command->reset();
-		
-		/*$res = $dbh->prepare('SELECT o.`price`,o.`market_price`,o.`date_change` FROM `objects` o WHERE o.`id_object`=?');
-			
-			$res->execute(array($arguments['id']));
-			
-			$row = $res->fetch(PDO::FETCH_ASSOC);*/
-				
+					
 		if ($row['price']!=$arguments['price'] or $row['market_price']!=$arguments['market_price'])
 		{
-			/*$query=$dbh->prepare('UPDATE `objects` SET `date_change`=NOW()+INTERVAL 2 HOUR WHERE `id_object`=?');
-			$query->execute(array($arguments['id']));*/
 			$sql='UPDATE `objects` SET `date_change`=:date WHERE `id_object`=:id_object';
 			$command=$connection->createCommand($sql);
 			$command->bindParam(':date',$date,PDO::PARAM_STR);
@@ -86,8 +72,6 @@ class AdminModifyData
 		$command->bindParam(':id_object',$arguments['id'],PDO::PARAM_STR);
 		$command->execute();
 				
-		/*	$query=$dbh->prepare('UPDATE `objects` SET `id_city`=?,`id_street`=?,`house_number`=?,`id_building`=?,`id_category`=?,`room_count`=?,`id_planning`=?,`floor`=?,`number_of_floor`=?,`id_floor_status`=?,`space`=?,`id_sell_out_status`=?,`id_time_status`=?,`price`=?,`market_price`=?,`date`=NOW()+INTERVAL 2 HOUR WHERE `id_object`=?');
-			$query->execute(array($arguments['id_city'],$arguments['id_street'],$arguments['house_number'],$arguments['id_building'],$arguments['id_category'],$arguments['room_count'],$arguments['id_planning'],$arguments['floor'],$arguments['number_of_floor'],$id_floor_status,$arguments['space'],$arguments['id_sell_out_status'],$arguments['id_time_status'],$arguments['price'],$arguments['market_price'],$arguments['id']));*/
 		echo "Запись отредактирована!";
 	}
 	public function editSubObject($arguments)
@@ -129,12 +113,6 @@ class AdminModifyData
 		$command=$connection->createCommand($sql);
 		$command->bindParam(':login',$arguments['login'],PDO::PARAM_STR);
 		$row=$command->queryRow();
-		
-		/*$res = $dbh->prepare('SELECT `id_user` FROM `users` WHERE `login`=?');
-			
-			$res->execute(array($arguments['login']));
-			
-			$row = $res->fetch(PDO::FETCH_ASSOC);*/
 							
 		if (!empty($row)) 
 		{
@@ -168,18 +146,8 @@ class AdminModifyData
 				$command->bindValue(':online','offline',PDO::PARAM_STR);
 				$command->execute();
 					
-				/*$query=$dbh->prepare('INSERT INTO `users`(`login`, `password`, `id_right`, `active`, `name`, `number`, `online`) VALUES (?,?,?,?,?,?,"offline")');
-					
-				$query->execute(array($arguments['login'],$pass,$arguments['id_right'],$arguments['active'],$arguments['name'],$arguments['number']));*/
-					
-				/*$res=$dbh->prepare('INSERT INTO `users_journal`(`id_user`, `id_type_event`,`time_event`) VALUES (?,?,NOW()+INTERVAL 2 HOUR)');
-					
-				$res->execute(array($_SESSION['id_user'],7));*/
-				$journal = new Journal;
-				$journal->id_user=Yii::app()->user->getId();
-				$journal->id_type_event=7;
-				$journal->time_event=$date;
-				$journal->save();		
+				$journal = new EventJournaling;
+				$journal->userAddUser(Yii::app()->user->getId());		
 					
 				echo 'Запись добавлена.';
 			}
@@ -234,9 +202,6 @@ class AdminModifyData
 			}
 			else
 			{
-				/*$query=$dbh->prepare('UPDATE `users` SET `login`=?,`id_right`=?,`active`=?,`name`=?,`number`=? WHERE `id_user`=?');
-				$query->execute(array($arguments['login'],$arguments['id_right'],$arguments['active'],$arguments['name'],$arguments['number'],$arguments['id']));*/
-				
 				$sql='UPDATE `users` SET `login`=:login,`id_right`=:id_right,`active`=:active,`name`=:name,`number`=:number WHERE `id_user`=:id_user';
 		
 				$command=$connection->createCommand($sql);
@@ -256,7 +221,6 @@ class AdminModifyData
     {
 		$connection=Yii::app()->db; 
 		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
-
 			
 		$sql='UPDATE `users` SET `active`=:active WHERE `id_user`=:id_user';
 		$command=$connection->createCommand($sql);

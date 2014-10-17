@@ -352,4 +352,42 @@ class PanelController extends CController
 			}
 		}
 	}
+	//-------------------------------Export data-------------------------------------
+	public function actionAdminExport()
+	{
+		$arguments = array();
+		
+		foreach ($_GET as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+		
+		$export = new ExcelExport();
+		$export->adminObjects($arguments);
+	}
+	public function actionUserExport()
+	{
+		$arguments = array();
+		
+		foreach ($_GET as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+		
+		$export = new ExcelExport();
+		
+		switch ($arguments['q'])
+		{
+			case "objects":
+			{
+				$export->userObjects($arguments);
+				break;
+			}
+			case "clients":
+			{
+				$export->userClients($arguments);
+				break;
+			}
+		}
+	}
 }

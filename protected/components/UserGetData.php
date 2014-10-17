@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 class UserGetData
 {
@@ -94,10 +94,7 @@ class UserGetData
 		$totalRows = $command->queryScalar();
 		
 		$command->reset();
-		/*$rows = $dbh->prepare('SELECT COUNT(*) AS count FROM `clients` c WHERE c.`id_status`=? '.$qWhere);
-		$rows->execute(array(1));
-			
-		$totalRows = $rows->fetch(PDO::FETCH_ASSOC);*/
+
 		$sql='SELECT `id_user` FROM `users` WHERE `id_user`<>:id_user AND `id_right`=:id_right';
 		$command=$connection->createCommand($sql);
 		$command->bindParam(':id_user',Yii::app()->user->getId(),PDO::PARAM_STR);
@@ -105,9 +102,6 @@ class UserGetData
 		$rows=$command->queryAll();
 		
 		$command->reset();
-					
-		/*$rows = $dbh->prepare('SELECT `id_user` FROM `users` WHERE `id_user`<>? AND `id_right`=?');
-		$rows->execute(array($_SESSION["id_user"],'user'));*/
 			
 		foreach($rows as $id_user)
 		{
@@ -117,9 +111,6 @@ class UserGetData
 		$array_id = rtrim($array_id, ",");
 					
 		$firstRowIndex = $curPage * $rowsPerPage - $rowsPerPage;
-		//получаем список из базы
-		/*$res = $dbh->prepare('SELECT c.`id_client`, c.`name` as clname, c.`number`,c.`id_city`,ct.`name_city`, c.`id_category`, c.`id_planning`, c.`id_floor_status`,c.`price`, c.`id_time_status`,c.`id_status`, c.`id_user`,u.`name`, c.`date` FROM `clients` c LEFT JOIN `users` u ON c.`id_user`= u.`id_user` LEFT JOIN `geo_city` ct ON c.`id_city`= ct.`id_city` WHERE c.`id_status`=? '.$qWhere.' ORDER BY FIELD( c.`id_user` ,'.$array_id.'), '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage);
-		$res->execute(array(1));*/
 		
 		$sql='SELECT c.`id_client`, c.`name` as clname, c.`number`,c.`id_city`,ct.`name_city`, c.`id_category`, c.`id_planning`, c.`id_floor_status`,c.`price`, c.`id_time_status`,c.`id_status`, c.`id_user`,u.`name`, c.`date` FROM `clients` c LEFT JOIN `users` u ON c.`id_user`= u.`id_user` LEFT JOIN `geo_city` ct ON c.`id_city`= ct.`id_city` WHERE c.`id_status`=1 '.$qWhere.' ORDER BY FIELD( c.`id_user` ,'.$array_id.'), '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage;
 		$command=$connection->createCommand($sql);
@@ -258,9 +249,6 @@ class UserGetData
 		$rows=$command->queryAll();
 		
 		$command->reset();
-		
-		/*$rows = $dbh->prepare('SELECT `id_user` FROM `users` WHERE `id_user`<>? AND `id_right`=?');
-		$rows->execute(array($_SESSION["id_user"],'user'));*/
 			
 		foreach($rows as $id_user)
 		{
@@ -271,8 +259,6 @@ class UserGetData
 			
 		$firstRowIndex = $curPage * $rowsPerPage - $rowsPerPage;
 		//получаем список из базы
-		/*$res = $dbh->prepare('SELECT o.`id_object`, o.`id_owner`, ow.`name_owner`,ow.`number`, o.`id_city`,ct.`name_city`,o.`id_street`, o.`id_floor_status`,st.`name_street` , o.`house_number` ,o.`id_building`, o.`id_category`, o.`room_count` , o.`id_planning` , o.`floor`,o.`number_of_floor` , o.`space` , o.`id_renovation` , o.`id_window`, o.`id_counter`, o.`id_sell_out_status`, o.`id_time_status`, o.`price`, o.`market_price` ,o.`id_user`,u.`name` , o.`date` FROM `objects` o LEFT JOIN `objects_owners` ow ON o.`id_owner`= ow.`id_owner` LEFT JOIN `objects_street` st ON o.`id_street`= st.`id_street` LEFT JOIN `geo_city` ct ON o.`id_city`= ct.`id_city` LEFT JOIN `users` u ON o.`id_user`= u.`id_user` WHERE (o.`id_sell_out_status`=1 OR o.`id_sell_out_status`=4) '.$qWhere.' ORDER BY FIELD( o.`id_user` ,'.$array_id.'), '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage);
-		$res->execute(array());*/
 		$sql='SELECT o.`id_object`, o.`id_owner`, ow.`name_owner`,ow.`number`, o.`id_city`,ct.`name_city`,o.`id_street`, o.`id_floor_status`,st.`name_street` , o.`house_number` ,o.`id_building`, o.`id_category`, o.`room_count` , o.`id_planning` , o.`floor`,o.`number_of_floor` , o.`space` , o.`id_renovation` , o.`id_window`, o.`id_counter`, o.`id_sell_out_status`, o.`id_time_status`, o.`price`, o.`market_price` ,o.`id_user`,u.`name` , o.`date` FROM `objects` o LEFT JOIN `objects_owners` ow ON o.`id_owner`= ow.`id_owner` LEFT JOIN `objects_street` st ON o.`id_street`= st.`id_street` LEFT JOIN `geo_city` ct ON o.`id_city`= ct.`id_city` LEFT JOIN `users` u ON o.`id_user`= u.`id_user` WHERE (o.`id_sell_out_status`=1 OR o.`id_sell_out_status`=4) '.$qWhere.' ORDER BY FIELD( o.`id_user` ,'.$array_id.'), '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage;
 		$command=$connection->createCommand($sql);
 		$rows=$command->queryAll();

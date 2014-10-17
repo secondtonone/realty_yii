@@ -41,11 +41,8 @@ class UserIdentity extends CUserIdentity
 			/* private $query = 'UPDATE `users` SET `browser`=?,`online`=?,`time_activity`=NOW()+INTERVAL 2 HOUR WHERE `id_user`=?';*/
 			 $update = User::model()->updateAll(array('browser'=>$_SERVER['HTTP_USER_AGENT'],'online'=>'online','time_activity'=>$date),'id_user=:id_user',array(':id_user'=>$this->_id));
 			 
-			 $journal = new Journal;
-			 $journal->id_user=$this->_id;
-			 $journal->id_type_event=1;
-			 $journal->time_event=$date;
-			 $journal->save();
+			 $journal = new EventJournaling;
+			 $journal->userEntering($this->_id);
 			 
              // В errorCode сохраняем что ошибок нет
              $this->errorCode=self::ERROR_NONE;
