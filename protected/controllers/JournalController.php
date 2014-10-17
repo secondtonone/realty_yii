@@ -66,6 +66,41 @@ class JournalController extends CController
 		$admin = new AdminGetData();
 		$admin->getOnlineUsers();
 	}
+	public function actionAdminModifyNotes()
+	{
+		$arguments = array();
+		
+		foreach ($_POST as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+		
+		$user = new AdminModifyData();
+		
+		switch ($arguments['oper'])
+		{
+			case "add":
+			{
+				$user->addNote($arguments);
+				break;
+			}
+			case "edit":
+			{
+				$user->editNote($arguments);
+				break;
+			}
+			case "del":
+			{
+				$user->deleteNote($arguments);
+				break;
+			}
+			case "activestatus":
+			{
+				$user->editNoteActiveStatus($arguments);
+				break;
+			}
+		}
+	}
 
 	/**
 	 * This is the action to handle external exceptions.

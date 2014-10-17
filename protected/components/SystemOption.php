@@ -104,8 +104,9 @@ class SystemOption
 			}
 			case 'user':
 			{
-				$sql="SELECT `id_user`, `name` FROM `users` WHERE `name` LIKE :term";
+				$sql="SELECT `id_user`, `name` FROM `users` WHERE `id_right`=:id_right AND `name` LIKE :term";
 				$command=$connection->createCommand($sql);
+				$command->bindValue(":id_right",'user',PDO::PARAM_STR);
 				$command->bindParam(":term",$term,PDO::PARAM_STR);
 				$rows=$command->queryAll();
 		

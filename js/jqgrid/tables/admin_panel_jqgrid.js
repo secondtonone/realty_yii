@@ -177,7 +177,7 @@ $("#objects").jqGrid({
 			viewrecords: true,
 			subGrid: true,
 			multiselect: true,
-			editurl: '/app/scripts/jqgrid/admin_modifydata.php?q=2',
+			editurl: '/panel/adminmodifyobjects',
 			subGridRowExpanded: function(subgrid_id, row_id) {
 			
 				var lastSel,subgrid_table_id, pager_id, object
@@ -211,7 +211,7 @@ $("#objects").jqGrid({
 				rowNum:20,
 				sortname: 'id_renovation',
 				sortorder: "asc",
-				editurl: '/app/scripts/jqgrid/admin_modifydata.php?q=3&id_object='+row_id,
+				editurl: '/panel/adminmodifysubobject?id_object='+row_id,
 				onSelectRow: function(id) {
 					
 					var rowData = $(this).jqGrid('getRowData',id);
@@ -327,7 +327,7 @@ $("#users").jqGrid({
 			multiselect: true,
             caption: '<i class="icon-table icon-users"></i>Пользователи системы',
 			viewrecords: true,
-			editurl: '/app/scripts/jqgrid/admin_modifydata.php?q=1',
+			editurl: '/panel/adminmodifyusers',
 			subGrid: true,
 			onSelectRow: function(id) {
 				var rowData = $("#users").jqGrid('getRowData',id),
@@ -385,7 +385,7 @@ $("#users").jqGrid({
 				autowidth:true,
 				multiselect: true,
 				height: '100%',
-				editurl: '/app/scripts/jqgrid/admin_modifydata.php?q=4',
+				editurl: '/panel/adminmodifyclients',
 				});
 				$("#"+subgrid_table_id).jqGrid('navGrid',"#"+pager_id,{edit:true,add:false,del:false, search:true},{width:390,reloadAfterSubmit:true, beforeShowForm: function(form) { 
 		
@@ -484,7 +484,7 @@ $("#users").jqGrid({
 						var cl = s[i];
 						$.ajax({  
 						type: "POST",  
-						url: "/app/scripts/jqgrid/admin_modifydata.php?q=1",  
+						url: "/panel/adminmodifyusers",  
 						data: 'oper=handcl&id_client='+cl+'&id_user='+id_user,
 						success: function(msg){
 									if(msg.length == 0)
@@ -612,7 +612,7 @@ $("#pager2_left table.navtable tbody tr").append('Статус: <select class="a
 						var cl = s[i];
 						$.ajax({  
 						type: "POST",  
-						url: "/app/scripts/jqgrid/admin_modifydata.php?q=1",  
+						url: "/panel/adminmodifyusers",  
 						data: 'oper=activestatus&id_user='+cl+'&active='+id_status,
 						success: function(msg){
 									if(msg.length == 0)
@@ -665,7 +665,7 @@ $("#hand-over").click(function() {
 						var cl = s[i];
 						$.ajax({  
 						type: "POST",  
-						url: "/app/scripts/jqgrid/admin_modifydata.php?q=1",  
+						url: "/panel/adminmodifyobjects",  
 						data: 'oper=handobj&id_object='+cl+'&id_user='+id_user,
 						success: function(msg){
 									if(msg.length == 0)

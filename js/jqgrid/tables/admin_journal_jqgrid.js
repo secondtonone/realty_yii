@@ -73,9 +73,9 @@ $("#notifications").jqGrid({
             caption: '<i class="icon-table icon-notification"></i>Уведомления',
 			viewrecords: true,
 			multiselect: true,
-			editurl: '/app/scripts/jqgrid/admin_journal_modifydata.php?q=1',
+			editurl: '/journal/adminmodifynotes',
 			onSelectRow: function(id){}
-        }).navGrid('#pager',{edit:true,add:true,view:false,del:true,search:true},{width:460,reloadAfterSubmit:true,zIndex:99, beforeShowForm: function(form) {
+        }).navGrid('#pager',{edit:true,add:true,view:false,del:true,search:true},{width:570,reloadAfterSubmit:true,zIndex:99, beforeShowForm: function(form) {
 			$('#text_notification', form).attr({"title":"Сообщение не должно содержать больше 300 символов."});
 			},
 	afterSubmit: function (response) {
@@ -106,7 +106,7 @@ $("#notifications").jqGrid({
 				}, 3000);
 				return [true, "", ""];
 			}
-			}},{width:460,reloadAfterSubmit:true,zIndex:99, beforeShowForm: function(form) {
+			}},{width:570,reloadAfterSubmit:true,zIndex:99, beforeShowForm: function(form) {
 				$('#text_notification', form).attr({"title":"Сообщение не должно содержать больше 300 символов."});
 				},afterSubmit: function (response) {
 			if(response.responseText=="")
@@ -136,7 +136,7 @@ $("#notifications").jqGrid({
 				}, 3000);
 				return [true, "", ""];
 			}
-			}},{width:460,reloadAfterSubmit:true,zIndex:99},{width:460,reloadAfterSubmit:true,multipleSearch:true,zIndex:99,closeAfterSearch:true},{width:460,reloadAfterSubmit:true,zIndex:99}).navSeparatorAdd("#pager",{sepclass:"ui-separator",sepcontent: ''}); 
+			}},{width:570,reloadAfterSubmit:true,zIndex:99},{width:570,reloadAfterSubmit:true,multipleSearch:true,zIndex:99,closeAfterSearch:true},{width:570,reloadAfterSubmit:true,zIndex:99}).navSeparatorAdd("#pager",{sepclass:"ui-separator",sepcontent: ''}); 
 
 $("#pager_left table.navtable tbody tr").append('Статус: <select class="active-status"><option value="0" selected="selected">выбрать...</option><option value="1">Активен</option><option value="2">Не активен</option></select>');
 
@@ -163,7 +163,7 @@ $("#pager_left table.navtable tbody tr").append('Статус: <select class="ac
 						var cl = s[i];
 						$.ajax({  
 						type: "POST",  
-						url: "/app/scripts/jqgrid/admin_journal_modifydata.php?q=1",  
+						url: "/journal/adminmodifynotes",  
 						data: 'oper=activestatus&id_notification='+cl+'&id_status='+id_status,
 						success: function(msg){
 									if(msg.length == 0)

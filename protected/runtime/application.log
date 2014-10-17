@@ -4710,3 +4710,43 @@ REQUEST_URI=/panel/usermodifyclients
 in E:\xampp\htdocs\example.com\www\protected\components\UserModifyData.php (109)
 in E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php (198)
 in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/17 11:37:23 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::execute(): SQLSTATE[HY093]: Invalid parameter number: mixed named and positional parameters. Выполнявшийся SQL-запрос: UPDATE `objects` SET `id_user`=:id_user,`date`=:date WHERE `id_object`=?.
+in E:\xampp\htdocs\example.com\www\protected\components\AdminModifyData.php (117)
+in E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php (281)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/17 11:37:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[HY093]: Invalid parameter number: mixed named and positional parameters. The SQL statement executed was: UPDATE `objects` SET `id_user`=:id_user,`date`=:date WHERE `id_object`=?' in E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:358
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\protected\components\AdminModifyData.php(117): CDbCommand->execute()
+#1 E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php(281): AdminModifyData->handOverObject(Array)
+#2 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): PanelController->actionAdminModifyObjects()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\xampp\htdocs\example.com\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('adminmodifyobje...')
+#7 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('panel/adminmodi...')
+#8 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 E:\xampp\htdocs\example.com\www\index.php(12): CApplication->run()
+#10 {main}
+REQUEST_URI=/panel/adminmodifyobjects
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/17 11:37:23 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::execute(): SQLSTATE[HY093]: Invalid parameter number: mixed named and positional parameters. Выполнявшийся SQL-запрос: UPDATE `objects` SET `id_user`=:id_user,`date`=:date WHERE `id_object`=?.
+in E:\xampp\htdocs\example.com\www\protected\components\AdminModifyData.php (117)
+in E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php (281)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/17 11:37:23 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[HY093]: Invalid parameter number: mixed named and positional parameters. The SQL statement executed was: UPDATE `objects` SET `id_user`=:id_user,`date`=:date WHERE `id_object`=?' in E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:358
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\protected\components\AdminModifyData.php(117): CDbCommand->execute()
+#1 E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php(281): AdminModifyData->handOverObject(Array)
+#2 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): PanelController->actionAdminModifyObjects()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\xampp\htdocs\example.com\www\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('adminmodifyobje...')
+#7 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('panel/adminmodi...')
+#8 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#9 E:\xampp\htdocs\example.com\www\index.php(12): CApplication->run()
+#10 {main}
+REQUEST_URI=/panel/adminmodifyobjects
+HTTP_REFERER=http://example.com/panel/index
+---

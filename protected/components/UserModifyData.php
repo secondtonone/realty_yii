@@ -359,8 +359,6 @@ class UserModifyData
 		
 		if (Yii::app()->user->getId()==$arguments['id_user'])
 		{
-			/*$query=$dbh->prepare('UPDATE `objects` SET `id_renovation`=?,`id_window`=?,`id_counter`=?,`date`=NOW()+INTERVAL 2 HOUR WHERE `id_object`=?');
-			$query->execute(array($arguments['id_renovation'],$arguments['id_window'],$arguments['id_counter'],$_GET['id_object']));*/
 			$sql='UPDATE `objects` SET `id_renovation`=:id_renovation,`id_window`=:id_window,`id_counter`=:id_counter,`date`=:date WHERE `id_object`=:id_object';
 			$command=$connection->createCommand($sql);
 			$command->bindParam(':id_renovation',$arguments['id_renovation'],PDO::PARAM_STR);

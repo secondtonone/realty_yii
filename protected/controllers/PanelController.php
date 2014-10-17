@@ -169,7 +169,7 @@ class PanelController extends CController
 		$user = new UserGetData();
 		$user->getSubObjects($_GET['id_object']);
 	}
-	//---------------------------SystemOption-------------------------------
+	//---------------------------User modify data------------------------------
 	public function actionUserModifyClients()
 	{
 		$arguments = array();
@@ -251,5 +251,105 @@ class PanelController extends CController
 		
 		$user = new UserModifyData();
 		$user->editSubObject($arguments);
+	}
+	//-------------------------------Admin modify data-------------------------------------
+	public function actionAdminModifyObjects()
+	{
+		$arguments = array();
+		
+		foreach ($_POST as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+		
+		$user = new AdminModifyData();
+		
+		switch ($arguments['oper'])
+		{
+			/*case "add":
+			{
+				$user->addObject($arguments);
+				break;
+			}*/
+			case "edit":
+			{
+				$user->editObject($arguments);
+				break;
+			}
+			case "handobj":
+			{
+				$user->handOverObject($arguments);
+				break;
+			}
+			/*case "selloutstatus":
+			{
+				$user->editSellOutStatus($arguments);
+				break;
+			}
+			case "timestatus":
+			{
+				$user->editTimeStatus($arguments);
+				break;
+			}*/
+		}
+	}
+	public function actionAdminModifySubObject()
+	{
+		$arguments = array('id_object'=>$_GET['id_object']);
+		
+		foreach ($_POST as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+		
+		$user = new AdminModifyData();
+		$user->editSubObject($arguments);
+	}
+	public function actionAdminModifyClients()
+	{
+		$arguments = array();
+		
+		foreach ($_POST as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+		
+		$user = new AdminModifyData();
+		$user->editClient($arguments);
+	}
+	public function actionAdminModifyUsers()
+	{
+		$arguments = array();
+		
+		foreach ($_POST as $key=>$value)
+		{
+        	$arguments[$key]=$value;
+    	}
+		
+		$user = new AdminModifyData();
+		
+		switch ($arguments['oper'])
+		{
+			case "add":
+			{
+				$user->addUser($arguments);
+				break;
+			}
+			case "edit":
+			{
+				$user->editUser($arguments);
+				break;
+			}
+			case "activestatus":
+			{
+				$user->editActiveStatus($arguments);
+				break;
+			}
+			case "handcl":
+			{
+				$user->handOverClient($arguments);
+				break;
+			}
+		}
 	}
 }
