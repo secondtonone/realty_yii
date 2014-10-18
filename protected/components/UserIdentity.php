@@ -36,7 +36,7 @@ class UserIdentity extends CUserIdentity
              $this->_id=$record->id_user;
 			 $this->setState('right', $record->id_right);
 			 $this->setState('login', $record->login);
-			 $this->setState('role', $record->id_right);
+
 			 $date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
 			/* private $query = 'UPDATE `users` SET `browser`=?,`online`=?,`time_activity`=NOW()+INTERVAL 2 HOUR WHERE `id_user`=?';*/
 			 $update = User::model()->updateAll(array('browser'=>$_SERVER['HTTP_USER_AGENT'],'online'=>'online','time_activity'=>$date),'id_user=:id_user',array(':id_user'=>$this->_id));

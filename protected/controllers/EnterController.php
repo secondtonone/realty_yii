@@ -7,6 +7,26 @@ class EnterController extends CController
 	 */
 	public $layout = 'main';
 	
+	public function filters()
+    {
+        return array(
+            'accessControl',
+        );
+    }
+	
+	public function accessRules()
+    {
+        return array(
+            array('allow',
+                'actions'=>array('logout'),
+                'roles'=>array(				
+					User::ROLE_USER, // 'user'
+					User::ROLE_ADMIN
+				),
+            )
+        );
+    }
+	
 	public function actionIndex()
 	{
 		// renders the view file 'protected/views/site/index.php'
@@ -58,7 +78,14 @@ class EnterController extends CController
     {
 		$logout= new UserLogOut;
 		$logout->unauthenticate();
-    }    
+    }
+	/*public function actionError()
+	{
+		if($error=Yii::app()->errorHandler->error)
+		{
+			$this->redirect(Yii::app()->getHomeUrl());
+		}
+	}   */ 
 
 	/**
 	 * This is the action to handle external exceptions.
