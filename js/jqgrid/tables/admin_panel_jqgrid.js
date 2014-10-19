@@ -180,7 +180,7 @@ $("#objects").jqGrid({
 			editurl: '/panel/adminmodifyobjects',
 			subGridRowExpanded: function(subgrid_id, row_id) {
 			
-				var lastSel,subgrid_table_id, pager_id, object
+				var lastSel,subgrid_table_id, pager_id, object,
 					rowData = $("#objects").jqGrid('getRowData',row_id),
 					name_city = rowData.name_city,
 					name_street = rowData.name_street,
@@ -218,13 +218,8 @@ $("#objects").jqGrid({
 					
 					if (id && id!==lastSel) {
 						$("#"+subgrid_table_id).jqGrid('restoreRow',lastSel);
-						
-					
-					
-							$("#"+subgrid_table_id).jqGrid('editRow',id, true);
-							lastSel = id;
-		
-						
+						$("#"+subgrid_table_id).jqGrid('editRow',id, true);
+						lastSel = id;
 					}
 				},
 				height: '100%'
@@ -247,7 +242,7 @@ $("#objects").jqGrid({
 									$('#market_price', form).attr({"title":"Цена в формате: 1000000 (только цифры без сокращений)"});
 			                      },
 	afterSubmit: function (response) {
-			if(response.responseText=="")
+			if(!response.responseText)
 			{
 				showErrorDialog('Вы не можите редактировать эту запись!');
 				return false;
@@ -394,7 +389,7 @@ $("#users").jqGrid({
 			$('#name_city', form).attr({"title":"Введите первые буквы города, выберите из вариантов"}); 
 			$('#cl_price', form).attr({"title":"Цена в формате: 1000000 (только цифры без сокращений)"});  
 			},afterSubmit: function (response) {
-				if(response.responseText=="")
+				if(!response.responseText)
 				{
 					showErrorDialog('Вы не можите редактировать эту запись!');				
 					return false;
@@ -423,7 +418,7 @@ $("#users").jqGrid({
 			$('#name_city', form).attr({"title":"Введите первые буквы города, выберите из вариантов"}); 
 			$('#cl_price', form).attr({"title":"Цена в формате: 1000000 (только цифры без сокращений)"});    
 			},afterSubmit: function (response) {
-			if(response.responseText=="")
+			if(!response.responseText)
 			{
 				showErrorDialog('Вы не можите добавить эту запись!');				
 				return false;
@@ -468,13 +463,13 @@ $("#users").jqGrid({
 				var s= $("#"+subgrid_table_id).jqGrid('getGridParam','selarrrow'),
 				id_user=$("#id_user_sub").val();
 				
-				if (id_user==0) 
+				if (id_user===0) 
 				{
 					showErrorDialog('Выберите значение!');
 					
 				}
 				
-				else if (s==false){ 
+				else if (s===false){ 
 					showErrorDialog('Поля не отмечены!');
 				}
 				else 
@@ -487,14 +482,14 @@ $("#users").jqGrid({
 						url: "/panel/adminmodifyusers",  
 						data: 'oper=handcl&id_client='+cl+'&id_user='+id_user,
 						success: function(msg){
-									if(msg.length == 0)
+									$("#"+subgrid_table_id).trigger("reloadGrid");
+									if(!msg)
 									{
 										showErrorDialog('Вы не можите редактировать эту запись!');
 									}
 								}
 						});
 					}
-					$("#"+subgrid_table_id).trigger("reloadGrid");
 				}
 		
 		});
@@ -510,7 +505,7 @@ $("#users").jqGrid({
 								
 			                      },
 	afterSubmit: function (response) {
-			if(response.responseText=="")
+			if(!response.responseText)
 			{
 				showErrorDialog('Вы не можите редактировать эту запись!');
 				return false;
@@ -551,7 +546,7 @@ $("#users").jqGrid({
 			$('#name', form).attr({"title":"ФИО в формате: Иванов Иван Иванович"});
 			$('#number', form).attr({"title":"Номер в формате: 89011123456 (только цифры)"}); 
 			},afterSubmit: function (response) {
-			if(response.responseText=="")
+			if(!response.responseText)
 			{
 				showErrorDialog('Такой логин уже используется!');				
 				return false;
@@ -596,13 +591,13 @@ $("#pager2_left table.navtable tbody tr").append('Статус: <select class="a
 				var s= $("#users").jqGrid('getGridParam','selarrrow'),
 				id_status=$(".active-status :selected").val();
 				
-				if (id_status==0) 
+				if (id_status===0) 
 				{
 					showErrorDialog('Выберите значение!');
 					
 				}
 				
-				else if (s==false){ 
+				else if (s===false){ 
 					showErrorDialog('Поля не отмечены!');
 				}
 				else 
@@ -615,7 +610,8 @@ $("#pager2_left table.navtable tbody tr").append('Статус: <select class="a
 						url: "/panel/adminmodifyusers",  
 						data: 'oper=activestatus&id_user='+cl+'&active='+id_status,
 						success: function(msg){
-									if(msg.length == 0)
+									$('#users').trigger("reloadGrid");
+									if(!msg)
 									{
 										showErrorDialog('Вы не можите редактировать эту запись!');
 									}
@@ -623,7 +619,6 @@ $("#pager2_left table.navtable tbody tr").append('Статус: <select class="a
 								}
 						});
 					}
-					$('#users').trigger("reloadGrid");
 					$('.active-status option').prop('selected', function() {
 							return this.defaultSelected;
 						});
@@ -649,13 +644,13 @@ $("#hand-over").click(function() {
 				var s= $("#objects").jqGrid('getGridParam','selarrrow'),
 				id_user=$("#pager_left #id_user").val();
 				
-				if (id_user==0) 
+				if (id_user===0) 
 				{
 					showErrorDialog('Выберите значение!');
 					
 				}
 				
-				else if (s==false){ 
+				else if (s===false){ 
 					showErrorDialog('Поля не отмечены!');
 				}
 				else 
@@ -668,14 +663,15 @@ $("#hand-over").click(function() {
 						url: "/panel/adminmodifyobjects",  
 						data: 'oper=handobj&id_object='+cl+'&id_user='+id_user,
 						success: function(msg){
-									if(msg.length == 0)
+									$('#objects').trigger("reloadGrid");
+									if(!msg)
 									{
 										showErrorDialog('Вы не можите редактировать эту запись!');
 									}
 							}
 						});
 					}
-					$('#objects').trigger("reloadGrid");
+
 				}
 		
 		});
@@ -689,7 +685,7 @@ $(document.body).on('keyup','#login', function() {
 					url: "/panel/checklogin",  
 					data: 'q=1&login='+login,
 					success: function(msg){
-						if (msg.length!=0)
+						if (msg)
 						{
 							showErrorDialog(msg);	
 						}	 
@@ -699,5 +695,3 @@ $(document.body).on('keyup','#login', function() {
 	});
 
 });
-
-  

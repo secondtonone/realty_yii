@@ -99,79 +99,52 @@ return array(
 			'packages' => array(
 			   // Уникальное имя пакета
 			   'mainjs' => array(
-					// Где искать подключаемые файлы JS и CSS
 					'baseUrl' => '/js/',
 					'js'=>array('jquery-1.10.2.js','sticky.full.js','jquery.slimscroll.js'),
 				  
 				),
 				'enterjs' => array(
-					// Где искать подключаемые файлы JS и CSS
 					'baseUrl' => '/js/',
-					// Если включен дебаг-режим, то подключает /js/highcharts/highcharts.src.js
-					// Иначе /js/highcharts/highcharts.js
 					'js'=>array('jquery.backstretch.min.js','enter.js'),
 				  
 				),
 				'jqgridjs' => array(
-					// Где искать подключаемые файлы JS и CSS
 					'baseUrl' => '/js/',
-					// Если включен дебаг-режим, то подключает /js/highcharts/highcharts.src.js
-					// Иначе /js/highcharts/highcharts.js
 					'js'=>array('jqgrid/themes/jquery-ui-1.9.2.custom.js','jqgrid/js/jquery.jqGrid.js','jqgrid/js/grid.locale-ru.js'),
 				  
 				),
 				'paneladminjs' => array(
-					// Где искать подключаемые файлы JS и CSS
 					'baseUrl' => '/js/',
-					// Если включен дебаг-режим, то подключает /js/highcharts/highcharts.src.js
-					// Иначе /js/highcharts/highcharts.js
 					'js'=>array('jqgrid/tables/admin_panel_jqgrid.js','panel.js'),
 				  
 				),
 				'paneluserjs' => array(
-					// Где искать подключаемые файлы JS и CSS
 					'baseUrl' => '/js/',
-					// Если включен дебаг-режим, то подключает /js/highcharts/highcharts.src.js
-					// Иначе /js/highcharts/highcharts.js
 					'js'=>array('jqgrid/tables/user_panel_jqgrid.js','panel.js'),
 				  
 				),
 				'journaljs' => array(
-					// Где искать подключаемые файлы JS и CSS
 					'baseUrl' => '/js/',
-					// Если включен дебаг-режим, то подключает /js/highcharts/highcharts.src.js
-					// Иначе /js/highcharts/highcharts.js
 					'js'=>array('jqgrid/tables/admin_journal_jqgrid.js','panel.js'),
 				  
 				),
 				'statsjs' => array(
-					// Где искать подключаемые файлы JS и CSS
 					'baseUrl' => '/js/',
-					// Если включен дебаг-режим, то подключает /js/highcharts/highcharts.src.js
-					// Иначе /js/highcharts/highcharts.js
-					'js'=>array('panel.js','сhart.js','stats.js'),
+					'js'=>array('chart.js','panel.js','stats.js'),
 				  
 				),
 				'helpjs' => array(
-					// Где искать подключаемые файлы JS и CSS
 					'baseUrl' => '/js/',
-					// Если включен дебаг-режим, то подключает /js/highcharts/highcharts.src.js
-					// Иначе /js/highcharts/highcharts.js
 					'js'=>array('jqgrid/themes/jquery-ui-1.9.2.custom.js','panel.js'),
 				  
 				),
 				'tooltip' => array(
-					// Где искать подключаемые файлы JS и CSS
 					'baseUrl' => '/js/',
-					// Если включен дебаг-режим, то подключает /js/highcharts/highcharts.src.js
-					// Иначе /js/highcharts/highcharts.js
 					'js'=>array('tooltip.js'),
 				  
 				),
 				'maincss' => array(
-					// Где искать подключаемые файлы JS и CSS
 					'baseUrl' => '/css/',
-					// Подключает файл /js/highcharts/highcharts.css
 					'css' => array('styles.css'),
 				)
 			),

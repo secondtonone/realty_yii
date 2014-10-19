@@ -1,6 +1,7 @@
 .stat-container {
 	border: 1px solid #353535;
 	margin-top:10px;
+	height: 530px;
 }
 .caption {
 	background: #353535;
@@ -13,6 +14,7 @@
 	font-size: 14px;
 	color: #353535;
 	padding: 10px;
+	clear: both;
 }
 .line-chart::after {
 	content: " ";
@@ -23,4 +25,18 @@
 .bar-chart::after {
 	content: " ";
 }
-
+.canvas-holder {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width:1150px;
+	margin: 0;
+	float: left;
+}
+.chart-legend {
+	margin: 0;
+	width:150px;
+	float: left;
+}
+canvas { 
+	margin: 0 auto; 
+} 

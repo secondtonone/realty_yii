@@ -117,7 +117,7 @@ $(document).ready(function(){
 	}
 	$(document.body).on('keyup','#floor', function() {
 		
-		if ($("#id_owner").val()=='')
+		if (!$("#id_owner").val())
 		{
 			var number=$("#number").val(),
 				id_street=$("#id_street").val(),
@@ -132,7 +132,7 @@ $(document).ready(function(){
 							url: "/panel/checkobject",  
 							data: 'number='+number+'&id_street='+id_street+'&house_number='+house_number+'&id_category='+id_category+'&room_count='+room_count+'&id_planning='+id_planning+'&floor='+floor_obj,
 							success: function(msg){
-								if (msg.length!=0)
+								if (msg)
 								{
 									showErrorDialog(msg);	
 								}	 
@@ -276,7 +276,7 @@ $("#objects").jqGrid({
 				},
 			subGridRowExpanded: function(subgrid_id, row_id) {
 			
-				var lastSel,subgrid_table_id, pager_id, object
+				var lastSel,subgrid_table_id, pager_id, object,
 					rowData = $("#objects").jqGrid('getRowData',row_id),
 					name_city = rowData.name_city,
 					name_street = rowData.name_street,
@@ -349,7 +349,7 @@ $("#objects").jqGrid({
 									$('#market_price', form).attr({"title":"Цена в формате: 1000000 (только цифры без сокращений)"}); 
 			                      },
 	afterSubmit: function (response) {
-			if(response.responseText=='')
+			if(!response.responseText)
 			{
 				showErrorDialog('Вы не можите редактировать эту запись!');				
 				return false;
@@ -386,7 +386,7 @@ $("#objects").jqGrid({
 			$('#market_price', form).attr({"title":"Цена в формате: 1000000 (только цифры без сокращений)"});   
 			},afterSubmit: function (response) {
 				
-			if(response.responseText=='')
+			if(!response.responseText)
 			{
 				showErrorDialog('Вы не можите добавить эту запись!');				
 				return false;
@@ -438,13 +438,13 @@ $("#objects").jqGrid({
 				var s= $("#objects").jqGrid('getGridParam','selarrrow'),
 				id_status=$(".sell-out-status :selected").val();
 				
-				if (id_status==0) 
+				if (id_status===0) 
 				{
 					showErrorDialog('Выберите значение!');
 													
 				}
 				
-				else if (s==false)
+				else if (s===false)
 				{ 
 					showErrorDialog('Поля не отмечены!');
 				
@@ -461,7 +461,8 @@ $("#objects").jqGrid({
 						url: "/panel/usermodifyobjects",  
 						data: 'oper=selloutstatus&id_object='+cl+'&id_status='+id_status+'&id_user='+id_user,
 						success: function(msg){
-									if(msg.length == 0)
+									$('#objects').trigger("reloadGrid");
+									if(!msg)
 									{
 										showErrorDialog('Вы не можите редактировать эту запись!');
 										
@@ -469,7 +470,6 @@ $("#objects").jqGrid({
 								}
 						});
 					}
-					$('#objects').trigger("reloadGrid");
 					$('.sell-out-status option').prop('selected', function() {
 							return this.defaultSelected;
 						});
@@ -483,14 +483,14 @@ $("#objects").jqGrid({
 	    		var s= $("#objects").jqGrid('getGridParam','selarrrow'),
 	    		id_status=$(".time-status :selected").val();
 			
-				if (id_status==0) 
+				if (id_status===0) 
 				{
 					
 					showErrorDialog('Выберите значение!');
 					
 				}
 				
-				else if (s==false){ 
+				else if (s===false){ 
 					
 					showErrorDialog('Поля не отмечены!');
 					
@@ -507,7 +507,9 @@ $("#objects").jqGrid({
 						url: "/panel/usermodifyobjects",  
 						data: 'oper=timestatus&id_object='+cl+'&id_status='+id_status+'&id_user='+id_user,
 						success: function(msg){
-								if(msg.length == 0)
+									$('#objects').trigger("reloadGrid");
+
+									if(!msg)
 									{
 										showErrorDialog('Вы не можите редактировать эту запись!');
 									}
@@ -515,7 +517,6 @@ $("#objects").jqGrid({
 							}
 						});
 					}
-					$('#objects').trigger("reloadGrid");
 					$('.time-status option').prop('selected', function() {
 							return this.defaultSelected;
 						});
@@ -535,7 +536,7 @@ $(document.body).on('change','#id_planning', function() {
 						url: "/panel/checkclient",  
 						data: 'number='+number+'&id_category='+id_category+'&id_planning='+id_planning,
 						success: function(msg){
-							if (msg.length!=0)
+							if (msg)
 							{
 								showErrorDialog(msg);
 							}	 
@@ -641,7 +642,7 @@ $("#clients").jqGrid({
 				mypostdata.filters='{"groupOp":"AND","rules":['+fields[0]+''+fields[1]+''+fields[2]+''+fields[3]+'{"field":"market_price","op":"ge","data":"'+lowPrice+'"},{"field":"market_price","op":"le","data":"'+highPrice+'"}]}';
 				$("#objects").jqGrid('setGridParam', {postData: mypostdata, search:true});
 				$("#objects").trigger("reloadGrid");
-				},
+			},
 			editurl: '/panel/usermodifyclients'
         }).navGrid('#pager2',{view:false, del:false, add:true, edit:true, search:true},{width:390,reloadAfterSubmit:true, beforeShowForm: function(form) { 
 		
@@ -650,7 +651,7 @@ $("#clients").jqGrid({
 			$('#number', form).attr({"title":"Номер в формате: 89011123456 (только цифры)"});  
 			$('#cl_price', form).attr({"title":"Цена в формате: 1000000 (только цифры без сокращений)"});  
 			},afterSubmit: function (response) {
-				if(response.responseText=="")
+				if(!response.responseText)
 				{
 					showErrorDialog('Вы не можите редактировать эту запись!');				
 					return false;
@@ -679,7 +680,7 @@ $("#clients").jqGrid({
 			$('#number', form).attr({"title":"Номер в формате: 89011123456 (только цифры)"});  
 			$('#cl_price', form).attr({"title":"Цена в формате: 1000000 (только цифры без сокращений)"});    
 			},afterSubmit: function (response) {
-			if(response.responseText=="")
+			if(!response.responseText)
 			{
 				showErrorDialog('Вы не можите добавить эту запись!');				
 				return false;
@@ -731,14 +732,14 @@ $("#clients").jqGrid({
 				var s= $("#clients").jqGrid('getGridParam','selarrrow'),
 				id_status=$(".active-status :selected").val();
 				
-				if (id_status==0) 
+				if (id_status===0) 
 				{
 			
 					showErrorDialog('Выберите значение!');
 					
 				}
 				
-				else if (s==false){ 
+				else if (s===false){ 
 				
 					showErrorDialog('Поля не отмечены!');
 					
@@ -755,7 +756,10 @@ $("#clients").jqGrid({
 						url: "/panel/usermodifyclients",  
 						data: 'oper=activestatus&id_client='+cl+'&id_status='+id_status+'&id_user='+id_user,
 						success: function(msg){
-									if(msg.length == 0)
+
+									$('#clients').trigger("reloadGrid");
+
+									if(!msg)
 									{
 						
 										showErrorDialog('Вы не можите редактировать эту запись!');
@@ -763,7 +767,7 @@ $("#clients").jqGrid({
 								}
 						});
 					}
-					$('#clients').trigger("reloadGrid");
+			
 					$('.active-status option').prop('selected', function() {
 							return this.defaultSelected;
 						});
@@ -778,14 +782,14 @@ $("#clients").jqGrid({
 	    		var s= $("#clients").jqGrid('getGridParam','selarrrow'),
 	    		id_status=$(".cl-time-status :selected").val();
 			
-				if (id_status==0) 
+				if (id_status===0) 
 				{
 					
 					showErrorDialog('Выберите значение!');
 					
 				}
 				
-				else if (s==false){ 
+				else if (s===false){ 
 					
 					showErrorDialog('Поля не отмечены!');
 					
@@ -802,7 +806,8 @@ $("#clients").jqGrid({
 						url: "/panel/usermodifyclients",  
 						data: 'oper=timestatus&id_client='+cl+'&id_status='+id_status+'&id_user='+id_user,
 						success: function(msg){
-								if(msg.length == 0)
+									$('#clients').trigger("reloadGrid");
+									if(!msg)
 									{
 										showErrorDialog('Вы не можите редактировать эту запись!');
 									}
@@ -810,7 +815,6 @@ $("#clients").jqGrid({
 							}
 						});
 					}
-					$('#clients').trigger("reloadGrid");
 					$('.cl-time-status option').prop('selected', function() {
 							return this.defaultSelected;
 						});

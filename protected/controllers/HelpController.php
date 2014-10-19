@@ -8,6 +8,30 @@ class HelpController extends CController
 	 */
 	public $layout = 'main';
 	
+	public function filters()
+    {
+        return array(
+            'accessControl',
+        );
+    }
+	
+	public function accessRules()
+    {
+        return array(
+			array('allow',
+                'actions'=>array(),
+                'roles'=>array(				
+					User::ROLE_ADMIN,
+					User::ROLE_USER
+				),
+			),
+            array('deny',
+                'actions'=>array(),
+                'users'=>array('*'),
+            ),
+        );
+    }
+	
 	public function actionIndex()
 	{
 		// renders the view file 'protected/views/site/index.php'
@@ -16,8 +40,8 @@ class HelpController extends CController
 		Yii::app()->getClientScript()->registerPackage('mainjs');
 		Yii::app()->getClientScript()->registerPackage('helpjs');
 		Yii::app()->getClientScript()->registerPackage('tooltip');
-		if (!Yii::app()->user->isGuest)
-		{
+		/*if (!Yii::app()->user->isGuest)
+		{*/
 			if(Yii::app()->user->right == 'admin')
 			{
 				$this->layout = 'mainadmin';
@@ -28,38 +52,10 @@ class HelpController extends CController
 				$this->layout = 'mainuser';
 				$this->render('user');
 			}
-		}
+		/*}
 		else
 		{
 			$this->redirect(array('enter/index'));
-		}
+		}*/
 	}
-	
-	public function actionLogin()
-    {
-		 /*$form = new User();
-         
-        // Проверяем является ли пользователь гостем
-        // ведь если он уже зарегистрирован - формы он не должен увидеть.
-        if (!Yii::app()->user->isGuest) {
-            throw new CException('Вы уже зарегистрированы!');
-         } else {
-            if (!empty($_POST['User'])) {
-                $form->attributes = $_POST['User'];
-                $form->verifyCode = $_POST['User']['verifyCode'];
- 
-                    // Проверяем правильность данных
-                    if($form->validate('login')) {
-                        // если всё ок - кидаем на главную страницу
-                        $this->redirect(Yii::app()->homeUrl);
-                     } 
-            } 
-            $this->render('login', array('form' => $form));
-        }*/
-    }    
-
-	/**
-	 * This is the action to handle external exceptions.
-	 */
-	
 }

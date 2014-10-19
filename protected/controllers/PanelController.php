@@ -8,6 +8,42 @@ class PanelController extends CController
 	 */
 	 
 	public $layout = 'main';
+
+	public function filters()
+    {
+        return array(
+            'accessControl',
+        );
+    }
+	
+	public function accessRules()
+    {
+        return array(
+			array('allow',
+                'actions'=>array('index','autocomplete','checkclient','checklogin','checkobject','lists','notes','updatestatus','getclients','getobjects','getsubobjects'),
+                'roles'=>array(				
+					User::ROLE_ADMIN,
+					User::ROLE_USER
+				),
+            ),
+			array('allow',
+                'actions'=>array('getusers','adminmodifyobjects','adminmodifysubobject','adminmodifyclients','adminmodifyusers','adminexport'),
+                'roles'=>array(				
+					User::ROLE_ADMIN
+				),
+			),
+			array('allow',
+                'actions'=>array('usermodifyclients','usermodifyobjects','usermodifysubobject','userexport'),
+                'roles'=>array(				
+					User::ROLE_USER
+				),
+			),
+            array('deny',
+                'actions'=>array(),
+                'users'=>array('*'),
+            ),
+        );
+    }
 	
 	public function actionIndex()
 	{
@@ -16,8 +52,8 @@ class PanelController extends CController
 		Yii::app()->getClientScript()->registerPackage('mainjs');
 		Yii::app()->getClientScript()->registerPackage('jqgridjs');
 		
-		if (!Yii::app()->user->isGuest)
-		{
+		/*if (!Yii::app()->user->isGuest)
+		{*/
 			if(Yii::app()->user->right == 'admin')
 			{
 				Yii::app()->getClientScript()->registerPackage('paneladminjs');
@@ -32,11 +68,11 @@ class PanelController extends CController
 				$this->layout = 'mainuser';
 				$this->render('user');
 			}
-		}
+		/*}
 		else
 		{
 			$this->redirect(array('enter/index'));
-		}
+		}*/
 	}
 	//---------------------------SystemOption-------------------------------
 	public function actionAutocomplete()

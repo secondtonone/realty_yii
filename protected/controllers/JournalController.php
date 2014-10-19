@@ -8,20 +8,43 @@ class JournalController extends CController
 	 */
 	public $layout = 'mainadmin';
 	
+	public function filters()
+    {
+        return array(
+            'accessControl',
+        );
+    }
+	
+	public function accessRules()
+    {
+        return array(
+			array('allow',
+                'actions'=>array(),
+                'roles'=>array(				
+					User::ROLE_ADMIN
+				),
+			),
+            array('deny',
+                'actions'=>array(),
+                'users'=>array('*'),
+            ),
+        );
+    }
+	
 	public function actionIndex()
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
-		if (!Yii::app()->user->isGuest)
+		/*if (!Yii::app()->user->isGuest)
 		{
 			if (Yii::app()->user->right == 'admin')
-			{
+			{*/
 				Yii::app()->getClientScript()->registerPackage('mainjs');
 				Yii::app()->getClientScript()->registerPackage('jqgridjs');
 				Yii::app()->getClientScript()->registerPackage('journaljs');
 				Yii::app()->getClientScript()->registerPackage('tooltip');
 				$this->render('index');
-			}
+			/*}
 			else
 			{
 				$this->redirect(Yii::app()->homeUrl);
@@ -30,7 +53,7 @@ class JournalController extends CController
 		else
 		{
 			$this->redirect(array('enter/index'));
-		}
+		}*/
 	}
 	
 	public function actionGetEvents()

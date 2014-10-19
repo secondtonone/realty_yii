@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	
+		
 	var	path=window.location.pathname.toString(),
 	    arrPath=path.split('/'),
 		id=(arrPath[1])?arrPath[1]:'panel';
@@ -22,7 +22,7 @@ $(document).ready(function () {
 			selectOptions += '<option value="'+i+'">'+i+'</option>';		
 		}
 		
-		selectOptions +='<option value="'+year+'" selected="selected">'+year+'</option>'
+		selectOptions +='<option value="'+year+'" selected="selected">'+year+'</option>';
 		
 		$('.stat-control .year').html(selectOptions);
 	}

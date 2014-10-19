@@ -17,12 +17,16 @@ class EnterController extends CController
 	public function accessRules()
     {
         return array(
-            array('allow',
+			array('allow',
                 'actions'=>array('logout'),
                 'roles'=>array(				
-					User::ROLE_USER, // 'user'
-					User::ROLE_ADMIN
+					User::ROLE_ADMIN,
+					User::ROLE_USER
 				),
+            ),
+            array('deny',
+                'actions'=>array('logout'),
+                'users'=>array('?'),
             )
         );
     }

@@ -79,7 +79,7 @@ $("#notifications").jqGrid({
 			$('#text_notification', form).attr({"title":"Сообщение не должно содержать больше 300 символов."});
 			},
 	afterSubmit: function (response) {
-			if(response.responseText=="")
+			if(!response.responseText)
 			{
 				showErrorDialog('Вы не можите редактировать эту запись!');
 				return false;
@@ -109,7 +109,7 @@ $("#notifications").jqGrid({
 			}},{width:570,reloadAfterSubmit:true,zIndex:99, beforeShowForm: function(form) {
 				$('#text_notification', form).attr({"title":"Сообщение не должно содержать больше 300 символов."});
 				},afterSubmit: function (response) {
-			if(response.responseText=="")
+			if(!response.responseText)
 			{
 				showErrorDialog('Вы не можите редактировать эту запись!');
 				return false;
@@ -147,13 +147,13 @@ $("#pager_left table.navtable tbody tr").append('Статус: <select class="ac
 				var s= $("#notifications").jqGrid('getGridParam','selarrrow'),
 				id_status=$(".active-status :selected").val();
 				
-				if (id_status==0) 
+				if (id_status===0) 
 				{
 					showErrorDialog('Выберите значение!');
 					
 				}
 				
-				else if (s==false){ 
+				else if (s===false){ 
 					showErrorDialog('Поля не отмечены!');
 				}
 				else 
@@ -166,7 +166,8 @@ $("#pager_left table.navtable tbody tr").append('Статус: <select class="ac
 						url: "/journal/adminmodifynotes",  
 						data: 'oper=activestatus&id_notification='+cl+'&id_status='+id_status,
 						success: function(msg){
-									if(msg.length == 0)
+									$('#notifications').trigger("reloadGrid");
+									if(!msg)
 									{
 										showErrorDialog('Вы не можите редактировать эту запись!');
 									}
@@ -174,7 +175,6 @@ $("#pager_left table.navtable tbody tr").append('Статус: <select class="ac
 								}
 						});
 					}
-					$('#notifications').trigger("reloadGrid");
 					$('.active-status option').prop('selected', function() {
 							return this.defaultSelected;
 						});
@@ -213,8 +213,4 @@ $('.user-list').on('click','.user',function(){
 			$("#journalevent").jqGrid('setGridParam', {postData: mypostdata, search:true});
 			$("#journalevent").trigger("reloadGrid");
 	});
-
-
 });
-
-  
