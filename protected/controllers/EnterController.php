@@ -51,15 +51,8 @@ class EnterController extends CController
     {
 		 $form = new User('login');
          
-        // Проверяем является ли пользователь гостем
-        // ведь если он уже зарегистрирован - формы он не должен увидеть.
-       /* if (!Yii::app()->user->isGuest) {
-            throw new CException('Вы уже зарегистрированы!');
-         } else {*/
-         if (!empty($_POST['login'])) {
-				
-				
-                /*$form->attributes = array('login' => $_POST['login'],'password' => $_POST['password']);*/
+         if (!empty($_POST['login'])) 
+		 {
 			$form->login = $_POST['login'];
 			$form->password = $_POST['password'];
 				

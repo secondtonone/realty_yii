@@ -33,56 +33,22 @@ class JournalController extends CController
 	
 	public function actionIndex()
 	{
-		// renders the view file 'protected/views/site/index.php'
-		// using the default layout 'protected/views/layouts/main.php'
-		/*if (!Yii::app()->user->isGuest)
-		{
-			if (Yii::app()->user->right == 'admin')
-			{*/
-				Yii::app()->getClientScript()->registerPackage('mainjs');
-				Yii::app()->getClientScript()->registerPackage('jqgridjs');
-				Yii::app()->getClientScript()->registerPackage('journaljs');
-				Yii::app()->getClientScript()->registerPackage('tooltip');
-				$this->render('index');
-			/*}
-			else
-			{
-				$this->redirect(Yii::app()->homeUrl);
-			}
-		}
-		else
-		{
-			$this->redirect(array('enter/index'));
-		}*/
+		Yii::app()->getClientScript()->registerPackage('mainjs');
+		Yii::app()->getClientScript()->registerPackage('jqgridjs');
+		Yii::app()->getClientScript()->registerPackage('journaljs');
+		Yii::app()->getClientScript()->registerPackage('tooltip');
+		$this->render('index');
 	}
 	
 	public function actionGetEvents()
 	{
-		if (empty($_POST['filters']))
-		{
-			$filters='';
-		}
-		else
-		{
-			$filters=$_POST['filters'];
-		}
-		
 		$admin = new AdminGetData();
-		$admin->getEvents($_POST['page'],$_POST['rows'],$_POST['sidx'],$_POST['sord'],$_POST['_search'],$filters);
+		$admin->getEvents($_POST);
 	}
 	public function actionGetNotifications()
 	{
-		if (empty($_POST['filters']))
-		{
-			$filters='';
-		}
-		else
-		{
-			$filters=$_POST['filters'];
-		}
-		
 		$admin = new AdminGetData();
-		$admin->getNotifications($_POST['page'],$_POST['rows'],$_POST['sidx'],$_POST['sord'],$_POST['_search'],$filters);
+		$admin->getNotifications($_POST);
 	}
 	public function actionGetOnlineUsers()
 	{
@@ -91,35 +57,28 @@ class JournalController extends CController
 	}
 	public function actionAdminModifyNotes()
 	{
-		$arguments = array();
-		
-		foreach ($_POST as $key=>$value)
-		{
-        	$arguments[$key]=$value;
-    	}
-		
 		$user = new AdminModifyData();
 		
-		switch ($arguments['oper'])
+		switch ($_POST['oper'])
 		{
 			case "add":
 			{
-				$user->addNote($arguments);
+				$user->addNote($_POST);
 				break;
 			}
 			case "edit":
 			{
-				$user->editNote($arguments);
+				$user->editNote($_POST);
 				break;
 			}
 			case "del":
 			{
-				$user->deleteNote($arguments);
+				$user->deleteNote($_POST);
 				break;
 			}
 			case "activestatus":
 			{
-				$user->editNoteActiveStatus($arguments);
+				$user->editNoteActiveStatus($_POST);
 				break;
 			}
 		}

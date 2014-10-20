@@ -4,7 +4,7 @@
         <div class="canvas-holder">
             <canvas id="container"></canvas>
         </div>
-        <div class="chart-legend"></div>
+        <div id="legend-line-chart"></div>
         <div class="stat-control">
             Год: 
             <select class="year">
@@ -14,7 +14,7 @@
         <div class="stat-container">
         	<div class="caption"><i class="icon bar-chart"></i>Квартиры</div>
             <div class="canvas-holder">
-                <canvas id="barchart"></canvas>
+                <canvas  height="300" width="550" id="barchart"></canvas>
             </div>
             <div class="stat-control">
             	Год: 

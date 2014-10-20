@@ -51,55 +51,32 @@ class PanelController extends CController
 		// using the default layout 'protected/views/layouts/main.php'
 		Yii::app()->getClientScript()->registerPackage('mainjs');
 		Yii::app()->getClientScript()->registerPackage('jqgridjs');
-		
-		/*if (!Yii::app()->user->isGuest)
-		{*/
-			if(Yii::app()->user->right == 'admin')
-			{
-				Yii::app()->getClientScript()->registerPackage('paneladminjs');
-				Yii::app()->getClientScript()->registerPackage('tooltip');
-				$this->layout = 'mainadmin';
-				$this->render('admin');
-			}
-			else if (Yii::app()->user->right == 'user')
-			{
-				Yii::app()->getClientScript()->registerPackage('paneluserjs');
-				Yii::app()->getClientScript()->registerPackage('tooltip');
-				$this->layout = 'mainuser';
-				$this->render('user');
-			}
-		/*}
-		else
+
+		if(Yii::app()->user->right == 'admin')
 		{
-			$this->redirect(array('enter/index'));
-		}*/
+			Yii::app()->getClientScript()->registerPackage('paneladminjs');
+			Yii::app()->getClientScript()->registerPackage('tooltip');
+			$this->layout = 'mainadmin';
+			$this->render('admin');
+		}
+		else if (Yii::app()->user->right == 'user')
+		{
+			Yii::app()->getClientScript()->registerPackage('paneluserjs');
+			Yii::app()->getClientScript()->registerPackage('tooltip');
+			$this->layout = 'mainuser';
+			$this->render('user');
+		}
 	}
 	//---------------------------SystemOption-------------------------------
 	public function actionAutocomplete()
     {
-		$arguments = array();
-		
-		foreach ($_GET as $key=>$value)
-		{
-        	$arguments[$key]=$value;
-    	}
-		
 		$system = new SystemOption();
-	
-		$system->autocomplete($arguments);
-
+		$system->autocomplete($_GET);
     }
 	public function actionCheckClient()
     {
-		$arguments = array();
-		
-		foreach ($_POST as $key=>$value)
-		{
-        	$arguments[$key]=$value;
-    	}
-
 		$system = new SystemOption();
-		$system->checkClient($arguments);
+		$system->checkClient($_POST);
     } 
 	public function actionCheckLogin()
     {
@@ -108,15 +85,8 @@ class PanelController extends CController
     }
 	public function actionCheckObject()
     {
-		$arguments = array();
-		
-		foreach ($_POST as $key=>$value)
-		{
-        	$arguments[$key]=$value;
-    	}
-		
 		$system = new SystemOption();
-		$system->checkObject($arguments);
+		$system->checkObject($_POST);
     }
 	public function actionLists()
     {
@@ -138,67 +108,32 @@ class PanelController extends CController
 	{
 		if(Yii::app()->user->right == 'admin')
 		{
-			if (!isset($_GET['filters']))
-			{
-				$filters='';
-			}
-			else
-			{
-				$filters=$_GET['filters'];
-			}
-				
 			$admin = new AdminGetData();
-			$admin->getClients($_GET['page'],$_GET['rows'],$_GET['sidx'],$_GET['sord'],$_GET['_search'],$filters,$_GET['id_user']);
+			$admin->getClients($_GET);
 		}
 		else if (Yii::app()->user->right == 'user')
-		{
-			if (!isset($_POST['filters']))
-			{
-				$filters='';
-			}
-			else
-			{
-				$filters=$_POST['filters'];
-			}
-			
+		{		
 			$user = new UserGetData();
-			$user->getClients($_POST['page'],$_POST['rows'],$_POST['sidx'],$_POST['sord'],$_POST['_search'],$filters);
+			$user->getClients($_POST);
 		}
 	}
 	public function actionGetObjects()
 	{
-		if (!isset($_POST['filters']))
-		{
-			$filters='';
-		}
-		else
-		{
-			$filters=$_POST['filters'];
-		}
 		if(Yii::app()->user->right == 'admin')
 		{
 			$admin = new AdminGetData();
-			$admin->getObjects($_POST['page'],$_POST['rows'],$_POST['sidx'],$_POST['sord'],$_POST['_search'],$filters);
+			$admin->getObjects($_POST);
 		}
 		else if (Yii::app()->user->right == 'user')
 		{
 			$user = new UserGetData();
-			$user->getObjects($_POST['page'],$_POST['rows'],$_POST['sidx'],$_POST['sord'],$_POST['_search'],$filters);
+			$user->getObjects($_POST);
 		}
 	}
 	public function actionGetUsers()
 	{
-		if (!isset($_POST['filters']))
-		{
-			$filters='';
-		}
-		else
-		{
-			$filters=$_POST['filters'];
-		}
-			
 		$admin = new AdminGetData();
-		$admin->getUsers($_POST['page'],$_POST['rows'],$_POST['sidx'],$_POST['sord'],$_POST['_search'],$filters);
+		$admin->getUsers($_POST);
 	}
 	public function actionGetSubObjects()
 	{
@@ -208,70 +143,56 @@ class PanelController extends CController
 	//---------------------------User modify data------------------------------
 	public function actionUserModifyClients()
 	{
-		$arguments = array();
-		
-		foreach ($_POST as $key=>$value)
-		{
-        	$arguments[$key]=$value;
-    	}
-		
 		$user = new UserModifyData();
 		
-		switch ($arguments['oper'])
+		switch ($_POST['oper'])
 		{
 			case "add":
 			{
-				$user->addClient($arguments);
+				$user->addClient($_POST);
 				break;
 			}
 			case "edit":
 			{
-				$user->editClient($arguments);
+				$user->editClient($_POST);
 				break;
 			}
 			case "activestatus":
 			{
-				$user->editActiveStatus($arguments);
+				$user->editActiveStatus($_POST);
 				break;
 			}
 			case "timestatus":
 			{
-				$user->editClientTimeStatus($arguments);
+				$user->editClientTimeStatus($_POST);
 				break;
 			}
 		}
 	}
 	public function actionUserModifyObjects()
 	{
-		$arguments = array();
-		
-		foreach ($_POST as $key=>$value)
-		{
-        	$arguments[$key]=$value;
-    	}
-		
 		$user = new UserModifyData();
 		
-		switch ($arguments['oper'])
+		switch ($_POST['oper'])
 		{
 			case "add":
 			{
-				$user->addObject($arguments);
+				$user->addObject($_POST);
 				break;
 			}
 			case "edit":
 			{
-				$user->editObject($arguments);
+				$user->editObject($_POST);
 				break;
 			}
 			case "selloutstatus":
 			{
-				$user->editSellOutStatus($arguments);
+				$user->editSellOutStatus($_POST);
 				break;
 			}
 			case "timestatus":
 			{
-				$user->editTimeStatus($arguments);
+				$user->editTimeStatus($_POST);
 				break;
 			}
 		}
@@ -300,33 +221,18 @@ class PanelController extends CController
 		
 		$user = new AdminModifyData();
 		
-		switch ($arguments['oper'])
+		switch ($_POST['oper'])
 		{
-			/*case "add":
-			{
-				$user->addObject($arguments);
-				break;
-			}*/
 			case "edit":
 			{
-				$user->editObject($arguments);
+				$user->editObject($_POST);
 				break;
 			}
 			case "handobj":
 			{
-				$user->handOverObject($arguments);
+				$user->handOverObject($_POST);
 				break;
 			}
-			/*case "selloutstatus":
-			{
-				$user->editSellOutStatus($arguments);
-				break;
-			}
-			case "timestatus":
-			{
-				$user->editTimeStatus($arguments);
-				break;
-			}*/
 		}
 	}
 	public function actionAdminModifySubObject()
@@ -343,47 +249,33 @@ class PanelController extends CController
 	}
 	public function actionAdminModifyClients()
 	{
-		$arguments = array();
-		
-		foreach ($_POST as $key=>$value)
-		{
-        	$arguments[$key]=$value;
-    	}
-		
 		$user = new AdminModifyData();
-		$user->editClient($arguments);
+		$user->editClient($_POST);
 	}
 	public function actionAdminModifyUsers()
-	{
-		$arguments = array();
-		
-		foreach ($_POST as $key=>$value)
-		{
-        	$arguments[$key]=$value;
-    	}
-		
+	{	
 		$user = new AdminModifyData();
 		
-		switch ($arguments['oper'])
+		switch ($_POST['oper'])
 		{
 			case "add":
 			{
-				$user->addUser($arguments);
+				$user->addUser($_POST);
 				break;
 			}
 			case "edit":
 			{
-				$user->editUser($arguments);
+				$user->editUser($_POST);
 				break;
 			}
 			case "activestatus":
 			{
-				$user->editActiveStatus($arguments);
+				$user->editActiveStatus($_POST);
 				break;
 			}
 			case "handcl":
 			{
-				$user->handOverClient($arguments);
+				$user->handOverClient($_POST);
 				break;
 			}
 		}
@@ -391,37 +283,23 @@ class PanelController extends CController
 	//-------------------------------Export data-------------------------------------
 	public function actionAdminExport()
 	{
-		$arguments = array();
-		
-		foreach ($_GET as $key=>$value)
-		{
-        	$arguments[$key]=$value;
-    	}
-		
 		$export = new ExcelExport();
-		$export->adminObjects($arguments);
+		$export->adminObjects($_GET);
 	}
 	public function actionUserExport()
 	{
-		$arguments = array();
-		
-		foreach ($_GET as $key=>$value)
-		{
-        	$arguments[$key]=$value;
-    	}
-		
 		$export = new ExcelExport();
 		
-		switch ($arguments['q'])
+		switch ($_GET['q'])
 		{
 			case "objects":
 			{
-				$export->userObjects($arguments);
+				$export->userObjects($_GET);
 				break;
 			}
 			case "clients":
 			{
-				$export->userClients($arguments);
+				$export->userClients($_GET);
 				break;
 			}
 		}

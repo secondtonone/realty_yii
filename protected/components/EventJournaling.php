@@ -31,12 +31,12 @@ class EventJournaling
 		$journal->time_event=$this->date;
 		$journal->save();
 	}
-	public function userLastActivity($id_user)
+	public function userLastActivity($id_user,$time_activity)
     {
 		$journal = new Journal;
 		$journal->id_user=$id_user;
 		$journal->id_type_event=4;
-		$journal->time_event=$this->date;
+		$journal->time_event=$time_activity;
 		$journal->save();
 	}
 	public function userAddObject($id_user)

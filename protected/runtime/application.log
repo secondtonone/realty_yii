@@ -7602,3 +7602,120 @@ Stack trace:
 #11 {main}
 REQUEST_URI=/journal/index
 ---
+2014/10/20 18:51:26 [error] [php] Invalid argument supplied for foreach() (E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:1232)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): JournalController->runAction()
+#2 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): JournalController->filterAccessControl()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): JournalController->runActionWithFilters()
+#8 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): JournalController->run()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 E:\xampp\htdocs\example.com\www\index.php(12): CWebApplication->run()
+REQUEST_URI=/journal/query
+in E:\xampp\htdocs\example.com\www\protected\controllers\JournalController.php (90)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/20 18:56:16 [error] [php] Invalid argument supplied for foreach() (E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:1232)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): JournalController->runAction()
+#2 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): JournalController->filterAccessControl()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): JournalController->runActionWithFilters()
+#8 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): JournalController->run()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 E:\xampp\htdocs\example.com\www\index.php(12): CWebApplication->run()
+REQUEST_URI=/journal/query
+in E:\xampp\htdocs\example.com\www\protected\controllers\JournalController.php (90)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/20 18:58:32 [error] [php] Invalid argument supplied for foreach() (E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:1232)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): JournalController->runAction()
+#2 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): JournalController->filterAccessControl()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): JournalController->runActionWithFilters()
+#8 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): JournalController->run()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 E:\xampp\htdocs\example.com\www\index.php(12): CWebApplication->run()
+REQUEST_URI=/journal/query
+in E:\xampp\htdocs\example.com\www\protected\controllers\JournalController.php (92)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/20 19:22:22 [error] [php] Invalid argument supplied for foreach() (E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:784)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): JournalController->runAction()
+#2 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): JournalController->filterAccessControl()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): JournalController->runActionWithFilters()
+#8 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): JournalController->run()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 E:\xampp\htdocs\example.com\www\index.php(12): CWebApplication->run()
+REQUEST_URI=/journal/query
+in E:\xampp\htdocs\example.com\www\protected\controllers\JournalController.php (94)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/20 19:26:34 [error] [php] Invalid argument supplied for foreach() (E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:784)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): JournalController->runAction()
+#2 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): JournalController->filterAccessControl()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): JournalController->runActionWithFilters()
+#8 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): JournalController->run()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 E:\xampp\htdocs\example.com\www\index.php(12): CWebApplication->run()
+REQUEST_URI=/journal/query
+in E:\xampp\htdocs\example.com\www\protected\controllers\JournalController.php (95)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/20 19:28:08 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchAll(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '``, ``time_activity``
+FROM ``users``
+WHERE (`time_activity`+INTERVAL 5 MINUTE)<(' at line 1. Выполнявшийся SQL-запрос: SELECT ``id_user``, ``time_activity``
+FROM ``users``
+WHERE (`time_activity`+INTERVAL 5 MINUTE)<(NOW()+INTERVAL 2 HOUR) and `online`=:online and `active`=:active.
+in E:\xampp\htdocs\example.com\www\protected\controllers\JournalController.php (96)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/20 19:28:08 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '``, ``time_activity``
+FROM ``users``
+WHERE (`time_activity`+INTERVAL 5 MINUTE)<(' at line 1. The SQL statement executed was: SELECT ``id_user``, ``time_activity``
+FROM ``users``
+WHERE (`time_activity`+INTERVAL 5 MINUTE)<(NOW()+INTERVAL 2 HOUR) and `online`=:online and `active`=:active' in E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php(396): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 E:\xampp\htdocs\example.com\www\protected\controllers\JournalController.php(96): CDbCommand->queryAll()
+#2 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): JournalController->actionQuery()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#10 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('query')
+#12 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('journal/query')
+#13 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 E:\xampp\htdocs\example.com\www\index.php(12): CApplication->run()
+#15 {main}
+REQUEST_URI=/journal/query
+HTTP_REFERER=http://example.com/stats/index
+---

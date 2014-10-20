@@ -2,21 +2,27 @@
 
 class UserGetData
 {
-	public function getClients($page,$rows,$sidx,$sord,$search,$filters)
+	public function getClients($arguments)
 	{
 		$connection=Yii::app()->db;
 		
-		$curPage = $page;
-		$rowsPerPage = $rows;
-		$sortingField = $sidx;
-		$sortingOrder = $sord;
+		$filters='';
+		$curPage = $arguments['page'];
+		$rowsPerPage = $arguments['rows'];
+		$sortingField = $arguments['sidx'];
+		$sortingOrder = $arguments['sord'];
+				
+		if (isset($arguments['filters']))
+		{
+			$filters=$arguments['filters'];
+		}
 			
 		$array_id = '';
 		$qWhere = '';
 		//определяем команду (поиск или просто запрос на вывод данных)
 		//если поиск, конструируем WHERE часть запроса
 							
-		if (isset($search) && $search == 'true') {
+		if (isset($arguments['_search']) && $arguments['_search'] == 'true') {
 			$allowedFields = array('clname','name','id_city','name_city','number','id_category','id_planning','id_floor_status','price', 'id_time_status','id_status','date');
 			$allowedOperations = array('AND', 'OR');
 
@@ -143,19 +149,25 @@ class UserGetData
 		echo json_encode($response); 
 	}
 	
-	public function getObjects($page,$rows,$sidx,$sord,$search,$filters)
+	public function getObjects($arguments)
 	{
 		$connection=Yii::app()->db;
 		
-		$curPage = $page;
-		$rowsPerPage = $rows;
-		$sortingField = $sidx;
-		$sortingOrder = $sord;
+		$filters='';
+		$curPage = $arguments['page'];
+		$rowsPerPage = $arguments['rows'];
+		$sortingField = $arguments['sidx'];
+		$sortingOrder = $arguments['sord'];
+				
+		if (isset($arguments['filters']))
+		{
+			$filters=$arguments['filters'];
+		}
 			
 		$array_id = '';
 		$qWhere = '';
 		
-		if (isset($search) && $search == 'true') {
+		if (isset($arguments['_search']) && $arguments['_search'] == 'true') {
 			
 			$allowedFields = array('name_owner','number','name_city','id_city', 'name_street', 'house_number' ,'id_category' ,'room_count' , 'id_planning','id_building' , 'floor','number_of_floor' , 'space' ,'id_renovation','id_floor_status','id_window' ,'id_counter','id_sell_out_status', 'id_time_status' , 'price' , 'market_price' ,'name' , 'date');
 			$allowedOperations = array('AND', 'OR');
@@ -231,11 +243,6 @@ class UserGetData
 		}
 					 
 		//определяем количество записей в таблице
-		/*$rows = $dbh->prepare('SELECT COUNT(`id_object`) AS count FROM `objects` o WHERE (o.`id_sell_out_status`=1 OR o.`id_sell_out_status`=4)'.$qWhere);
-		$rows->execute(array());
-			
-		$totalRows = $rows->fetch(PDO::FETCH_ASSOC);*/
-		
 		$sql='SELECT COUNT(`id_object`) AS count FROM `objects` o WHERE (o.`id_sell_out_status`=1 OR o.`id_sell_out_status`=4)'.$qWhere;
 		$command=$connection->createCommand($sql);
 		$totalRows = $command->queryScalar();
@@ -300,10 +307,6 @@ class UserGetData
 		$command=$connection->createCommand($sql);
 		$command->bindParam(':id_object',$id_object,PDO::PARAM_STR);
 		$rows=$command->queryAll();
-		
-		/*$res = $dbh->prepare('SELECT o.`id_renovation`, o.`id_window`, o.`id_counter`,o.`id_user`,o.`date_change` FROM `objects` o WHERE o.`id_object`=?');
-		$res->execute(array($id_object));*/
-		
 		//сохраняем номер текущей страницы, общее количество страниц и общее количество записей
 		$response = new stdClass();
 		

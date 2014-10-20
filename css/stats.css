@@ -1,7 +1,6 @@
 .stat-container {
 	border: 1px solid #353535;
 	margin-top:10px;
-	height: 530px;
 }
 .caption {
 	background: #353535;
@@ -26,17 +25,29 @@
 	content: " ";
 }
 .canvas-holder {
-	padding-top: 20px;
-	padding-bottom: 20px;
-	width:1150px;
+	padding: 20px;
+	max-width:1000px;
+	width:100%;
 	margin: 0;
 	float: left;
 }
-.chart-legend {
+.legend {
 	margin: 0;
-	width:150px;
+	width:200px;
 	float: left;
+	border: 1px solid black;
 }
 canvas { 
-	margin: 0 auto; 
+	margin: 0 auto;
+	width: 100% !important;
+    max-width: 1200px;
+    height: auto !important; 
 } 
+.legend .title {
+    display: block;
+    margin: 0.5em;
+    border-style: solid;
+    border-width: 0 0 0 1em;
+    padding: 0 0.3em;
+	clear:both;
+}

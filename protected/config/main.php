@@ -130,7 +130,7 @@ return array(
 				),
 				'statsjs' => array(
 					'baseUrl' => '/js/',
-					'js'=>array('chart.js','panel.js','stats.js'),
+					'js'=>array('chart.js','legend.js','panel.js','stats.js'),
 				  
 				),
 				'helpjs' => array(

@@ -2,23 +2,29 @@
 
 class AdminGetData
 {
-	public function getClients($page,$rows,$sidx,$sord,$search,$filters,$id_user)
+	public function getClients($arguments/*$page,$rows,$sidx,$sord,$search,$filters,$id_user*/)
 	{
 		$connection=Yii::app()->db; 
-		
-		$curPage = $page;
-		$rowsPerPage = $rows;
-		$sortingField = $sidx;
-		$sortingOrder = $sord;
+	
+		$filters='';
+		$curPage = $arguments['page'];
+		$rowsPerPage = $arguments['rows'];
+		$sortingField = $arguments['sidx'];
+		$sortingOrder = $arguments['sord'];
 			
 		$enable="1";
 			
 		$qWhere = '';
+		
+		if (isset($arguments['filters']))
+		{
+			$filters=$arguments['filters'];
+		}
 		//определяем команду (поиск или просто запрос на вывод данных)
 		//если поиск, конструируем WHERE часть запроса
 					
 			
-		if (isset($search) && $search == 'true') {
+		if (isset($arguments['_search']) && $arguments['_search'] == 'true') {
 			$allowedFields = array('name','number','id_city','name_city','id_category','id_planning','id_floor_status','price', 'id_time_status','id_status','date');
 			$allowedOperations = array('AND', 'OR');
 
@@ -78,7 +84,7 @@ class AdminGetData
 		
 		$sql='SELECT COUNT(*) FROM `clients` c WHERE c.`id_user`=:id_user'.$qWhere;
 		$command=$connection->createCommand($sql);
-		$command->bindParam(':id_user',$id_user,PDO::PARAM_STR);
+		$command->bindParam(':id_user',$arguments['id_user'],PDO::PARAM_STR);
 		$totalRows = $command->queryScalar();
 		
 		$command->reset();
@@ -87,7 +93,7 @@ class AdminGetData
 		
 		$sql='SELECT c.`id_client`, c.`name`, c.`number`,c.`id_city`,ct.`name_city`, c.`id_category`, c.`id_planning`, c.`id_floor_status`,c.`price`, c.`id_time_status`,c.`id_status`, c.`id_user`, c.`date` FROM `clients` c LEFT JOIN `geo_city` ct ON c.`id_city`= ct.`id_city` WHERE c.`id_user`=:id_user '.$qWhere.' ORDER BY '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage;
 		$command=$connection->createCommand($sql);
-		$command->bindParam(':id_user',$id_user,PDO::PARAM_STR);
+		$command->bindParam(':id_user',$arguments['id_user'],PDO::PARAM_STR);
 		$rows=$command->queryAll();
 			
 		//сохраняем номер текущей страницы, общее количество страниц и общее количество записей
@@ -105,18 +111,24 @@ class AdminGetData
 		}
 		echo json_encode($response);
 	}
-	public function getEvents($page,$rows,$sidx,$sord,$search,$filters)
+	public function getEvents($arguments)
 	{
 		$connection=Yii::app()->db; 
 		
-		$curPage = $page;
-		$rowsPerPage = $rows;
-		$sortingField = $sidx;
-		$sortingOrder = $sord;
+		$filters='';
+		$curPage = $arguments['page'];
+		$rowsPerPage = $arguments['rows'];
+		$sortingField = $arguments['sidx'];
+		$sortingOrder = $arguments['sord'];
+				
+		if (isset($arguments['filters']))
+		{
+			$filters=$arguments['filters'];
+		}
 		
 		$qWhere = '';
 			
-		if (isset($search) && $search == 'true') {
+		if (isset($arguments['_search']) && $arguments['_search'] == 'true') {
 			$allowedFields = array('id_event','id_user', 'name', 'id_type_event', 'time_event');
 			$allowedOperations = array('AND', 'OR');
 							
@@ -204,21 +216,28 @@ class AdminGetData
 		}
 		echo json_encode($response);
 	}
-	public function getNotifications($page,$rows,$sidx,$sord,$search,$filters)
+	public function getNotifications($arguments)
 	{
 		$connection=Yii::app()->db;
 		
-		$curPage = $page;
-		$rowsPerPage = $rows;
-		$sortingField = $sidx;
-		$sortingOrder = $sord;
+		$filters='';
+		$curPage = $arguments['page'];
+		$rowsPerPage = $arguments['rows'];
+		$sortingField = $arguments['sidx'];
+		$sortingOrder = $arguments['sord'];
+				
+		if (isset($arguments['filters']))
+		{
+			$filters=$arguments['filters'];
+		}
+		
 
 		$qWhere = '';
 		//определяем команду (поиск или просто запрос на вывод данных)
 		//если поиск, конструируем WHERE часть запроса
 				
 		
-		if (isset($search) && $search == 'true') {
+		if (isset($arguments['_search']) && $arguments['_search']== 'true') {
 			$allowedFields = array('id_notification', 'text_notification', 'id_status');
 			$allowedOperations = array('AND', 'OR');
 						
@@ -292,14 +311,21 @@ class AdminGetData
 		}
 		echo json_encode($response);
 	}
-	public function getObjects($page,$rows,$sidx,$sord,$search,$filters)
+	public function getObjects($arguments)
 	{
 		$connection=Yii::app()->db;
 		
-		$curPage = $page;
-		$rowsPerPage = $rows;
-		$sortingField = $sidx;
-		$sortingOrder = $sord;
+		$filters='';
+		$curPage = $arguments['page'];
+		$rowsPerPage = $arguments['rows'];
+		$sortingField = $arguments['sidx'];
+		$sortingOrder = $arguments['sord'];
+				
+		if (isset($arguments['filters']))
+		{
+			$filters=$arguments['filters'];
+		}
+			
 
 		$enable="1";
 		$qWhere = '';
@@ -307,7 +333,7 @@ class AdminGetData
 		//если поиск, конструируем WHERE часть запроса
 				
 		
-		if (isset($search) && $search == 'true') {
+		if (isset($arguments['_search']) && $arguments['_search'] == 'true') {
 			$allowedFields = array('name_owner','number','name_city', 'name_street', 'house_number' ,'id_category' ,'room_count' , 'id_planning','id_building' , 'floor','number_of_floor' , 'space' ,'id_renovation','id_floor_status','id_window' ,'id_counter','id_sell_out_status', 'id_time_status' , 'price' , 'market_price','id_user' ,'name' , 'date');
 			$allowedOperations = array('AND', 'OR');
 						
@@ -414,9 +440,6 @@ class AdminGetData
 		$sql='SELECT u.`id_user`,u.`name` , u.`login` , u.`online`,u.`time_activity`, obj, client, objsell FROM `users` u LEFT JOIN (SELECT `id_user` AS uid, COUNT(`id_object`) AS obj FROM `objects` WHERE `id_sell_out_status`=1 OR `id_sell_out_status`=4 GROUP BY `id_user`) Q1 ON Q1.uid=u.`id_user` LEFT JOIN (SELECT `id_user` AS uid, COUNT(`id_client`) AS client FROM `clients` WHERE `id_status`=1 GROUP BY `id_user`) Q2 ON Q2.uid=u.`id_user` LEFT JOIN (SELECT `id_user` AS uid, COUNT(`id_object`) AS objsell FROM `objects` WHERE `id_sell_out_status`=2 GROUP BY `id_user`) Q3 ON Q3.uid=u.`id_user` ORDER BY `online` DESC, `login` asc';
 		$command=$connection->createCommand($sql);
 		$rows=$command->queryAll();	
-		
-		/*$res = $dbh->prepare('SELECT u.`id_user`,u.`name` , u.`login` , u.`online`,u.`time_activity`, obj, client, objsell FROM `users` u LEFT JOIN (SELECT `id_user` AS uid, COUNT(`id_object`) AS obj FROM `objects` WHERE `id_sell_out_status`=1 OR `id_sell_out_status`=4 GROUP BY `id_user`) Q1 ON Q1.uid=u.`id_user` LEFT JOIN (SELECT `id_user` AS uid, COUNT(`id_client`) AS client FROM `clients` WHERE `id_status`=1 GROUP BY `id_user`) Q2 ON Q2.uid=u.`id_user` LEFT JOIN (SELECT `id_user` AS uid, COUNT(`id_object`) AS objsell FROM `objects` WHERE `id_sell_out_status`=2 GROUP BY `id_user`) Q3 ON Q3.uid=u.`id_user` ORDER BY `online` DESC, `login` asc');
-		$res->execute(array());*/
 				
 		foreach($rows as $row)
 		{
@@ -460,14 +483,20 @@ class AdminGetData
 				
 		echo $html_out;
 	}
-	public function getUsers($page,$rows,$sidx,$sord,$search,$filters)
+	public function getUsers($arguments)
 	{
 		$connection=Yii::app()->db;
 		
-		$curPage = $page;
-		$rowsPerPage = $rows;
-		$sortingField = $sidx;
-		$sortingOrder = $sord;
+		$filters='';
+		$curPage = $arguments['page'];
+		$rowsPerPage = $arguments['rows'];
+		$sortingField = $arguments['sidx'];
+		$sortingOrder = $arguments['sord'];
+				
+		if (isset($arguments['filters']))
+		{
+			$filters=$arguments['filters'];
+		}
 			
 			
 		$qWhere = '';
@@ -475,7 +504,7 @@ class AdminGetData
 					//если поиск, конструируем WHERE часть запроса
 					
 			
-		if (isset($search) && $search == 'true') {
+		if (isset($arguments['_search']) && $arguments['_search'] == 'true') {
 			$allowedFields = array('login','active','id_right','name','number','time_activity','online');
 			$allowedOperations = array('AND', 'OR');
 							

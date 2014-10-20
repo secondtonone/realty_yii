@@ -92,7 +92,7 @@
 			responsive: false,
 
                         // Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
-                        maintainAspectRatio: true,
+            maintainAspectRatio: true,
 
 			// Boolean - Determines whether to draw tooltips on the canvas or not - attaches events to touchmove & mousemove
 			showTooltips: true,
@@ -101,13 +101,13 @@
 			tooltipEvents: ["mousemove", "touchstart", "touchmove", "mouseout"],
 
 			// String - Tooltip background colour
-			tooltipFillColor: "rgba(0,0,0,0.8)",
+			tooltipFillColor: "rgba(0,0,0,0.7)",
 
 			// String - Tooltip label font declaration for the scale label
 			tooltipFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",
 
 			// Number - Tooltip label font size in pixels
-			tooltipFontSize: 14,
+			tooltipFontSize: 12,
 
 			// String - Tooltip font weight style
 			tooltipFontStyle: "normal",
@@ -137,7 +137,7 @@
 			tooltipCaretSize: 8,
 
 			// Number - Pixel radius of the tooltip border
-			tooltipCornerRadius: 6,
+			tooltipCornerRadius: 0,
 
 			// Number - Pixel offset from point x to tooltip edge
 			tooltipXOffset: 10,
