@@ -1,14 +1,12 @@
 <div class="page-content">
     <div class="stat-container">
-        <div class="caption"><i class="icon line-chart"></i>Квартиры</div>
+        <div class="caption"><i class="icon line-chart"></i>Продажи объектов по категориям за весь год</div>
         <div class="canvas-holder">
-            <canvas id="container"></canvas>
+            <canvas id="year-sells-objects"></canvas>
         </div>
-        <div id="legend-line-chart"></div>
-        <div class="stat-control">
-            Год: 
-            <select class="year">
-            </select>    
+        <div class="legend-warapper">
+            <div id="legend-year-sells-objects"></div>
+            <div class="stat-control">Год:<select class="year"></select></div>
         </div>
     </div>
         <div class="stat-container">

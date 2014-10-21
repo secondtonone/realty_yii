@@ -1,6 +1,7 @@
 .stat-container {
 	border: 1px solid #353535;
 	margin-top:10px;
+	overflow: hidden;
 }
 .caption {
 	background: #353535;
@@ -13,7 +14,6 @@
 	font-size: 14px;
 	color: #353535;
 	padding: 10px;
-	clear: both;
 }
 .line-chart::after {
 	content: " ";
@@ -34,7 +34,6 @@
 .legend {
 	margin: 0;
 	width:200px;
-	float: left;
 	border: 1px solid black;
 }
 canvas { 
@@ -50,4 +49,7 @@ canvas {
     border-width: 0 0 0 1em;
     padding: 0 0.3em;
 	clear:both;
+}
+.legend-warapper {
+	float: left;	
 }

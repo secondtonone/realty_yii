@@ -1,21 +1,35 @@
 $(document).ready(function () {
+
+	function setYearSelect () {
+		var today = new Date(),
+			year = today.getFullYear(),
+			selectOptions='';
+		
+		for (var i=2014;i<year;i++)//сменить на 2014
+		{
+			selectOptions += '<option value="'+i+'">'+i+'</option>';		
+		}
+		
+		selectOptions +='<option value="'+year+'" selected="selected">'+year+'</option>';
+		
+		$('.stat-control .year').html(selectOptions);
+	}
+	setYearSelect();
 	// Get context with jQuery - using jQuery's .get() method.
-	var ctx = document.getElementById("container").getContext("2d");
+	var yearSellsObjects = document.getElementById("year-sells-objects").getContext("2d");
 	
 /*	document.getElementById("container").setAttribute('width','1050');
 	document.getElementById("container").setAttribute('height','400');*/
-	
-	var helpers = Chart.helpers;
-	var chartLegend=document.getElementById("legend-line-chart");
+	var legendYearSellsObjects=document.getElementById("legend-year-sells-objects");
 	// This will get the first returned node in the jQuery collection.
-	var data = {
+	var dataYearSellsObjects = {
 	    labels: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"],
 	    datasets: [
 	        {
 	            label: "1-комнатная",
-	            fillColor: "rgba(220,220,220,0.2)",
-	            strokeColor: "rgba(220,220,220,1)",
-	            pointColor: "rgba(220,220,220,1)",
+	            fillColor: "rgba(210,150,100,0.2)",
+	            strokeColor: "rgba(210,150,100,1)",
+	            pointColor: "rgba(210,150,100,1)",
 	            pointStrokeColor: "#fff",
 	            pointHighlightFill: "#fff",
 	            pointHighlightStroke: "rgba(220,220,220,1)",
@@ -23,12 +37,12 @@ $(document).ready(function () {
 	        },
 	        {
 	            label: "1,5-комнатная",
-	            fillColor: "rgba(151,187,205,0.2)",
-	            strokeColor: "rgba(151,187,205,1)",
-	            pointColor: "rgba(151,187,205,1)",
+	            fillColor: "rgba(255,128,128,0.2)",
+	            strokeColor: "rgba(255,128,128,1)",
+	            pointColor: "rgba(255,128,128,1)",
 	            pointStrokeColor: "#fff",
 	            pointHighlightFill: "#fff",
-	            pointHighlightStroke: "rgba(151,187,205,1)",
+	            pointHighlightStroke: "rgba(255,128,128,1)",
 	            data: [8, 8, 4, 19, 8, 2, 9, 0, 4, 8, 9, 4]
 	        },
 	        {
@@ -43,9 +57,9 @@ $(document).ready(function () {
 	        },
 	        {
 	            label: "3-комнатная",
-	            fillColor: "rgba(11,187,205,0.2)",
-	            strokeColor: "rgba(11,187,205,1)",
-	            pointColor: "rgba(11,187,205,1)",
+	            fillColor: "rgba(254,5,54,0.2)",
+	            strokeColor: "rgba(254,5,54,1)",
+	            pointColor: "rgba(254,5,54,1)",
 	            pointStrokeColor: "#fff",
 	            pointHighlightFill: "#fff",
 	            pointHighlightStroke: "rgba(151,187,205,1)",
@@ -53,9 +67,9 @@ $(document).ready(function () {
 	        },
 			{
 	            label: "4-комнатная",
-	            fillColor: "rgba(151,187,25,0.2)",
-	            strokeColor: "rgba(151,187,25,1)",
-	            pointColor: "rgba(151,187,25,1)",
+	            fillColor: "rgba(213,222,13,0.2)",
+	            strokeColor: "rgba(213,222,13,1)",
+	            pointColor: "rgba(213,222,13,1)",
 	            pointStrokeColor: "#fff",
 	            pointHighlightFill: "#fff",
 	            pointHighlightStroke: "rgba(151,187,205,1)",
@@ -63,9 +77,9 @@ $(document).ready(function () {
 	        },
 			{
 	            label: "Гостинка",
-	            fillColor: "rgba(15,17,205,0.2)",
-	            strokeColor: "rgba(15,17,205,1)",
-	            pointColor: "rgba(15,17,205,1)",
+	            fillColor: "rgba(15,17,125,0.2)",
+	            strokeColor: "rgba(15,17,125,1)",
+	            pointColor: "rgba(15,17,125,1)",
 	            pointStrokeColor: "#fff",
 	            pointHighlightFill: "#fff",
 	            pointHighlightStroke: "rgba(151,187,205,1)",
@@ -133,9 +147,10 @@ $(document).ready(function () {
 	        },
 	    ]
 	};
-	var myNewChart = new Chart(ctx).Line(data, {
+	var yearSellsObjects = new Chart(yearSellsObjects).Line(dataYearSellsObjects, {
 	    bezierCurve: false,
 		responsive:true,
+		scaleGridLineWidth : 1,
 		datasetFill : false,
 		multiTooltipTemplate: function(valuesObject){
 		 /* console.log(valuesObject);*/
@@ -144,7 +159,6 @@ $(document).ready(function () {
 		}
 	});	
 	
-	legend(chartLegend, data);
-	
+	legend(legendYearSellsObjects, dataYearSellsObjects);
 
 });

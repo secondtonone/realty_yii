@@ -12,21 +12,6 @@ $(document).ready(function () {
 			});
 	}
 	
-	function setYearSelect () {
-		var today = new Date(),
-			year = today.getFullYear(),
-			selectOptions;
-		
-		for (var i=2014;i<year;i++)//сменить на 2014
-		{
-			selectOptions += '<option value="'+i+'">'+i+'</option>';		
-		}
-		
-		selectOptions +='<option value="'+year+'" selected="selected">'+year+'</option>';
-		
-		$('.stat-control .year').html(selectOptions);
-	}
-	
 	$('#'+id+'').addClass('active');
 		
 	$('.sidebar-menu li a').click (function(){
@@ -65,7 +50,5 @@ $(document).ready(function () {
 	
 	activityTime();
 	setInterval(activityTime,300000);
-	
-	setYearSelect();
 	
 });

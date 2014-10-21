@@ -57,6 +57,10 @@ class StatsController extends CController
 			$this->redirect(array('enter/index'));
 		}*/
 	}
+	public function actionYearSellsObjects()
+	{
+		
+	}
 	/**
 	 * This is the action to handle external exceptions.
 	 */
