@@ -14,6 +14,10 @@
 	font-size: 14px;
 	color: #353535;
 	padding: 10px;
+	text-align: center;
+}
+.stat-control label{
+	display: inline-block;
 }
 .line-chart::after {
 	content: " ";
@@ -31,12 +35,23 @@
 	margin: 0;
 	float: left;
 }
+.canvas-holder-pie {
+	padding: 20px;
+	max-width:400px;
+	width:100%;
+	margin: 0;
+	float: left;
+}
+.canvas-holder h4,
+.canvas-holder-pie h4 {
+	text-align: center;
+}
 .legend {
 	margin: 0;
 	width:200px;
 	border: 1px solid black;
 }
-canvas { 
+.stat-container canvas { 
 	margin: 0 auto;
 	width: 100% !important;
     max-width: 1200px;

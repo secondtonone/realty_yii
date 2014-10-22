@@ -191,9 +191,9 @@ $("#objects").jqGrid({
 				
 				object = name_city+', '+name_street+' '+house_number;
 				
+
 				$("#"+subgrid_id).html("<div class='subgridformobj'><table id='"+subgrid_table_id+"' class='scroll'></table></div><div id='yandexmap'></div>");
 				
-				initMap(object);
 				
 				$("#"+subgrid_table_id).jqGrid({
 				url:"/panel/getsubobjects?id_object="+row_id,
@@ -223,8 +223,8 @@ $("#objects").jqGrid({
 					}
 				},
 				height: '100%'
-				});			
-		
+				});	
+				initMap(object);		
 			}
         }).navGrid('#pager',{edit:true,add:false,del:false,search:true},{width:380,reloadAfterSubmit:true,zIndex:99, beforeShowForm: function(form) { 
 									$('#tr_id_renovation', form).hide();
