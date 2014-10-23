@@ -59,7 +59,8 @@ class StatsController extends CController
 	}
 	public function actionYearSellsObjects()
 	{
-		
+		$stats = new StatsGetDataset();
+		$stats->yearSellsObjects($_POST['year']);	
 	}
 	/**
 	 * This is the action to handle external exceptions.

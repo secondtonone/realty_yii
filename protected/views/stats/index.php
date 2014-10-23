@@ -8,7 +8,7 @@
             <div id="legend-year-sells-objects"></div>
             <div class="stat-control">
                 <label>Год: 
-                    <select class="year">
+                    <select id="change-year-sells-objects" class="year">
                     </select>
                 </label>
             </div>
