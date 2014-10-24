@@ -62,6 +62,16 @@ class StatsController extends CController
 		$stats = new StatsGetDataset();
 		$stats->yearSellsObjects($_POST['year']);	
 	}
+	public function actionYearSellsObjectsPie()
+	{
+		$stats = new StatsGetDataset();
+		$stats->yearSellsObjectsPie($_POST['year']);	
+	}
+	public function actionMonthSellsObjectsPie()
+	{
+		$stats = new StatsGetDataset();
+		$stats->monthSellsObjectsPie($_POST['year'],$_POST['month']);	
+	}
 	/**
 	 * This is the action to handle external exceptions.
 	 */

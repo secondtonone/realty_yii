@@ -7719,3 +7719,21 @@ Stack trace:
 REQUEST_URI=/journal/query
 HTTP_REFERER=http://example.com/stats/index
 ---
+2014/10/24 20:31:33 [error] [php] Undefined variable: month (E:\xampp\htdocs\example.com\www\protected\components\StatsGetDataset.php:17)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): StatsController->runAction()
+#2 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): StatsController->filterAccessControl()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): StatsController->runActionWithFilters()
+#8 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): StatsController->run()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 E:\xampp\htdocs\example.com\www\index.php(12): CWebApplication->run()
+REQUEST_URI=/stats/yearsellsobjects
+in E:\xampp\htdocs\example.com\www\protected\components\StatsGetDataset.php (17)
+in E:\xampp\htdocs\example.com\www\protected\controllers\StatsController.php (63)
+in E:\xampp\htdocs\example.com\www\index.php (12)

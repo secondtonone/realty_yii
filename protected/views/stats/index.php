@@ -32,7 +32,7 @@
                 <div class="stat-control">
                     <label>Месяц: 
                         <select class="month">
-                            <option value="1" selected="selected">Январь</option>
+                            <option value="1">Январь</option>
                             <option value="2">Февраль</option>
                             <option value="3">Март</option>
                             <option value="4">Апрель</option>
@@ -63,7 +63,7 @@
                 </select>
                 Месяц: 
                 <select class="month">
-                    <option value="1" selected="selected">Январь</option>
+                    <option value="1">Январь</option>
                     <option value="2">Февраль</option>
                     <option value="3">Март</option>
                     <option value="4">Апрель</option>
