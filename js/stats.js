@@ -3,18 +3,18 @@ $(document).ready(function () {
 		year = today.getFullYear(),
 		month = today.getMonth()+1,
 		categoryObjectsTempelate = [
-		{label:'1-комнатная',color:'rgba(255, 0, 0,1)',highlightColor:'rgba(255, 0, 0,0.7)',fillColor:'rgba(255, 0, 0,0.2)'},
-		{label:'1,5-комнатная',color:'rgba(255, 127, 0,1)',highlightColor:'rgba(255, 127, 0,0.7)',fillColor:'rgba(255, 127, 0,0.2)'},
-		{label:'2-комнатная',color:'rgba(205, 205, 44,1)',highlightColor:'rgba(205, 205, 44,0.7)',fillColor:'rgba(205, 205, 44,0.2)'},
-		{label:'3-комнатная',color:'rgba( 0, 255, 0,1)',highlightColor:'rgba( 0, 255, 0,0.7)',fillColor:'rgba( 0, 255, 0,0.2)'},
-		{label:'4-комнатная',color:'rgba( 0, 0, 255,1)',highlightColor:'rgba( 0, 0, 255,0.7)',fillColor:'rgba( 0, 0, 255,0.2)'},
-		{label:'Гостинка',color:'rgba(75, 0, 130,1)',highlightColor:'rgba(75, 0, 130,0.7)',fillColor:'rgba(75, 0, 130,0.2)'},
-		{label:'Дача',color:'rgba(143, 0, 255,1)',highlightColor:'rgba(143, 0, 255,0.7)',fillColor:'rgba(143, 0, 255,0.2)'},
-		{label:'Дом',color:'rgba(164,164,164,1)',highlightColor:'rgba(164,164,164,0.7)',fillColor:'rgba(164,164,164,0.2)'},
-		{label:'Земельный участок',color:'rgba(254,5,54,1)',highlightColor:'rgba(254,5,54,0.7)',fillColor:'rgba(254,5,54,0.2)'},
-		{label:'Комната',color:'rgba(210,150,100,1)',highlightColor:'rgba(210,150,100,0.7)',fillColor:'rgba(210,150,100,0.2)'},
-		{label:'Коттедж',color:'rgba(111,181,205,1)',highlightColor:'rgba(111,181,205,0.7)',fillColor:'rgba(111,181,205,0.2)'},
-		{label:'Многокомнатная',color:'rgba(15,18,25,1)',highlightColor:'rgba(15,18,25,0.7)',fillColor:'rgba(15,18,25,0.2)'}
+			{label:'1-комнатная',color:'rgba(255, 0, 0,1)',highlightColor:'rgba(255, 0, 0,0.7)',fillColor:'rgba(255, 0, 0,0.2)'},
+			{label:'1,5-комнатная',color:'rgba(255, 127, 0,1)',highlightColor:'rgba(255, 127, 0,0.7)',fillColor:'rgba(255, 127, 0,0.2)'},
+			{label:'2-комнатная',color:'rgba(205, 205, 44,1)',highlightColor:'rgba(205, 205, 44,0.7)',fillColor:'rgba(205, 205, 44,0.2)'},
+			{label:'3-комнатная',color:'rgba( 0, 255, 0,1)',highlightColor:'rgba( 0, 255, 0,0.7)',fillColor:'rgba( 0, 255, 0,0.2)'},
+			{label:'4-комнатная',color:'rgba( 0, 0, 255,1)',highlightColor:'rgba( 0, 0, 255,0.7)',fillColor:'rgba( 0, 0, 255,0.2)'},
+			{label:'Гостинка',color:'rgba(75, 0, 130,1)',highlightColor:'rgba(75, 0, 130,0.7)',fillColor:'rgba(75, 0, 130,0.2)'},
+			{label:'Дача',color:'rgba(143, 0, 255,1)',highlightColor:'rgba(143, 0, 255,0.7)',fillColor:'rgba(143, 0, 255,0.2)'},
+			{label:'Дом',color:'rgba(164,164,164,1)',highlightColor:'rgba(164,164,164,0.7)',fillColor:'rgba(164,164,164,0.2)'},
+			{label:'Земельный участок',color:'rgba(254,5,54,1)',highlightColor:'rgba(254,5,54,0.7)',fillColor:'rgba(254,5,54,0.2)'},
+			{label:'Комната',color:'rgba(210,150,100,1)',highlightColor:'rgba(210,150,100,0.7)',fillColor:'rgba(210,150,100,0.2)'},
+			{label:'Коттедж',color:'rgba(111,181,205,1)',highlightColor:'rgba(111,181,205,0.7)',fillColor:'rgba(111,181,205,0.2)'},
+			{label:'Многокомнатная',color:'rgba(15,18,25,1)',highlightColor:'rgba(15,18,25,0.7)',fillColor:'rgba(15,18,25,0.2)'}
 	];
 	function getYearSellsObjects(year) {
 		
@@ -26,8 +26,7 @@ $(document).ready(function () {
 			success: function(data){
 
 				var response=JSON.parse(data),
-					//months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
-					months = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul','aug','sep','oct','nov','dec'],
+					months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
 					dataYearSellsObjects = {
 				    labels: months,
 				    datasets: [
@@ -153,10 +152,14 @@ $(document).ready(function () {
 				        },
 				    ]
 				};
-				var yearSellsObjects = document.getElementById("year-sells-objects").getContext("2d"),
+				var context = document.getElementById("year-sells-objects"),
+					yearSellsObjects = context.getContext("2d"),
 					legendYearSellsObjects=document.getElementById("legend-year-sells-objects");
 
-				new Chart(yearSellsObjects).Line(dataYearSellsObjects, {
+				// Возобновляем матрицу трансформации
+				
+
+				var lineChartSellsObject=new Chart(yearSellsObjects).Line(dataYearSellsObjects, {
 					    bezierCurve: false,
 						responsive:true,
 						scaleGridLineWidth : 1,
@@ -167,6 +170,8 @@ $(document).ready(function () {
 						return valuesObject.datasetLabel+' - '+valuesObject.value+' об.';
 						}
 					});
+
+				lineChartSellsObject.update();
 
 				legend(legendYearSellsObjects, dataYearSellsObjects);	
 					
@@ -363,7 +368,7 @@ $(document).ready(function () {
 	function setYearSelect (year) {
 		var selectOptions='';
 		
-		for (var i=2013;i<year;i++)//сменить на 2014
+		for (var i=2014;i<year;i++)//сменить на 2014
 		{
 			selectOptions += '<option value="'+i+'">'+i+'</option>';		
 		}
@@ -381,6 +386,9 @@ $(document).ready(function () {
 	
 	// This will get the first returned node in the jQuery collection.
 	// 
+	getYearSellsObjects(year);
+	getYearSellsObjectsPie(year);
+	getMonthSellsObjectsPie(year,month); 
 
 	
 
@@ -388,15 +396,29 @@ $(document).ready(function () {
 			
 		//$("option:selected", $(this)).each(function() {
 			var year=$("#change-year-sells-objects :selected").val();
-				
-			getYearSellsObjects(year);
-										
+			$('#year-sells-objects').remove(); // this is my <canvas> element
+  			$('#year-sells-objects-canvas-wrapper').append('<canvas id="year-sells-objects"><canvas>');			
+			getYearSellsObjects(year);				
 		//});
 	});
-
-
-	getYearSellsObjects(year);
-	getYearSellsObjectsPie(year);
-	getMonthSellsObjectsPie(year,month); 
+	$("#change-year-sells-objects-pie").change(function() {
+			
+		//$("option:selected", $(this)).each(function() {
+			var year=$("#change-year-sells-objects-pie :selected").val();
+			$('#year-sells-objects-pie').remove(); // this is my <canvas> element
+  			$('#year-sells-objects-pie-canvas-wrapper').append('<canvas id="year-sells-objects-pie"><canvas>');
+			getYearSellsObjectsPie(year);			
+		//});
+	});
+	$("#change-month-sells-objects-pie").change(function() {
+			
+		//$("option:selected", $(this)).each(function() {
+			var year=$("#change-year-sells-objects-pie :selected").val(),
+				month=$("#change-month-sells-objects-pie :selected").val();	
+			$('#month-sells-objects-pie').remove(); // this is my <canvas> element
+  			$('#month-sells-objects-pie-canvas-wrapper').append('<canvas id="month-sells-objects-pie"><canvas>');	
+			getMonthSellsObjectsPie(year,month); 		
+		//});
+	});
 					
 });

@@ -1,7 +1,7 @@
 <div class="page-content">
     <div class="stat-container">
         <div class="caption"><i class="icon line-chart"></i>Динамика продаж объектов по категориям за весь год</div>
-        <div class="canvas-holder">
+        <div class="canvas-holder" id="year-sells-objects-canvas-wrapper">
             <canvas id="year-sells-objects"></canvas>
         </div>
         <div class="legend-warapper">
@@ -18,20 +18,24 @@
         	<div class="caption"><i class="icon bar-chart"></i>Кол-во продаж объектов по категориям</div>
             <div class="canvas-holder-pie">
                 <h4>За весь год</h4>
-                <canvas  id="year-sells-objects-pie"></canvas>
+                <div id="year-sells-objects-pie-canvas-wrapper">
+                    <canvas  id="year-sells-objects-pie"></canvas>
+                </div>
                 <div class="stat-control">
                     <label>Год: 
-                        <select class="year">
+                        <select id="change-year-sells-objects-pie" class="year">
                         </select>
                     </label>
                 </div>
             </div>
             <div class="canvas-holder-pie">
                 <h4>За месяц</h4>
-                <canvas  id="month-sells-objects-pie"></canvas>
+                <div id="month-sells-objects-pie-canvas-wrapper">
+                    <canvas  id="month-sells-objects-pie"></canvas>
+                </div>
                 <div class="stat-control">
                     <label>Месяц: 
-                        <select class="month">
+                        <select id="change-month-sells-objects-pie" class="month">
                             <option value="1">Январь</option>
                             <option value="2">Февраль</option>
                             <option value="3">Март</option>
