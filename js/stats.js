@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
 	var today = new Date(),
 		year = today.getFullYear(),
 		month = today.getMonth()+1,
@@ -16,6 +17,7 @@ $(document).ready(function () {
 			{label:'Коттедж',color:'rgba(111,181,205,1)',highlightColor:'rgba(111,181,205,0.7)',fillColor:'rgba(111,181,205,0.2)'},
 			{label:'Многокомнатная',color:'rgba(15,18,25,1)',highlightColor:'rgba(15,18,25,0.7)',fillColor:'rgba(15,18,25,0.2)'}
 	];
+	
 	function getYearSellsObjects(year) {
 		
 		$.ajax({
@@ -24,142 +26,34 @@ $(document).ready(function () {
 			url: "/stats/yearsellsobjects",  
 			data: 'year='+year,
 			success: function(data){
-
 				var response=JSON.parse(data),
-					months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+					datasets= [];
+
+				$.each(categoryObjectsTempelate, function(i, item) {
+				    datasets.push(
+				        {
+				            label: categoryObjectsTempelate[i].label,
+				            fillColor: categoryObjectsTempelate[i].fillColor,
+				            strokeColor: categoryObjectsTempelate[i].color,
+				            pointColor: categoryObjectsTempelate[i].color,
+				            pointStrokeColor: "#fff",
+				            pointHighlightFill: "#fff",
+				            pointHighlightStroke: categoryObjectsTempelate[i].color,
+				            data: response[i]
+				        }
+				    );
+				});
+
+				var months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
 					dataYearSellsObjects = {
 				    labels: months,
-				    datasets: [
-				        {
-				            label: categoryObjectsTempelate[0].label,
-				            fillColor: categoryObjectsTempelate[0].fillColor,
-				            strokeColor: categoryObjectsTempelate[0].color,
-				            pointColor: categoryObjectsTempelate[0].color,
-				            pointStrokeColor: "#fff",
-				            pointHighlightFill: "#fff",
-				            pointHighlightStroke: categoryObjectsTempelate[0].color,
-				            data: response[1]
-				        },
-				        {
-				            label: categoryObjectsTempelate[1].label,
-				            fillColor: categoryObjectsTempelate[1].fillColor,
-				            strokeColor: categoryObjectsTempelate[1].color,
-				            pointColor: categoryObjectsTempelate[1].color,
-				            pointStrokeColor: "#fff",
-				            pointHighlightFill: "#fff",
-				            pointHighlightStroke: categoryObjectsTempelate[1].color,
-				            data: response[2]
-				        },
-				        {
-				            label: categoryObjectsTempelate[2].label,
-				            fillColor: categoryObjectsTempelate[2].fillColor,
-				            strokeColor: categoryObjectsTempelate[2].color,
-				            pointColor: categoryObjectsTempelate[2].color,
-				            pointStrokeColor: "#fff",
-				            pointHighlightFill: "#fff",
-				            pointHighlightStroke: categoryObjectsTempelate[2].color,
-				            data: response[3]
-				        },
-				        {
-				            label: categoryObjectsTempelate[3].label,
-				            fillColor: categoryObjectsTempelate[3].fillColor,
-				            strokeColor: categoryObjectsTempelate[3].color,
-				            pointColor: categoryObjectsTempelate[3].color,
-				            pointStrokeColor: "#fff",
-				            pointHighlightFill: "#fff",
-				            pointHighlightStroke: categoryObjectsTempelate[3].color,
-				            data: response[4]
-				        },
-						{
-				            label: categoryObjectsTempelate[4].label,
-				            fillColor: categoryObjectsTempelate[4].fillColor,
-				            strokeColor: categoryObjectsTempelate[4].color,
-				            pointColor: categoryObjectsTempelate[4].color,
-				            pointStrokeColor: "#fff",
-				            pointHighlightFill: "#fff",
-				            pointHighlightStroke: categoryObjectsTempelate[4].color,
-				            data: response[5]
-				        },
-						{
-				            label: categoryObjectsTempelate[5].label,
-				            fillColor: categoryObjectsTempelate[5].fillColor,
-				            strokeColor: categoryObjectsTempelate[5].color,
-				            pointColor: categoryObjectsTempelate[5].color,
-				            pointStrokeColor: "#fff",
-				            pointHighlightFill: "#fff",
-				            pointHighlightStroke: categoryObjectsTempelate[5].color,
-				            data: response[6]
-				        },
-						{
-				            label: categoryObjectsTempelate[6].label,
-				            fillColor: categoryObjectsTempelate[6].fillColor,
-				            strokeColor: categoryObjectsTempelate[6].color,
-				            pointColor: categoryObjectsTempelate[6].color,
-				            pointStrokeColor: "#fff",
-				            pointHighlightFill: "#fff",
-				            pointHighlightStroke: categoryObjectsTempelate[6].color,
-				            data: response[7]
-				        },
-						{
-				            label: categoryObjectsTempelate[7].label,
-				            fillColor: categoryObjectsTempelate[7].fillColor,
-				            strokeColor: categoryObjectsTempelate[7].color,
-				            pointColor: categoryObjectsTempelate[7].color,
-				            pointStrokeColor: "#fff",
-				            pointHighlightFill: "#fff",
-				            pointHighlightStroke: categoryObjectsTempelate[7].color,
-				            data: response[8]
-				        },
-						{
-				            label: categoryObjectsTempelate[8].label,
-				            fillColor: categoryObjectsTempelate[8].fillColor,
-				            strokeColor: categoryObjectsTempelate[8].color,
-				            pointColor: categoryObjectsTempelate[8].color,
-				            pointStrokeColor: "#fff",
-				            pointHighlightFill: "#fff",
-				            pointHighlightStroke: categoryObjectsTempelate[8].color,
-				            data: response[9]
-				        },
-						{
-				            label: categoryObjectsTempelate[9].label,
-				            fillColor: categoryObjectsTempelate[9].fillColor,
-				            strokeColor: categoryObjectsTempelate[9].color,
-				            pointColor: categoryObjectsTempelate[9].color,
-				            pointStrokeColor: "#fff",
-				            pointHighlightFill: "#fff",
-				            pointHighlightStroke: categoryObjectsTempelate[9].color,
-				            data: response[10]
-				        },
-						{
-				            label: categoryObjectsTempelate[10].label,
-				            fillColor: categoryObjectsTempelate[10].fillColor,
-				            strokeColor: categoryObjectsTempelate[10].color,
-				            pointColor: categoryObjectsTempelate[10].color,
-				            pointStrokeColor: "#fff",
-				            pointHighlightFill: "#fff",
-				            pointHighlightStroke: categoryObjectsTempelate[10].color,
-				            data: response[11]
-				        },
-						{
-				            label: categoryObjectsTempelate[11].label,
-				            fillColor: categoryObjectsTempelate[11].fillColor,
-				            strokeColor: categoryObjectsTempelate[11].color,
-				            pointColor: categoryObjectsTempelate[11].color,
-				            pointStrokeColor: "#fff",
-				            pointHighlightFill: "#fff",
-				            pointHighlightStroke: categoryObjectsTempelate[11].color,
-				            data: response[14]
-				        },
-				    ]
+				    datasets: datasets
 				};
 				var context = document.getElementById("year-sells-objects"),
 					yearSellsObjects = context.getContext("2d"),
 					legendYearSellsObjects=document.getElementById("legend-year-sells-objects");
 
-				// Возобновляем матрицу трансформации
-				
-
-				var lineChartSellsObject=new Chart(yearSellsObjects).Line(dataYearSellsObjects, {
+				new Chart(yearSellsObjects).Line(dataYearSellsObjects, {
 					    bezierCurve: false,
 						responsive:true,
 						scaleGridLineWidth : 1,
@@ -171,11 +65,7 @@ $(document).ready(function () {
 						}
 					});
 
-				lineChartSellsObject.update();
-
 				legend(legendYearSellsObjects, dataYearSellsObjects);	
-					
-
 			}	
 		});
 	}

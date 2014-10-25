@@ -6,6 +6,7 @@ class StatsGetDataset
 	{
 		$response=array();
 		$rowJSON=array();
+		$final_response=array();
 		$connection=Yii::app()->db; 
 		$year = new CDbExpression('YEAR(date)');
 		$month = new CDbExpression('MONTH(date)');
@@ -31,7 +32,14 @@ class StatsGetDataset
 
 			$response[$i]=$rowJSON;
 		}
-		echo json_encode($response);
+		$j = 0;
+		foreach ($response as $value)
+		{
+			$final_response[$j]=$value;
+			$j++;
+
+		}
+		echo json_encode($final_response);
 	}
 
 	public function yearSellsObjectsPie($current_year)
@@ -76,4 +84,4 @@ class StatsGetDataset
 		echo json_encode($response);
 	}
 
-}/
+}
