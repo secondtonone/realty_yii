@@ -7815,3 +7815,14 @@ Stack trace:
 REQUEST_URI=/stats/yearsellsobjects
 HTTP_REFERER=http://example.com/stats/index
 ---
+2014/10/26 14:04:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "pricesellsobjects".' in E:\xampp\htdocs\example.com\www\framework\web\CController.php:483
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(270): CController->missingAction('pricesellsobjec...')
+#1 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('pricesellsobjec...')
+#2 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('stats/pricesell...')
+#3 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\example.com\www\index.php(12): CApplication->run()
+#5 {main}
+REQUEST_URI=/stats/pricesellsobjects
+HTTP_REFERER=http://example.com/stats/index
+---

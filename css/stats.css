@@ -37,13 +37,12 @@
 }
 .canvas-holder-pie {
 	padding: 20px;
-	max-width:400px;
+	max-width:480px;
 	width:100%;
 	margin: 0;
 	float: left;
 }
-.canvas-holder h4,
-.canvas-holder-pie h4 {
+.stat-container h4 {
 	text-align: center;
 }
 .legend {
@@ -67,4 +66,8 @@
 }
 .legend-warapper {
 	float: left;	
+}
+.stat-container .table-wrapper{
+	float: left;
+	width: 300px;
 }
