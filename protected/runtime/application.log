@@ -7826,3 +7826,99 @@ Stack trace:
 REQUEST_URI=/stats/pricesellsobjects
 HTTP_REFERER=http://example.com/stats/index
 ---
+2014/10/27 08:01:00 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetch(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(date)=1 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=' at line 1. Выполнявшийся SQL-запрос: SELECT ((SELECT COUNT(id_object) FROM objects MONTH(date)=1 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=1 AND YEAR(date)=2014)) as jan,((SELECT COUNT(id_object) FROM objects MONTH(date)=2 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=2 AND YEAR(date)=2014)) as feb,((SELECT COUNT(id_object) FROM objects MONTH(date)=3 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=3 AND YEAR(date)=2014)) as mar,((SELECT COUNT(id_object) FROM objects MONTH(date)=4 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=4 AND YEAR(date)=2014)) as apr,((SELECT COUNT(id_object) FROM objects MONTH(date)=5 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=5 AND YEAR(date)=2014)) as may,((SELECT COUNT(id_object) FROM objects MONTH(date)=6 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=6 AND YEAR(date)=2014)) as jun,((SELECT COUNT(id_object) FROM objects MONTH(date)=7 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=7 AND YEAR(date)=2014)) as jul,((SELECT COUNT(id_object) FROM objects MONTH(date)=8 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=8 AND YEAR(date)=2014)) as aug,((SELECT COUNT(id_object) FROM objects MONTH(date)=9 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=9 AND YEAR(date)=2014)) as sep,((SELECT COUNT(id_object) FROM objects MONTH(date)=10 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=10 AND YEAR(date)=2014)) as oct,((SELECT COUNT(id_object) FROM objects MONTH(date)=11 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=11 AND YEAR(date)=2014)) as nov,((SELECT COUNT(id_object) FROM objects MONTH(date)=12 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=12 AND YEAR(date)=2014)) as dec FROM objects LIMIT 1.
+in E:\xampp\htdocs\example.com\www\protected\components\StatsGetDataset.php (125)
+in E:\xampp\htdocs\example.com\www\protected\controllers\StatsController.php (83)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/27 08:01:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(date)=1 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=' at line 1. The SQL statement executed was: SELECT ((SELECT COUNT(id_object) FROM objects MONTH(date)=1 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=1 AND YEAR(date)=2014)) as jan,((SELECT COUNT(id_object) FROM objects MONTH(date)=2 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=2 AND YEAR(date)=2014)) as feb,((SELECT COUNT(id_object) FROM objects MONTH(date)=3 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=3 AND YEAR(date)=2014)) as mar,((SELECT COUNT(id_object) FROM objects MONTH(date)=4 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=4 AND YEAR(date)=2014)) as apr,((SELECT COUNT(id_object) FROM objects MONTH(date)=5 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=5 AND YEAR(date)=2014)) as may,((SELECT COUNT(id_object) FROM objects MONTH(date)=6 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=6 AND YEAR(date)=2014)) as jun,((SELECT COUNT(id_object) FROM objects MONTH(date)=7 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=7 AND YEAR(date)=2014)) as jul,((SELECT COUNT(id_object) FROM objects MONTH(date)=8 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=8 AND YEAR(date)=2014)) as aug,((SELECT COUNT(id_object) FROM objects MONTH(date)=9 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=9 AND YEAR(date)=2014)) as sep,((SELECT COUNT(id_object) FROM objects MONTH(date)=10 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=10 AND YEAR(date)=2014)) as oct,((SELECT COUNT(id_object) FROM objects MONTH(date)=11 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=11 AND YEAR(date)=2014)) as nov,((SELECT COUNT(id_object) FROM objects MONTH(date)=12 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients MONTH(date)=12 AND YEAR(date)=2014)) as dec FROM objects LIMIT 1' in E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 E:\xampp\htdocs\example.com\www\protected\components\StatsGetDataset.php(125): CDbCommand->queryRow()
+#2 E:\xampp\htdocs\example.com\www\protected\controllers\StatsController.php(83): StatsGetDataset->yearDynamicDB('2014')
+#3 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): StatsController->actionYearDynamicDB()
+#4 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#11 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('yeardynamicdb')
+#13 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('stats/yeardynam...')
+#14 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 E:\xampp\htdocs\example.com\www\index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/stats/yeardynamicdb
+HTTP_REFERER=http://example.com/stats/index
+---
+2014/10/27 08:13:06 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetch(): SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dec FROM objects LIMIT 1' at line 1. Выполнявшийся SQL-запрос: SELECT ((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=1 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=1 AND YEAR(date)=2014)) as jan,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=2 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=2 AND YEAR(date)=2014)) as feb,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=3 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=3 AND YEAR(date)=2014)) as mar,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=4 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=4 AND YEAR(date)=2014)) as apr,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=5 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=5 AND YEAR(date)=2014)) as may,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=6 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=6 AND YEAR(date)=2014)) as jun,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=7 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=7 AND YEAR(date)=2014)) as jul,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=8 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=8 AND YEAR(date)=2014)) as aug,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=9 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=9 AND YEAR(date)=2014)) as sep,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=10 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=10 AND YEAR(date)=2014)) as oct,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=11 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=11 AND YEAR(date)=2014)) as nov,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=12 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=12 AND YEAR(date)=2014)) as dec FROM objects LIMIT 1.
+in E:\xampp\htdocs\example.com\www\protected\components\StatsGetDataset.php (125)
+in E:\xampp\htdocs\example.com\www\protected\controllers\StatsController.php (83)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/27 08:13:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dec FROM objects LIMIT 1' at line 1. The SQL statement executed was: SELECT ((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=1 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=1 AND YEAR(date)=2014)) as jan,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=2 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=2 AND YEAR(date)=2014)) as feb,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=3 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=3 AND YEAR(date)=2014)) as mar,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=4 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=4 AND YEAR(date)=2014)) as apr,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=5 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=5 AND YEAR(date)=2014)) as may,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=6 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=6 AND YEAR(date)=2014)) as jun,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=7 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=7 AND YEAR(date)=2014)) as jul,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=8 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=8 AND YEAR(date)=2014)) as aug,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=9 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=9 AND YEAR(date)=2014)) as sep,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=10 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=10 AND YEAR(date)=2014)) as oct,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=11 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=11 AND YEAR(date)=2014)) as nov,((SELECT COUNT(id_object) FROM objects WHERE MONTH(date)=12 AND YEAR(date)=2014)+(SELECT COUNT(id_client) FROM clients WHERE MONTH(date)=12 AND YEAR(date)=2014)) as dec FROM objects LIMIT 1' in E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 E:\xampp\htdocs\example.com\www\protected\components\StatsGetDataset.php(125): CDbCommand->queryRow()
+#2 E:\xampp\htdocs\example.com\www\protected\controllers\StatsController.php(83): StatsGetDataset->yearDynamicDB('2014')
+#3 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): StatsController->actionYearDynamicDB()
+#4 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#11 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('yeardynamicdb')
+#13 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('stats/yeardynam...')
+#14 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 E:\xampp\htdocs\example.com\www\index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/stats/yeardynamicdb
+HTTP_REFERER=http://example.com/stats/index
+---
+2014/10/27 08:22:13 [error] [php] Undefined variable: j (E:\xampp\htdocs\example.com\www\protected\components\StatsGetDataset.php:129)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): StatsController->runAction()
+#2 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): StatsController->filterAccessControl()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): StatsController->runActionWithFilters()
+#8 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): StatsController->run()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 E:\xampp\htdocs\example.com\www\index.php(12): CWebApplication->run()
+REQUEST_URI=/stats/yeardynamicdb
+in E:\xampp\htdocs\example.com\www\protected\components\StatsGetDataset.php (129)
+in E:\xampp\htdocs\example.com\www\protected\controllers\StatsController.php (83)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/27 17:27:30 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchColumn(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'j.id_type_event' in 'where clause'. Выполнявшийся SQL-запрос: SELECT COUNT(*) FROM `users_journal` u WHERE j.id_type_event = '3'.
+in E:\xampp\htdocs\example.com\www\protected\components\AdminGetData.php (192)
+in E:\xampp\htdocs\example.com\www\protected\controllers\JournalController.php (46)
+in E:\xampp\htdocs\example.com\www\index.php (12)
+2014/10/27 17:27:30 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'j.id_type_event' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `users_journal` u WHERE j.id_type_event = '3'' in E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 E:\xampp\htdocs\example.com\www\protected\components\AdminGetData.php(192): CDbCommand->queryScalar()
+#2 E:\xampp\htdocs\example.com\www\protected\controllers\JournalController.php(46): AdminGetData->getEvents(Array)
+#3 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): JournalController->actionGetEvents()
+#4 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#11 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('getevents')
+#13 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('journal/geteven...')
+#14 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 E:\xampp\htdocs\example.com\www\index.php(12): CApplication->run()
+#16 {main}
+REQUEST_URI=/journal/getevents
+HTTP_REFERER=http://example.com/journal/index
+---

@@ -110,5 +110,74 @@ class StatsGetDataset
 
 		echo json_encode($response);
 	}
+	public function yearDynamicDB($current_year)
+	{
+		$response=array();
+		$rowJSON=array();
+		$connection=Yii::app()->db; 
+		$month = new CDbExpression('MONTH(date)');
+		$year = new CDbExpression('YEAR(date)');
+		$j=0;
+		
+		$sql = 'SELECT ((SELECT COUNT(id_object) FROM objects WHERE '.$month.'=1 AND '.$year.'='.$current_year.')+(SELECT COUNT(id_client) FROM clients WHERE '.$month.'=1 AND '.$year.'='.$current_year.')),((SELECT COUNT(id_object) FROM objects WHERE '.$month.'=2 AND '.$year.'='.$current_year.')+(SELECT COUNT(id_client) FROM clients WHERE '.$month.'=2 AND '.$year.'='.$current_year.')),((SELECT COUNT(id_object) FROM objects WHERE '.$month.'=3 AND '.$year.'='.$current_year.')+(SELECT COUNT(id_client) FROM clients WHERE '.$month.'=3 AND '.$year.'='.$current_year.')),((SELECT COUNT(id_object) FROM objects WHERE '.$month.'=4 AND '.$year.'='.$current_year.')+(SELECT COUNT(id_client) FROM clients WHERE '.$month.'=4 AND '.$year.'='.$current_year.')),((SELECT COUNT(id_object) FROM objects WHERE '.$month.'=5 AND '.$year.'='.$current_year.')+(SELECT COUNT(id_client) FROM clients WHERE '.$month.'=5 AND '.$year.'='.$current_year.')),((SELECT COUNT(id_object) FROM objects WHERE '.$month.'=6 AND '.$year.'='.$current_year.')+(SELECT COUNT(id_client) FROM clients WHERE '.$month.'=6 AND '.$year.'='.$current_year.')),((SELECT COUNT(id_object) FROM objects WHERE '.$month.'=7 AND '.$year.'='.$current_year.')+(SELECT COUNT(id_client) FROM clients WHERE '.$month.'=7 AND '.$year.'='.$current_year.')),((SELECT COUNT(id_object) FROM objects WHERE '.$month.'=8 AND '.$year.'='.$current_year.')+(SELECT COUNT(id_client) FROM clients WHERE '.$month.'=8 AND '.$year.'='.$current_year.')),((SELECT COUNT(id_object) FROM objects WHERE '.$month.'=9 AND '.$year.'='.$current_year.')+(SELECT COUNT(id_client) FROM clients WHERE '.$month.'=9 AND '.$year.'='.$current_year.')),((SELECT COUNT(id_object) FROM objects WHERE '.$month.'=10 AND '.$year.'='.$current_year.')+(SELECT COUNT(id_client) FROM clients WHERE '.$month.'=10 AND '.$year.'='.$current_year.')),((SELECT COUNT(id_object) FROM objects WHERE '.$month.'=11 AND '.$year.'='.$current_year.')+(SELECT COUNT(id_client) FROM clients WHERE '.$month.'=11 AND '.$year.'='.$current_year.')),((SELECT COUNT(id_object) FROM objects WHERE '.$month.'=12 AND '.$year.'='.$current_year.')+(SELECT COUNT(id_client) FROM clients WHERE '.$month.'=12 AND '.$year.'='.$current_year.')) FROM objects LIMIT 1';
+		
+		$command=$connection->createCommand($sql);
+		$row=$command->queryRow();
+
+		$response[]=$row;
+		
+		
+		echo json_encode($response);
+	}
+	public function systemStats()
+	{
+		$response=new stdClass();
+		$rowJSON=array();
+		$connection=Yii::app()->db;
+		$now = new CDbExpression('NOW()');
+		$current_month = new CDbExpression('MONTH('.$now.')');
+		$event_month = new CDbExpression('MONTH(time_event)');
+		$current_day = new CDbExpression('DAYOFMONTH('.$now.')');
+		$day_of_year_time_event = new CDbExpression('DAYOFYEAR(time_event)');
+		$day_of_year_now = new CDbExpression('DAYOFYEAR('.$now.')');
+
+		$sql = 'SELECT (SELECT COUNT(id_object) FROM  objects) as count_all,(SELECT COUNT(id_object) FROM  objects WHERE id_sell_out_status=1) as selling,(SELECT COUNT(id_object) FROM  objects WHERE id_sell_out_status=2) as sells_out,(SELECT COUNT(id_object) FROM  objects WHERE id_sell_out_status=3 AND id_sell_out_status=4) as hide_out FROM  objects LIMIT 1';
+		$command=$connection->createCommand($sql);
+		$row=$command->queryRow();
+		$response->objects=$row;
+		$command->reset();
+
+		$sql = 'SELECT (SELECT COUNT(id_client) FROM  clients) as count_all,(SELECT COUNT(id_client) FROM  clients WHERE id_status=1) as active,(SELECT COUNT(id_client) FROM  clients WHERE id_status=2) as disactive FROM  clients LIMIT 1';
+		$command=$connection->createCommand($sql);
+		$row=$command->queryRow();
+		$response->clients=$row;
+		$command->reset();
+
+		$sql = 'SELECT (SELECT COUNT(id_user) FROM  users) as count_all,(SELECT COUNT(id_user) FROM  users WHERE active=1) as active,(SELECT COUNT(id_user) FROM  users WHERE active=2) as disactive FROM  users LIMIT 1';
+		$command=$connection->createCommand($sql);
+		$row=$command->queryRow();
+		$response->users=$row;
+		$command->reset();
+
+		$sql = 'SELECT (SELECT COUNT(id_user) FROM  users) as count_all,(SELECT COUNT(id_user) FROM  users WHERE active=1) as active,(SELECT COUNT(id_user) FROM  users WHERE active=2) as disactive FROM  users LIMIT 1';
+		$command=$connection->createCommand($sql);
+		$row=$command->queryRow();
+		$response->users=$row;
+		$command->reset();
+
+		$sql = 'SELECT (SELECT COUNT(id_event)/'.$current_day.' FROM  users_journal WHERE '.$event_month.'='.$current_month.' AND (id_type_event=6 OR id_type_event=5)) as count_all,(SELECT COUNT(id_event)/'.$current_day.' FROM  users_journal WHERE id_type_event=5 AND '.$event_month.'='.$current_month.') as objects,(SELECT COUNT(id_event)/'.$current_day.' FROM  users_journal WHERE id_type_event=6 AND '.$event_month.'='.$current_month.') as clients FROM users_journal LIMIT 1';
+		$command=$connection->createCommand($sql);
+		$row=$command->queryRow();
+		$response->records=$row;
+		$command->reset();
+	
+		$sql = 'SELECT (SELECT COUNT(id_event)/7 FROM  users_journal WHERE '.$day_of_year_time_event.'>'.$day_of_year_now.'-7 AND id_type_event=3) as week,(SELECT COUNT(id_event)/30 FROM  users_journal WHERE id_type_event=3 AND '.$day_of_year_time_event.'>'.$day_of_year_now.'-30) as month,(SELECT COUNT(id_event)/60 FROM  users_journal WHERE id_type_event=3 AND '.$day_of_year_time_event.'>'.$day_of_year_now.'-60) as monthplus FROM users_journal LIMIT 1';
+		$command=$connection->createCommand($sql);
+		$row=$command->queryRow();
+		$response->sellouts=$row;
+		$command->reset();
+		
+		echo json_encode($response);
+	}
 
 }

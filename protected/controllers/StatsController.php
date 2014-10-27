@@ -77,6 +77,16 @@ class StatsController extends CController
 		$stats = new StatsGetDataset();
 		$stats->yearPriceObjects($_POST['year']);	
 	}
+	public function actionYearDynamicDB()
+	{
+		$stats = new StatsGetDataset();
+		$stats->yearDynamicDB($_POST['year']);	
+	}
+	public function actionSystemStats()
+	{
+		$stats = new StatsGetDataset();
+		$stats->systemStats();	
+	}
 	/**
 	 * This is the action to handle external exceptions.
 	 */

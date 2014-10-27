@@ -165,7 +165,6 @@ $(document).ready(function () {
 				        }
 				    );
 				});
-				console.log(datasets);
 				var months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
 					dataYearPriceObjects = {
 				    labels: months,
@@ -192,10 +191,90 @@ $(document).ready(function () {
 		});
 	}
 
+	function getYearDynamicDB(year) {
+		
+		$.ajax({
+			type: "POST",
+			async: false,
+			url: "/stats/yeardynamicdb",  
+			data: 'year='+year,
+			success: function(data){
+
+				var response=JSON.parse(data),
+					datasets= [
+						{
+				            label: categoryObjectsTempelate[9].label,
+				            fillColor: categoryObjectsTempelate[9].fillColor,
+				            strokeColor: categoryObjectsTempelate[9].color,
+				            pointColor: categoryObjectsTempelate[9].color,
+				            pointStrokeColor: "#fff",
+				            pointHighlightFill: "#fff",
+				            pointHighlightStroke: categoryObjectsTempelate[9].color,
+				            data: response[0]
+				        }
+				    ];
+
+				var months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+					dataYearDynamicDB = {
+				    labels: months,
+				    datasets: datasets
+				};
+				var context = document.getElementById("year-dynamic-db"),
+					yearDynamicDB = context.getContext("2d");
+
+				new Chart(yearDynamicDB).Line(dataYearDynamicDB, {
+					    bezierCurve: true,
+						responsive:true,
+						scaleGridLineWidth : 1,
+						datasetFill : true,
+						tooltipTemplate: function(valuesObject){
+									  /*console.log(valuesObject);*/
+									  // do different things here based on whatever you want;
+						return valuesObject.value+' записей';
+						}
+					});	
+			}	
+		});
+	}
+
+	function getSystemStats() {
+		
+		$.ajax({
+			type: "POST",
+			async: false,
+			url: "/stats/systemstats",  
+			success: function(data){
+
+				var response=JSON.parse(data);
+
+				$('#objects-all').html(response.objects.count_all);
+				$('#objects-selling').html(response.objects.selling);
+				$('#objects-sells-out').html(response.objects.sells_out);
+				$('#objects-hide-out').html(response.objects.hide_out);
+
+				$("#clients-all").html(response.clients.count_all);
+				$("#clients-active").html(response.clients.active);
+				$("#clients-disactive").html(response.clients.disactive);
+
+				$("#users-all").html(response.users.count_all);
+				$("#users-active").html(response.users.active);
+				$("#users-disactive").html(response.users.disactive);
+
+				$("#all-records").html(response.records.count_all);
+				$("#objects-records").html(response.records.objects);
+				$("#clients-records").html(response.records.clients);
+
+				$("#week-sell-outs").html(response.sellouts.week);
+				$("#month-sell-outs").html(response.sellouts.month);
+				$("#monthplus-sell-outs").html(response.sellouts.monthplus);
+			}	
+		});
+	}
+
 	function setYearSelect (year) {
 		var selectOptions='';
 		
-		for (var i=2014;i<year;i++)//сменить на 2014
+		for (var i=2014;i<year;i++)
 		{
 			selectOptions += '<option value="'+i+'">'+i+'</option>';		
 		}
@@ -217,6 +296,8 @@ $(document).ready(function () {
 	getYearSellsObjectsPie(year);
 	getMonthSellsObjectsPie(year,month); 
 	getYearPriceObjects(year);
+	getYearDynamicDB(year);
+	getSystemStats();
 	
 
 	$("#change-year-sells-objects").change(function() {
@@ -255,6 +336,14 @@ $(document).ready(function () {
   			$('#year-price-objects-canvas-wrapper').append('<canvas id="year-price-objects"><canvas>');			
 			getYearPriceObjects(year);				
 		//});
+	});
+	$("#change-year-dynamic-db").change(function() {
+			
+		//$("option:selected", $(this)).each(function() {
+			var year=$("#change-year-dynamic-db :selected").val();
+			$('#year-dynamic-db').remove(); // this is my <canvas> element
+  			$('#year-dynamic-db-canvas-wrapper').append('<canvas id="year-dynamic-db"><canvas>');			
+			getYearDynamicDB(year);
 	});
 					
 });

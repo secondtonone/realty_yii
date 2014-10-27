@@ -77,19 +77,19 @@
                     <h4>Всего записей в БД</h4>
                     <table>
                         <tbody>
-                            <tr><td>Объекы недвижимости</td><td></td></tr>
-                            <tr><td>Всего</td><td>23</td></tr>
-                            <tr><td>В продаже</td><td>332</td></tr>
-                            <tr><td>Продано</td><td>323</td></tr>
-                            <tr><td>Снято с продажи</td><td>233</td></tr>
-                            <tr><td>Покупателей</td><td></td></tr>
-                            <tr><td>Всего</td><td>323</td></tr>
-                            <tr><td>Активных</td><td>33</td></tr>
-                            <tr><td>Не активных</td><td>23</td></tr>
-                            <tr><td>Пользователей</td><td></td></tr>
-                            <tr><td>Всего</td><td>343</td></tr>
-                            <tr><td>Активных</td><td>34</td></tr>
-                            <tr><td>Не активных</td><td>3443</td></td>
+                            <tr><td class="table-sub-title" colspan="2">Объекы недвижимости</td></tr>
+                            <tr><td>Всего:</td><td class="table-value" id="objects-all"></td></tr>
+                            <tr><td>В продаже:</td><td class="table-value" id="objects-selling"></td></tr>
+                            <tr><td>Продано:</td><td class="table-value" id="objects-sells-out"></td></tr>
+                            <tr><td>Снято с продажи:</td><td class="table-value" id="objects-hide-out"></td></tr>
+                            <tr><td class="table-sub-title" colspan="2">Покупателей</td></tr>
+                            <tr><td>Всего:</td><td class="table-value" id="clients-all"></td></tr>
+                            <tr><td>Активных:</td><td class="table-value" id="clients-active"></td></tr>
+                            <tr><td>Не активных:</td><td class="table-value" id="clients-disactive"></td></tr>
+                            <tr><td class="table-sub-title" colspan="2">Пользователей</td></tr>
+                            <tr><td>Всего:</td><td class="table-value"  id="users-all"></td></tr>
+                            <tr><td>Активных:</td><td class="table-value" id="users-active"></td></tr>
+                            <tr><td>Не активных:</td><td class="table-value" id="users-disactive"></td></td>
                         </tbody>
                     </table>
                 </div>
@@ -97,25 +97,25 @@
                     <h4>Активность пользователей</h4>
                     <table>
                         <tbody>
-                            <tr><td>Записей в день</td><td></td></tr>
-                            <tr><td>Объекты:</td><td>344</td></tr>
-                            <tr><td>Покупатели:</td><td>234</td></tr>
-                            <tr><td>Продажи</td><td></td></tr>
-                            <tr><td>В неделю:</td><td>3434</td></tr>
-                            <tr><td>За месяц:</td><td>344</td></tr>
-                            <tr><td>В год:</td><td>242</td></tr>
-                            <tr><td></td><td></td></tr>
+                            <tr><td class="table-sub-title" colspan="2">Записей в день</td></tr>
+                            <tr><td>Всего:</td><td class="table-value" id="all-records"></td></tr>
+                            <tr><td>Объекты:</td><td class="table-value" id="objects-records"></td></tr>
+                            <tr><td>Покупатели:</td><td class="table-value" id="clients-records"></td></tr>
+                            <tr><td class="table-sub-title" colspan="2">Коэфицент продаж</td></tr>
+                            <tr><td>За 7 дней:</td><td class="table-value" id="week-sell-outs"></td></tr>
+                            <tr><td>За 30 дней:</td><td class="table-value" id="month-sell-outs"></td></tr>
+                            <tr><td>За 60 дней:</td><td class="table-value" id="monthplus-sell-outs"></td></tr>
                         </tbody>
                     </table>
                 </div>
                 <div class="canvas-holder-pie">
                     <h4>Динамика роста БД</h4>
-                    <div id="year-sells-objects-pie-canvas-wrapper1">
-                        <canvas  id="year-sells-objects-pie1"></canvas>
+                    <div id="year-dynamic-db-canvas-wrapper">
+                        <canvas  id="year-dynamic-db"></canvas>
                     </div>
                     <div class="stat-control">
                         <label>Год: 
-                            <select id="change-year-sells-objects-pie1" class="year">
+                            <select id="change-year-dynamic-db" class="year">
                             </select>
                         </label>
                     </div>
