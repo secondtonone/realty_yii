@@ -1,8 +1,8 @@
 .stat-container {
 	border: 1px solid #353535;
-	margin-top:10px;
+	margin:10px auto 0;
 	overflow: hidden;
-	min-width: 1300px;
+	max-width: 1300px;
 }
 .caption {
 	background: #353535;

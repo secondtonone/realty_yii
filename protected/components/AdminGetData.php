@@ -548,7 +548,7 @@ class AdminGetData
 		}
 						 
 				//определяем количество записей в таблице
-		$sql="SELECT COUNT(`id_object`) AS count FROM `objects` o ".$qWhere;
+		$sql="SELECT COUNT(*) AS count FROM `users` ".$qWhere;
 		$command=$connection->createCommand($sql);
 		$totalRows = $command->queryScalar();
 								

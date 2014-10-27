@@ -7922,3 +7922,27 @@ Stack trace:
 REQUEST_URI=/journal/getevents
 HTTP_REFERER=http://example.com/journal/index
 ---
+2014/10/27 21:56:35 [error] [exception.CException] exception 'CException' with message 'Для использования авторизации, построенной на cookie, свойство WebUser.allowAutoLogin должно принять значение "true".' in E:\xampp\htdocs\example.com\www\framework\web\auth\CWebUser.php:240
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\protected\models\User.php(62): CWebUser->login(Object(UserIdentity), 86400)
+#1 E:\xampp\htdocs\example.com\www\framework\validators\CInlineValidator.php(42): User->authenticate('password', Array)
+#2 E:\xampp\htdocs\example.com\www\framework\validators\CValidator.php(213): CInlineValidator->validateAttribute(Object(User), 'password')
+#3 E:\xampp\htdocs\example.com\www\framework\base\CModel.php(159): CValidator->validate(Object(User), NULL)
+#4 E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php(63): CModel->validate()
+#5 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): EnterController->actionLogin()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#10 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#11 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#12 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#13 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('login')
+#15 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('enter/login')
+#16 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#17 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#18 {main}
+REQUEST_URI=/enter/login
+HTTP_REFERER=http://example.com/enter/index
+---
