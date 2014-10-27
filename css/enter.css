@@ -4,11 +4,10 @@
 }
 
 .login-wrapper {
-	height:580px;
 	width: 355px;
 	margin: auto;
 	position:absolute;
-	top:50%;
+	top:30%;
 	bottom:0;
 	left:0;
 	right:0;
