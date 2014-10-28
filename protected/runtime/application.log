@@ -7946,3 +7946,11 @@ Stack trace:
 REQUEST_URI=/enter/login
 HTTP_REFERER=http://example.com/enter/index
 ---
+2014/10/28 08:56:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
