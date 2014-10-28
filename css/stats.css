@@ -52,12 +52,12 @@
 	width:200px;
 	border: 1px solid black;
 }
-.stat-container canvas { 
+.stat-container canvas {
 	margin: 0 auto;
 	width: 100% !important;
     max-width: 1200px;
-    height: auto !important; 
-} 
+    height: auto !important;
+}
 .legend .title {
     display: block;
     margin: 0.5em;
@@ -67,7 +67,7 @@
 	clear:both;
 }
 .legend-warapper {
-	float: left;	
+	float: left;
 }
 .stat-container .table-wrapper {
 	float: left;

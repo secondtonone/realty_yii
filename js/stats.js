@@ -15,15 +15,15 @@ $(document).ready(function () {
 			{label:'Дача',color:'rgba(143, 0, 255,1)',highlightColor:'rgba(143, 0, 255,0.7)',fillColor:'rgba(143, 0, 255,0.2)'},
 			{label:'Коттедж',color:'rgba(111,181,205,1)',highlightColor:'rgba(111,181,205,0.7)',fillColor:'rgba(111,181,205,0.2)'},
 			{label:'Земельный участок',color:'rgba(231,150,164,1)',highlightColor:'rgba(231,150,164,0.7)',fillColor:'rgba(231,150,164,0.2)'},
-			{label:'1,5-комнатная',color:'rgba(255, 127, 0,1)',highlightColor:'rgba(255, 127, 0,0.7)',fillColor:'rgba(255, 127, 0,0.2)'}			
+			{label:'1,5-комнатная',color:'rgba(255, 127, 0,1)',highlightColor:'rgba(255, 127, 0,0.7)',fillColor:'rgba(255, 127, 0,0.2)'}
 	];
-	
+
 	function getYearSellsObjects(year) {
-		
+
 		$.ajax({
 			type: "POST",
 			async: false,
-			url: "/stats/yearsellsobjects",  
+			url: "/stats/yearsellsobjects",
 			data: 'year='+year,
 			success: function(data){
 				var response=JSON.parse(data),
@@ -65,8 +65,8 @@ $(document).ready(function () {
 						}
 					});
 
-				legend(legendYearSellsObjects, dataYearSellsObjects);	
-			}	
+				legend(legendYearSellsObjects, dataYearSellsObjects);
+			}
 		});
 	}
 
@@ -74,7 +74,7 @@ $(document).ready(function () {
 		$.ajax({
 			type: "POST",
 			async: false,
-			url: "/stats/yearsellsobjectspie",  
+			url: "/stats/yearsellsobjectspie",
 			data: 'year='+year,
 			success: function(data){
 
@@ -108,7 +108,7 @@ $(document).ready(function () {
 		$.ajax({
 			type: "POST",
 			async: false,
-			url: "/stats/monthsellsobjectspie",  
+			url: "/stats/monthsellsobjectspie",
 			data: 'month='+month+'&year='+year,
 			success: function(data){
 				var response=JSON.parse(data),
@@ -141,11 +141,11 @@ $(document).ready(function () {
 	}
 
 	function getYearPriceObjects(year) {
-		
+
 		$.ajax({
 			type: "POST",
 			async: false,
-			url: "/stats/yearpriceobjects",  
+			url: "/stats/yearpriceobjects",
 			data: 'year='+year,
 			success: function(data){
 				var response=JSON.parse(data),
@@ -186,17 +186,17 @@ $(document).ready(function () {
 						}
 					});
 
-				legend(legendYearPriceObjects, dataYearPriceObjects);	
-			}	
+				legend(legendYearPriceObjects, dataYearPriceObjects);
+			}
 		});
 	}
 
 	function getYearDynamicDB(year) {
-		
+
 		$.ajax({
 			type: "POST",
 			async: false,
-			url: "/stats/yeardynamicdb",  
+			url: "/stats/yeardynamicdb",
 			data: 'year='+year,
 			success: function(data){
 
@@ -232,17 +232,17 @@ $(document).ready(function () {
 									  // do different things here based on whatever you want;
 						return valuesObject.value+' записей';
 						}
-					});	
-			}	
+					});
+			}
 		});
 	}
 
 	function getSystemStats() {
-		
+
 		$.ajax({
 			type: "POST",
 			async: false,
-			url: "/stats/systemstats",  
+			url: "/stats/systemstats",
 			success: function(data){
 
 				var response=JSON.parse(data);
@@ -267,20 +267,20 @@ $(document).ready(function () {
 				$("#week-sell-outs").html(response.sellouts.week);
 				$("#month-sell-outs").html(response.sellouts.month);
 				$("#monthplus-sell-outs").html(response.sellouts.monthplus);
-			}	
+			}
 		});
 	}
 
 	function setYearSelect (year) {
 		var selectOptions='';
-		
+
 		for (var i=2014;i<year;i++)
 		{
-			selectOptions += '<option value="'+i+'">'+i+'</option>';		
+			selectOptions += '<option value="'+i+'">'+i+'</option>';
 		}
-		
+
 		selectOptions +='<option value="'+year+'" selected="selected">'+year+'</option>';
-		
+
 		$('.stat-control .year').html(selectOptions);
 	}
 	setYearSelect(year);
@@ -289,61 +289,61 @@ $(document).ready(function () {
 	// Get context with jQuery - using jQuery's .get() method.
 /*	document.getElementById("container").setAttribute('width','1050');
 	document.getElementById("container").setAttribute('height','400');*/
-	
+
 	// This will get the first returned node in the jQuery collection.
-	// 
+	//
 	getYearSellsObjects(year);
 	getYearSellsObjectsPie(year);
-	getMonthSellsObjectsPie(year,month); 
+	getMonthSellsObjectsPie(year,month);
 	getYearPriceObjects(year);
 	getYearDynamicDB(year);
 	getSystemStats();
-	
+
 
 	$("#change-year-sells-objects").change(function() {
-			
+
 		//$("option:selected", $(this)).each(function() {
 			var year=$("#change-year-sells-objects :selected").val();
 			$('#year-sells-objects').remove(); // this is my <canvas> element
-  			$('#year-sells-objects-canvas-wrapper').append('<canvas id="year-sells-objects"><canvas>');			
-			getYearSellsObjects(year);				
+  			$('#year-sells-objects-canvas-wrapper').append('<canvas id="year-sells-objects"><canvas>');
+			getYearSellsObjects(year);
 		//});
 	});
 	$("#change-year-sells-objects-pie").change(function() {
-			
+
 		//$("option:selected", $(this)).each(function() {
 			var year=$("#change-year-sells-objects-pie :selected").val();
 			$('#year-sells-objects-pie').remove(); // this is my <canvas> element
   			$('#year-sells-objects-pie-canvas-wrapper').append('<canvas id="year-sells-objects-pie"><canvas>');
-			getYearSellsObjectsPie(year);			
+			getYearSellsObjectsPie(year);
 		//});
 	});
 	$("#change-month-sells-objects-pie").change(function() {
-			
+
 		//$("option:selected", $(this)).each(function() {
 			var year=$("#change-year-sells-objects-pie :selected").val(),
-				month=$("#change-month-sells-objects-pie :selected").val();	
+				month=$("#change-month-sells-objects-pie :selected").val();
 			$('#month-sells-objects-pie').remove(); // this is my <canvas> element
-  			$('#month-sells-objects-pie-canvas-wrapper').append('<canvas id="month-sells-objects-pie"><canvas>');	
-			getMonthSellsObjectsPie(year,month); 		
+  			$('#month-sells-objects-pie-canvas-wrapper').append('<canvas id="month-sells-objects-pie"><canvas>');
+			getMonthSellsObjectsPie(year,month);
 		//});
 	});
 	$("#change-year-price-objects").change(function() {
-			
+
 		//$("option:selected", $(this)).each(function() {
 			var year=$("#change-year-price-objects :selected").val();
 			$('#year-price-objects').remove(); // this is my <canvas> element
-  			$('#year-price-objects-canvas-wrapper').append('<canvas id="year-price-objects"><canvas>');			
-			getYearPriceObjects(year);				
+  			$('#year-price-objects-canvas-wrapper').append('<canvas id="year-price-objects"><canvas>');
+			getYearPriceObjects(year);
 		//});
 	});
 	$("#change-year-dynamic-db").change(function() {
-			
+
 		//$("option:selected", $(this)).each(function() {
 			var year=$("#change-year-dynamic-db :selected").val();
 			$('#year-dynamic-db').remove(); // this is my <canvas> element
-  			$('#year-dynamic-db-canvas-wrapper').append('<canvas id="year-dynamic-db"><canvas>');			
+  			$('#year-dynamic-db-canvas-wrapper').append('<canvas id="year-dynamic-db"><canvas>');
 			getYearDynamicDB(year);
 	});
-					
+
 });
