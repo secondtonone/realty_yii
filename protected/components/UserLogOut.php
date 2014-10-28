@@ -11,7 +11,6 @@ class UserLogOut
 		$update = User::model()->updateAll(array('browser'=>$_SERVER['HTTP_USER_AGENT'],'online'=>'offline','time_activity'=>$date),'id_user=:id_user',array(':id_user'=>Yii::app()->user->getId()));
 		
 		Yii::app()->user->logout();
-		Yii::app()->request->redirect(Yii::app()->user->returnUrl);
-		
+		Yii::app()->request->redirect(Yii::app()->user->returnUrl);	
 	}
 }
