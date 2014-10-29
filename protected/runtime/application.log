@@ -7962,3 +7962,18 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2014/10/29 09:19:06 [error] [php] Undefined index: page (E:\xampp\htdocs\example.com\www\protected\components\UserGetData.php:157)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): PanelController->runAction()
+#2 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): PanelController->filterAccessControl()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): PanelController->runActionWithFilters()
+#8 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): PanelController->run()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 E:\xampp\htdocs\example.com\www\index.php(14): CWebApplication->run()
+REQUEST_URI=/panel/getobjects

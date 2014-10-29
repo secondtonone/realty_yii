@@ -267,6 +267,10 @@ $(document).ready(function () {
 				$("#week-sell-outs").html(response.sellouts.week);
 				$("#month-sell-outs").html(response.sellouts.month);
 				$("#monthplus-sell-outs").html(response.sellouts.monthplus);
+
+				$("#today-visits").html(response.visits.today);
+				$("#week-visits").html(response.visits.week);
+				$("#month-visits").html(response.visits.month);
 			}
 		});
 	}

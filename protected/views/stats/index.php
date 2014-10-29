@@ -7,7 +7,7 @@
         <div class="legend-warapper">
             <div id="legend-year-sells-objects"></div>
             <div class="stat-control">
-                <label>Год: 
+                <label>Год:
                     <select id="change-year-sells-objects" class="year">
                     </select>
                 </label>
@@ -15,14 +15,14 @@
         </div>
     </div>
         <div class="stat-container">
-        	<div class="caption"><i class="icon bar-chart"></i>Кол-во продаж объектов по категориям</div>
+        	<div class="caption"><i class="icon pie-chart"></i>Кол-во продаж объектов по категориям</div>
             <div class="canvas-holder-pie">
                 <h4>За весь год</h4>
                 <div id="year-sells-objects-pie-canvas-wrapper">
                     <canvas  id="year-sells-objects-pie"></canvas>
                 </div>
                 <div class="stat-control">
-                    <label>Год: 
+                    <label>Год:
                         <select id="change-year-sells-objects-pie" class="year">
                         </select>
                     </label>
@@ -34,7 +34,7 @@
                     <canvas  id="month-sells-objects-pie"></canvas>
                 </div>
                 <div class="stat-control">
-                    <label>Месяц: 
+                    <label>Месяц:
                         <select id="change-month-sells-objects-pie" class="month">
                             <option value="1">Январь</option>
                             <option value="2">Февраль</option>
@@ -57,14 +57,14 @@
             </div>
         </div>
         <div class="stat-container">
-            <div class="caption"><i class="icon area-chart"></i>Динамика цен объектов по категориям</div>
+            <div class="caption"><i class="icon line-chart"></i>Динамика цен объектов по категориям</div>
         	<div class="canvas-holder" id="year-price-objects-canvas-wrapper">
                 <canvas id="year-price-objects"></canvas>
             </div>
             <div class="legend-warapper">
                 <div id="legend-year-price-objects"></div>
                 <div class="stat-control">
-                    <label>Год: 
+                    <label>Год:
                         <select id="change-year-price-objects" class="year">
                         </select>
                     </label>
@@ -105,21 +105,25 @@
                             <tr><td>За 7 дней:</td><td class="table-value" id="week-sell-outs"></td></tr>
                             <tr><td>За 30 дней:</td><td class="table-value" id="month-sell-outs"></td></tr>
                             <tr><td>За 60 дней:</td><td class="table-value" id="monthplus-sell-outs"></td></tr>
+                            <tr><td class="table-sub-title" colspan="2">Количество посещений</td></tr>
+                            <tr><td>За сегодня:</td><td class="table-value" id="today-visits"></td></tr>
+                            <tr><td>За 7 дней:</td><td class="table-value" id="week-visits"></td></tr>
+                            <tr><td>За 30 дней:</td><td class="table-value" id="month-visits"></td></tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="canvas-holder-pie">
+                <div class="canvas-holder-dynamic">
                     <h4>Динамика роста БД</h4>
                     <div id="year-dynamic-db-canvas-wrapper">
                         <canvas  id="year-dynamic-db"></canvas>
                     </div>
                     <div class="stat-control">
-                        <label>Год: 
+                        <label>Год:
                             <select id="change-year-dynamic-db" class="year">
                             </select>
                         </label>
                     </div>
                 </div>
             </div>
-        </div>      
+        </div>
 	</div>

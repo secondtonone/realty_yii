@@ -21,7 +21,7 @@
 }
 .header .navbar .container {
 	max-width: 1800px;
-	min-width: 1183px;
+	min-width: 800px;
 	margin: 0px auto;
 }
 .container .nav {
@@ -105,13 +105,11 @@
 	float:right;
 }
 .page-content {
-	border: 1px solid #E2E2E2 !important;
+	border: 0px solid #E2E2E2 !important;
 	margin: 42px auto 0px;
-	background-color: #FFFFFF;
 	padding: 7px;
-	max-width: 1787px;
-	min-width: 1170px;
 	min-height:800px;
+	max-width: 1800px;
 	height: auto !important;
 }
 .preloader {
@@ -135,7 +133,7 @@
 .button-status,
 .cl-button-status,
 #hand-over,
-#hand-over-sub { 
+#hand-over-sub {
 	background-color: #353535 !important;
 	color: #FFFFFF !important;
 	border: 0px none;
@@ -150,11 +148,11 @@
 }
 .button-status:hover,
 #hand-over:hover,
-#hand-over-sub:hover  { 
+#hand-over-sub:hover  {
 	background-color: #000 !important;
 }
-.alt-row-class { 
-	background-color: #F2F2F2; 
+.alt-row-class {
+	background-color: #F2F2F2;
 	background-image: none;
 	color:#010011;
 }
@@ -183,7 +181,7 @@
 	font-weight: 500;
 	font-size: 14px;
 	color: #353535 !important;
-	margin-right:5px; 
+	margin-right:5px;
 }
 .icon-object::after {
 	content: " ";
@@ -195,12 +193,12 @@
 	content: " ";
 }
 #yandexmap {
-	width:60%;
+	width:80%;
 	height:300px;
-	float:left;
+	float: left;
 	position:relative;
 	top:0;
-	padding: 10px;	
+	padding: 10px;
 }
 .subgridformobj {
 	float:left;

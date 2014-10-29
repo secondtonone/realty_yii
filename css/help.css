@@ -48,7 +48,7 @@
 	border-top: 1px solid #353535;
 	text-decoration: none;
 	cursor: pointer;
-	color: #FFF;	
+	color: #FFF;
 }
 .sidebar-menu li a:hover {
 	background: #EEEEEE;
@@ -63,7 +63,7 @@
 	text-decoration: none;
 	border: 0px solid #353535;
 	padding:5px 5px;
-	
+
 }
 .sub-menu li a {
 	font-size: 13px;
@@ -76,7 +76,7 @@ li .header {
 	padding-left: 20px;
 	padding-right: 20px;
 	margin-left: 225px;
-	position: relative;	
+	position: relative;
 }
 .help-page-content .title {
 	color: #000000 !important;
@@ -114,19 +114,19 @@ li .header {
 	padding-right:3px;
 	color: #353535;
 	}
-.anchor-target { 
+.anchor-target {
 	margin-top: -90px;
 	padding-top: 90px;
 	position: absolute;
 }
 .arrow {
-	margin-right:7px; 
+	margin-right:7px;
 	float: right;
 	color: #CCCCCC;
 	content: " ";
 }
 .arrow-down {
-	margin-right:7px; 
+	margin-right:7px;
 	float: right;
 	color: #CCCCCC;
 	content: " ";
@@ -144,6 +144,6 @@ li .header {
 	color: #CCCCCC;
 }
 .icon-excel::after {
-	content: " ";
+	content: " ";
 	color: #CCCCCC ;
 }

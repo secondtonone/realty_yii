@@ -1,7 +1,7 @@
 $(document).ready(function(){
-	
+
 	function getList()
-	{	
+	{
 		var lists = $.ajax({
 					type: "POST",
 					url: "/panel/lists",
@@ -11,9 +11,9 @@ $(document).ready(function(){
 			list = JSON.parse(lists);
 		return list;
 	}
-	
+
 	function showErrorDialog(str)
-	{	
+	{
 		$(document.body).append('<div id="dialog-message" title="Внимание!"><div style="padding: 10px;margin-top:15px;" class="ui-state-error ui-corner-all"><span class="ui-icon  ui-icon-alert" style="float:left; margin:0 7px 50px 0;"></span>'+str+'</div></div>');
 		$( "#dialog-message" ).dialog({
   			close: function( event, ui ) {
@@ -25,34 +25,34 @@ $(document).ready(function(){
 					$("#dialog-message").empty();
 					$("#dialog-message").remove();
 				}, 7000);
-				
+
 		return false;
 	}
-	
+
 	function getUsers()
-	{	
+	{
 		return $.ajax({
 					type: "POST",
 					url: "/journal/getonlineusers",
 					async: false
 				}).responseText;
 	}
-	
+
 	function userListGenerate()
 	{
 		var users=getUsers();
 		$(".list-preloader").hide();
 		$('.user-list').html(users);
-		
+
 	}
 
 	userListGenerate();
-	
+
 	setInterval(userListGenerate,150000);
-	
+
 	var selectList=getList(),
 		selectType={value:selectList.rows.type,sopt:['eq']};
-	
+
 $("#notifications").jqGrid({
             url:"/journal/getnotifications",
             datatype: 'json',
@@ -100,7 +100,7 @@ $("#notifications").jqGrid({
 					$infoTd = $infoTr.children("td.topinfo");
 				$infoTd.html(myInfo);
 				$infoTr.show();
-			
+
 				setTimeout(function () {
 					$infoTr.slideUp("slow");
 				}, 3000);
@@ -130,40 +130,40 @@ $("#notifications").jqGrid({
 					$infoTd = $infoTr.children("td.topinfo");
 				$infoTd.html(myInfo);
 				$infoTr.show();
-			
+
 				setTimeout(function () {
 					$infoTr.slideUp("slow");
 				}, 3000);
 				return [true, "", ""];
 			}
-			}},{width:570,reloadAfterSubmit:true,zIndex:99},{width:570,reloadAfterSubmit:true,multipleSearch:true,zIndex:99,closeAfterSearch:true},{width:570,reloadAfterSubmit:true,zIndex:99}).navSeparatorAdd("#pager",{sepclass:"ui-separator",sepcontent: ''}); 
+			}},{width:570,reloadAfterSubmit:true,zIndex:99},{width:570,reloadAfterSubmit:true,multipleSearch:true,zIndex:99,closeAfterSearch:true},{width:570,reloadAfterSubmit:true,zIndex:99}).navSeparatorAdd("#pager",{sepclass:"ui-separator",sepcontent: ''});
 
 $("#pager_left table.navtable tbody tr").append('Статус: <select class="active-status"><option value="0" selected="selected">выбрать...</option><option value="1">Активен</option><option value="2">Не активен</option></select>');
 
  $(".active-status").change(function() {
-			
+
 			$("option:selected", $(this)).each(function() {
-				
+
 				var s= $("#notifications").jqGrid('getGridParam','selarrrow'),
 				id_status=$(".active-status :selected").val();
-				
-				if (id_status===0) 
+
+				if (id_status===0)
 				{
 					showErrorDialog('Выберите значение!');
-					
+
 				}
-				
-				else if (s===false){ 
+
+				else if (s===false){
 					showErrorDialog('Поля не отмечены!');
 				}
-				else 
+				else
 				{
 					for(var i=0;i<s.length;i++)
 					{
 						var cl = s[i];
-						$.ajax({  
-						type: "POST",  
-						url: "/journal/adminmodifynotes",  
+						$.ajax({
+						type: "POST",
+						url: "/journal/adminmodifynotes",
 						data: 'oper=activestatus&id_notification='+cl+'&id_status='+id_status,
 						success: function(msg){
 									$('#notifications').trigger("reloadGrid");
@@ -171,14 +171,14 @@ $("#pager_left table.navtable tbody tr").append('Статус: <select class="ac
 									{
 										showErrorDialog('Вы не можите редактировать эту запись!');
 									}
-									
+
 								}
 						});
 					}
 					$('.active-status option').prop('selected', function() {
 							return this.defaultSelected;
 						});
-				}	
+				}
 			});
 		});
 
@@ -192,7 +192,7 @@ $("#journalevent").jqGrid({
 				{name:'id_user', index:'id_user',editable: true,edittype: "text",hidden:true,searchoptions:{sopt:['eq'],searchhidden: true}},
 				{name:'name', index:'name', width:150, align:'left', edittype:"text",editable:true,searchoptions:{sopt:['bw','eq','ne','cn']},editrules:{required:true},editoptions:{maxlength: 15}},
 				{name: 'id_type_event',index: 'id_type_event', width:150, align:'left',edittype:"select",formatter:"select",editoptions:selectType,stype:"select",searchoptions:selectType},
-				{name:'time_event', index:'time_event', width:150, align:'left', edittype:"text",editable:false,searchoptions:{sopt:['bw','eq','ne','cn']}}				
+				{name:'time_event', index:'time_event', width:150, align:'left', edittype:"text",editable:false,searchoptions:{sopt:['bw','eq','ne','cn']}}
 				],
             pager: '#pager2',
 			autowidth:true,
@@ -204,7 +204,7 @@ $("#journalevent").jqGrid({
 			multiselect: true,
             caption: '<i class="icon-table icon-archive"></i>Журнал действий',
 			viewrecords: true
-        }).navGrid('#pager2',{edit:false,add:false,del:false,view:true,search:true},{width:450,reloadAfterSubmit:true,zIndex:99},{width:450,reloadAfterSubmit:true,zIndex:99},{width:450,reloadAfterSubmit:true,zIndex:99},{width:450,reloadAfterSubmit:true,multipleSearch:true,zIndex:99},{width:450,multipleSearch:true,reloadAfterSubmit:true,zIndex:99,closeAfterSearch:true}); 
+        }).navGrid('#pager2',{edit:false,add:false,del:false,view:true,search:true},{width:450,reloadAfterSubmit:true,zIndex:99},{width:450,reloadAfterSubmit:true,zIndex:99},{width:450,reloadAfterSubmit:true,zIndex:99},{width:450,reloadAfterSubmit:true,multipleSearch:true,zIndex:99},{width:450,multipleSearch:true,reloadAfterSubmit:true,zIndex:99,closeAfterSearch:true});
 
 $('.user-list').on('click','.user',function(){
 		var id_user=$(this).attr('id'),
