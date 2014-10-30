@@ -16,7 +16,12 @@ $(document).ready(function () {
 			{label:'Коттедж',color:'rgba(111,181,205,1)',highlightColor:'rgba(111,181,205,0.7)',fillColor:'rgba(111,181,205,0.2)'},
 			{label:'Земельный участок',color:'rgba(231,150,164,1)',highlightColor:'rgba(231,150,164,0.7)',fillColor:'rgba(231,150,164,0.2)'},
 			{label:'1,5-комнатная',color:'rgba(255, 127, 0,1)',highlightColor:'rgba(255, 127, 0,0.7)',fillColor:'rgba(255, 127, 0,0.2)'}
+	],
+	radarTempelate = [
+			{label:'Предложение',color:'rgba(220,220,220,1)',highlightColor:'rgba(220,220,220,0.7)',fillColor:'rgba(220,220,220,0.2)'},
+			{label:'Спрос',color:'rgba(151,187,205,1)',highlightColor:'rgba(151,187,205,0.7)',fillColor:'rgba(151,187,205,0.2)'}
 	];
+
 
 	function getYearSellsObjects(year) {
 
@@ -191,6 +196,60 @@ $(document).ready(function () {
 		});
 	}
 
+	function getYearSellsObjectsRadar(year) {
+		$.ajax({
+			type: "POST",
+			async: false,
+			url: "/stats/yearsellsobjectsradar",
+			data: 'year='+year,
+			success: function(data){
+
+				var response=JSON.parse(data),
+					datasets= [
+						{
+				            label: radarTempelate[0].label,
+				            fillColor: radarTempelate[0].fillColor,
+				            strokeColor: radarTempelate[0].color,
+				            pointColor: radarTempelate[0].color,
+				            pointStrokeColor: "#fff",
+				            pointHighlightFill: "#fff",
+				            pointHighlightStroke: radarTempelate[0].color,
+				            data: response[0]
+				        },
+				        {
+				            label: radarTempelate[1].label,
+				            fillColor: radarTempelate[1].fillColor,
+				            strokeColor: radarTempelate[1].color,
+				            pointColor: radarTempelate[1].color,
+				            pointStrokeColor: "#fff",
+				            pointHighlightFill: "#fff",
+				            pointHighlightStroke: radarTempelate[1].color,
+				            data: response[1]
+				        }
+			        ];
+
+
+				var	months = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'],
+					yearSellsObjectsRadar = document.getElementById("year-sells-objects-radar").getContext("2d"),
+					dataYearSellsObjectsRadar = {
+					    labels: months,
+					    datasets: datasets
+					};
+
+				new Chart(yearSellsObjectsRadar).Radar(dataYearSellsObjectsRadar,{
+					responsive:true,
+					multiTooltipTemplate: function(valuesObject){
+								  /*console.log(valuesObject);*/
+								  // do different things here based on whatever you want;
+					return valuesObject.datasetLabel+' - '+valuesObject.value+' заявок';
+					}
+
+				});
+			}
+		});
+
+	}
+
 	function getYearDynamicDB(year) {
 
 		$.ajax({
@@ -237,6 +296,7 @@ $(document).ready(function () {
 		});
 	}
 
+
 	function getSystemStats() {
 
 		$.ajax({
@@ -251,10 +311,12 @@ $(document).ready(function () {
 				$('#objects-selling').html(response.objects.selling);
 				$('#objects-sells-out').html(response.objects.sells_out);
 				$('#objects-hide-out').html(response.objects.hide_out);
+				$('#objects-unattached').html(response.objects.unattached);
 
 				$("#clients-all").html(response.clients.count_all);
 				$("#clients-active").html(response.clients.active);
 				$("#clients-disactive").html(response.clients.disactive);
+				$('#clients-unattached').html(response.clients.unattached);
 
 				$("#users-all").html(response.users.count_all);
 				$("#users-active").html(response.users.active);
@@ -271,6 +333,65 @@ $(document).ready(function () {
 				$("#today-visits").html(response.visits.today);
 				$("#week-visits").html(response.visits.week);
 				$("#month-visits").html(response.visits.month);
+
+				if(response.objects.unattached>0)
+				{
+					$("#objects-unattached").css("color", "#E02222");
+				}
+
+				if(response.clients.unattached>0)
+				{
+					$("#clients-unattached").css("color", "#E02222");
+				}
+
+				if(response.users.disactive>0)
+				{
+					$("#users-disactive").css("color", "#E02222");
+				}
+
+				if(response.records.count_all<5)
+				{
+					$("#all-records").css("color", "#E02222");
+				}
+				if(response.records.objects<3)
+				{
+					$("#objects-records").css("color", "#E02222");
+				}
+				if(response.records.clients<2)
+				{
+					$("#clients-records").css("color", "#E02222");
+				}
+
+				if(response.sellouts.week<5)
+				{
+					$("#week-sell-outs").css("color", "#E02222");
+				}
+				if(response.sellouts.month<25)
+				{
+					$("#month-sell-outs").css("color", "#E02222");
+				}
+				if(response.sellouts.monthplus<45)
+				{
+					$("#monthplus-sell-outs").css("color", "#E02222");
+				}
+
+				if(response.visits.today<10)
+				{
+					$("#today-visits").css("color", "#E02222");
+				}
+				if(response.visits.week<70)
+				{
+					$("#week-visits").css("color", "#E02222");
+				}
+				if(response.visits.month<210)
+				{
+					$("#month-visits").css("color", "#E02222");
+				}
+				/*$.each(response, function(category, param) {
+				    $.each(param, function(item) {
+					    alert(item);
+					});
+				});*/
 			}
 		});
 	}
@@ -299,6 +420,7 @@ $(document).ready(function () {
 	getYearSellsObjects(year);
 	getYearSellsObjectsPie(year);
 	getMonthSellsObjectsPie(year,month);
+	getYearSellsObjectsRadar(year);
 	getYearPriceObjects(year);
 	getYearDynamicDB(year);
 	getSystemStats();
@@ -320,6 +442,15 @@ $(document).ready(function () {
 			$('#year-sells-objects-pie').remove(); // this is my <canvas> element
   			$('#year-sells-objects-pie-canvas-wrapper').append('<canvas id="year-sells-objects-pie"><canvas>');
 			getYearSellsObjectsPie(year);
+		//});
+	});
+	$("#change-year-sells-objects-radar").change(function() {
+
+		//$("option:selected", $(this)).each(function() {
+			var year=$("#change-year-sells-objects-radar :selected").val();
+			$('#year-sells-objects-radar').remove(); // this is my <canvas> element
+  			$('#year-sells-objects-radar-canvas-wrapper').append('<canvas id="year-sells-objects-radar"><canvas>');
+			getYearSellsObjectsRadar(year);
 		//});
 	});
 	$("#change-month-sells-objects-pie").change(function() {

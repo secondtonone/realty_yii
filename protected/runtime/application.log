@@ -7977,3 +7977,64 @@ Stack trace:
 #10 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
 #11 E:\xampp\htdocs\example.com\www\index.php(14): CWebApplication->run()
 REQUEST_URI=/panel/getobjects
+2014/10/30 08:42:16 [error] [php] Undefined variable: j (E:\xampp\htdocs\example.com\www\protected\components\StatsGetDataset.php:73)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): StatsController->runAction()
+#2 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): StatsController->filterAccessControl()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): StatsController->runActionWithFilters()
+#8 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): StatsController->run()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#11 E:\xampp\htdocs\example.com\www\index.php(14): CWebApplication->run()
+REQUEST_URI=/stats/yearsellsobjectsradar
+2014/10/30 11:22:36 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchColumn(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ct.id_city' in 'where clause'. Выполнявшийся SQL-запрос: SELECT COUNT(`id_object`) AS count FROM `objects` o WHERE (o.`id_sell_out_status`=1 OR o.`id_sell_out_status`=4) AND o.id_category = '5' AND o.id_floor_status = '3' AND ct.id_city = '2452' AND o.market_price >= '1400000' AND o.market_price <= '1600000'.
+2014/10/30 11:22:36 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ct.id_city' in 'where clause'' in E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 E:\xampp\htdocs\example.com\www\protected\components\ExcelExport.php(257): CDbCommand->queryScalar()
+#2 E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php(297): ExcelExport->userObjects(Array)
+#3 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): PanelController->actionUserExport()
+#4 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#11 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('userexport')
+#13 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('panel/userexpor...')
+#14 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/panel/userexport?q=objects&_search=true&nd=1414664552717&rows=20&page=1&sidx=id_object&sord=asc&filters=%7B%22groupOp%22%3A%22AND%22%2C%22rules%22%3A%5B%7B%22field%22%3A%22id_category%22%2C%22op%22%3A%22eq%22%2C%22data%22%3A%225%22%7D%2C%7B%22field%22%3A%22id_floor_status%22%2C%22op%22%3A%22eq%22%2C%22data%22%3A%223%22%7D%2C%7B%22field%22%3A%22id_city%22%2C%22op%22%3A%22eq%22%2C%22data%22%3A%222452%22%7D%2C%7B%22field%22%3A%22market_price%22%2C%22op%22%3A%22ge%22%2C%22data%22%3A%221400000%22%7D%2C%7B%22field%22%3A%22market_price%22%2C%22op%22%3A%22le%22%2C%22data%22%3A%221600000%22%7D%5D%7D&oper=excel
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/10/30 11:23:04 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchColumn(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ct.id_city' in 'where clause'. Выполнявшийся SQL-запрос: SELECT COUNT(`id_object`) AS count FROM `objects` o WHERE (o.`id_sell_out_status`=1 OR o.`id_sell_out_status`=4) AND o.id_category = '5' AND ct.id_city = '2452' AND o.market_price >= '1100000' AND o.market_price <= '1300000'.
+2014/10/30 11:23:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'ct.id_city' in 'where clause'' in E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php:543
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\db\CDbCommand.php(433): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 E:\xampp\htdocs\example.com\www\protected\components\ExcelExport.php(257): CDbCommand->queryScalar()
+#2 E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php(297): ExcelExport->userObjects(Array)
+#3 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): PanelController->actionUserExport()
+#4 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#11 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('userexport')
+#13 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('panel/userexpor...')
+#14 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#16 {main}
+REQUEST_URI=/panel/userexport?q=objects&_search=true&nd=1414664576364&rows=20&page=1&sidx=id_object&sord=asc&filters=%7B%22groupOp%22%3A%22AND%22%2C%22rules%22%3A%5B%7B%22field%22%3A%22id_category%22%2C%22op%22%3A%22eq%22%2C%22data%22%3A%225%22%7D%2C%7B%22field%22%3A%22id_city%22%2C%22op%22%3A%22eq%22%2C%22data%22%3A%222452%22%7D%2C%7B%22field%22%3A%22market_price%22%2C%22op%22%3A%22ge%22%2C%22data%22%3A%221100000%22%7D%2C%7B%22field%22%3A%22market_price%22%2C%22op%22%3A%22le%22%2C%22data%22%3A%221300000%22%7D%5D%7D&oper=excel
+HTTP_REFERER=http://example.com/panel/index
+---

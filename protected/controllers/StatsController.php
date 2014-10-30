@@ -6,22 +6,22 @@ class StatsController extends CController
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
-	 
+
 	public $layout = 'mainadmin';
-	
+
 	public function filters()
     {
         return array(
             'accessControl',
         );
     }
-	
+
 	public function accessRules()
     {
         return array(
 			array('allow',
                 'actions'=>array(),
-                'roles'=>array(				
+                'roles'=>array(
 					User::ROLE_ADMIN
 				),
 			),
@@ -31,7 +31,7 @@ class StatsController extends CController
             ),
         );
     }
-	
+
 	public function actionIndex()
 	{
 		// renders the view file 'protected/views/site/index.php'
@@ -60,35 +60,40 @@ class StatsController extends CController
 	public function actionYearSellsObjects()
 	{
 		$stats = new StatsGetDataset();
-		$stats->yearSellsObjects($_POST['year']);	
+		$stats->yearSellsObjects($_POST['year']);
 	}
 	public function actionYearSellsObjectsPie()
 	{
 		$stats = new StatsGetDataset();
-		$stats->yearSellsObjectsPie($_POST['year']);	
+		$stats->yearSellsObjectsPie($_POST['year']);
+	}
+	public function actionYearSellsObjectsRadar()
+	{
+		$stats = new StatsGetDataset();
+		$stats->yearSellsObjectsRadar($_POST['year']);
 	}
 	public function actionMonthSellsObjectsPie()
 	{
 		$stats = new StatsGetDataset();
-		$stats->monthSellsObjectsPie($_POST['year'],$_POST['month']);	
+		$stats->monthSellsObjectsPie($_POST['year'],$_POST['month']);
 	}
 	public function actionYearPriceObjects()
 	{
 		$stats = new StatsGetDataset();
-		$stats->yearPriceObjects($_POST['year']);	
+		$stats->yearPriceObjects($_POST['year']);
 	}
 	public function actionYearDynamicDB()
 	{
 		$stats = new StatsGetDataset();
-		$stats->yearDynamicDB($_POST['year']);	
+		$stats->yearDynamicDB($_POST['year']);
 	}
 	public function actionSystemStats()
 	{
 		$stats = new StatsGetDataset();
-		$stats->systemStats();	
+		$stats->systemStats();
 	}
 	/**
 	 * This is the action to handle external exceptions.
 	 */
-	
+
 }

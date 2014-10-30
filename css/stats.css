@@ -41,10 +41,10 @@
 	float: left;
 }
 .canvas-holder-pie {
-	padding: 20px;
-	width:40%;
+	width:29%;
 	margin: 0;
 	float: left;
+	padding-bottom: 15px;
 }
 .canvas-holder-dynamic {
 	padding: 20px;

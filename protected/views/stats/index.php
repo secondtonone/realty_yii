@@ -17,6 +17,18 @@
         <div class="stat-container">
         	<div class="caption"><i class="icon pie-chart"></i>Кол-во продаж объектов по категориям</div>
             <div class="canvas-holder-pie">
+                <h4>Спрос и предложение</h4>
+                <div id="year-sells-objects-radar-canvas-wrapper">
+                    <canvas  id="year-sells-objects-radar"></canvas>
+                </div>
+                <div class="stat-control">
+                    <label>Год:
+                        <select id="change-year-sells-objects-radar" class="year">
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="canvas-holder-pie">
                 <h4>За весь год</h4>
                 <div id="year-sells-objects-pie-canvas-wrapper">
                     <canvas  id="year-sells-objects-pie"></canvas>
@@ -82,14 +94,16 @@
                             <tr><td>В продаже:</td><td class="table-value" id="objects-selling"></td></tr>
                             <tr><td>Продано:</td><td class="table-value" id="objects-sells-out"></td></tr>
                             <tr><td>Снято с продажи:</td><td class="table-value" id="objects-hide-out"></td></tr>
+                            <tr><td>Не закрепленных:</td><td title="Рекомендованная величина:0" class="table-value" id="objects-unattached"></td></tr>
                             <tr><td class="table-sub-title" colspan="2">Покупателей</td></tr>
                             <tr><td>Всего:</td><td class="table-value" id="clients-all"></td></tr>
                             <tr><td>Активных:</td><td class="table-value" id="clients-active"></td></tr>
                             <tr><td>Не активных:</td><td class="table-value" id="clients-disactive"></td></tr>
+                            <tr><td>Не закрепленных:</td><td title="Рекомендованная величина:0" class="table-value" id="clients-unattached"></td></tr>
                             <tr><td class="table-sub-title" colspan="2">Пользователей</td></tr>
                             <tr><td>Всего:</td><td class="table-value"  id="users-all"></td></tr>
                             <tr><td>Активных:</td><td class="table-value" id="users-active"></td></tr>
-                            <tr><td>Не активных:</td><td class="table-value" id="users-disactive"></td></td>
+                            <tr><td>Не активных:</td><td title="Рекомендованная величина:0" class="table-value" id="users-disactive"></td></td>
                         </tbody>
                     </table>
                 </div>
@@ -97,18 +111,18 @@
                     <h4>Активность пользователей</h4>
                     <table>
                         <tbody>
-                            <tr><td class="table-sub-title" colspan="2">Записей в день</td></tr>
-                            <tr><td>Всего:</td><td class="table-value" id="all-records"></td></tr>
-                            <tr><td>Объекты:</td><td class="table-value" id="objects-records"></td></tr>
-                            <tr><td>Покупатели:</td><td class="table-value" id="clients-records"></td></tr>
+                            <tr><td class="table-sub-title" colspan="2">Записей в день за последний месяц</td></tr>
+                            <tr><td>Всего:</td><td title="Рекомендованная величина:5" class="table-value" id="all-records"></td></tr>
+                            <tr><td>Объекты:</td><td title="Рекомендованная величина:3" class="table-value" id="objects-records"></td></tr>
+                            <tr><td>Покупатели:</td><td title="Рекомендованная величина:2" class="table-value" id="clients-records"></td></tr>
                             <tr><td class="table-sub-title" colspan="2">Коэфицент продаж</td></tr>
-                            <tr><td>За 7 дней:</td><td class="table-value" id="week-sell-outs"></td></tr>
-                            <tr><td>За 30 дней:</td><td class="table-value" id="month-sell-outs"></td></tr>
-                            <tr><td>За 60 дней:</td><td class="table-value" id="monthplus-sell-outs"></td></tr>
+                            <tr><td>За 7 дней:</td><td title="Рекомендованная величина:5" class="table-value" id="week-sell-outs"></td></tr>
+                            <tr><td>За 30 дней:</td><td title="Рекомендованная величина:25" class="table-value" id="month-sell-outs"></td></tr>
+                            <tr><td>За 60 дней:</td><td title="Рекомендованная величина:45" class="table-value" id="monthplus-sell-outs"></td></tr>
                             <tr><td class="table-sub-title" colspan="2">Количество посещений</td></tr>
-                            <tr><td>За сегодня:</td><td class="table-value" id="today-visits"></td></tr>
-                            <tr><td>За 7 дней:</td><td class="table-value" id="week-visits"></td></tr>
-                            <tr><td>За 30 дней:</td><td class="table-value" id="month-visits"></td></tr>
+                            <tr><td>За сегодня:</td><td title="Рекомендованная величина:10" class="table-value" id="today-visits"></td></tr>
+                            <tr><td>За 7 дней:</td><td title="Рекомендованная величина:70" class="table-value" id="week-visits"></td></tr>
+                            <tr><td>За 30 дней:</td><td title="Рекомендованная величина:210" class="table-value" id="month-visits"></td></tr>
                         </tbody>
                     </table>
                 </div>
