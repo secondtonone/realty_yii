@@ -1,5 +1,4 @@
 <?php
-
 class StatsGetDataset
 {
 	public function yearSellsObjects($current_year)
