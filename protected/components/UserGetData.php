@@ -95,7 +95,7 @@ class UserGetData
 		}
 
 			//определяем количество записей в таблице
-		$sql='SELECT COUNT(*) AS count FROM `clients` c WHERE c.`id_status`=1 '.$qWhere;
+		$sql='SELECT COUNT(*) AS count FROM `clients` c LEFT JOIN `users` u ON c.`id_user`= u.`id_user` LEFT JOIN `geo_city` ct ON c.`id_city`= ct.`id_city` WHERE c.`id_status`=1 '.$qWhere;
 		$command=$connection->createCommand($sql);
 		$totalRows = $command->queryScalar();
 
@@ -243,7 +243,7 @@ class UserGetData
 		}
 
 		//определяем количество записей в таблице
-		$sql='SELECT COUNT(`id_object`) AS count FROM `objects` o WHERE (o.`id_sell_out_status`=1 OR o.`id_sell_out_status`=4)'.$qWhere;
+		$sql='SELECT COUNT(`id_object`) AS count FROM `objects` o LEFT JOIN `objects_owners` ow ON o.`id_owner`= ow.`id_owner` LEFT JOIN `objects_street` st ON o.`id_street`= st.`id_street` LEFT JOIN `geo_city` ct ON o.`id_city`= ct.`id_city` LEFT JOIN `users` u ON o.`id_user`= u.`id_user` WHERE (o.`id_sell_out_status`=1 OR o.`id_sell_out_status`=4)'.$qWhere;
 		$command=$connection->createCommand($sql);
 		$totalRows = $command->queryScalar();
 

@@ -82,7 +82,7 @@ class AdminGetData
 			}
 		}
 
-		$sql='SELECT COUNT(*) FROM `clients` c WHERE c.`id_user`=:id_user'.$qWhere;
+		$sql='SELECT COUNT(*) FROM `clients` c LEFT JOIN `geo_city` ct ON c.`id_city`= ct.`id_city` WHERE c.`id_user`=:id_user'.$qWhere;
 		$command=$connection->createCommand($sql);
 		$command->bindParam(':id_user',$arguments['id_user'],PDO::PARAM_STR);
 		$totalRows = $command->queryScalar();
@@ -402,7 +402,7 @@ class AdminGetData
 		}
 
 		//определяем количество записей в таблице
-		$sql="SELECT COUNT(`id_object`) AS count FROM `objects` o ".$qWhere;
+		$sql="SELECT COUNT(`id_object`) AS count FROM `objects` o LEFT JOIN `objects_owners` ow ON o.`id_owner`= ow.`id_owner` LEFT JOIN `objects_street` st ON o.`id_street`= st.`id_street` LEFT JOIN `geo_city` c ON o.`id_city`= c.`id_city` LEFT JOIN `users` u ON o.`id_user`= u.`id_user` ".$qWhere;
 		$command=$connection->createCommand($sql);
 		$totalRows = $command->queryScalar();
 

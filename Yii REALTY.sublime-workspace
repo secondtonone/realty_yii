@@ -124,26 +124,18 @@
 			}
 		},
 		{
-			"file": "css/styles.css",
+			"file": "protected/components/AdminGetData.php",
 			"settings":
 			{
-				"buffer_size": 2123,
+				"buffer_size": 21568,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "protected/config/main.php",
+			"file": "protected/components/ExcelExport.php",
 			"settings":
 			{
-				"buffer_size": 4268,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "protected/views/stats/index.php",
-			"settings":
-			{
-				"buffer_size": 8300,
+				"buffer_size": 22603,
 				"line_ending": "Windows"
 			}
 		}
@@ -288,15 +280,22 @@
 	],
 	"file_history":
 	[
+		"/E/xampp/htdocs/example.com/www/protected/components/UserGetData.php",
+		"/E/xampp/htdocs/example.com/www/protected/controllers/EnterController.php",
+		"/E/xampp/htdocs/example.com/www/protected/views/enter/index.php",
+		"/E/xampp/htdocs/example.com/www/protected/config/main.php",
+		"/E/xampp/htdocs/example.com/www/css/styles.css",
+		"/E/xampp/htdocs/example.com/www/protected/components/AdminGetData.php",
+		"/E/xampp/htdocs/example.com/www/protected/components/ExcelExport.php",
+		"/E/xampp/htdocs/example.com/www/protected/views/layouts/main.php",
+		"/E/xampp/htdocs/example.com/www/protected/views/stats/index.php",
+		"/E/xampp/htdocs/example.com/www/.gitignore",
+		"/E/xampp/htdocs/example.com/www/.git/info/exclude",
 		"/E/xampp/htdocs/example.com/www/index.php",
 		"/E/xampp/htdocs/example.com/www/js/jqgrid/tables/user_panel_jqgrid.js",
 		"/E/xampp/htdocs/example.com/www/js/jqgrid/tables/admin_panel_jqgrid.js",
-		"/E/xampp/htdocs/example.com/www/protected/components/ExcelExport.php",
 		"/E/xampp/htdocs/example.com/www/css/stats.css",
 		"/E/xampp/htdocs/example.com/www/css/panel.css",
-		"/E/xampp/htdocs/example.com/www/css/styles.css",
-		"/E/xampp/htdocs/example.com/www/protected/components/UserGetData.php",
-		"/E/xampp/htdocs/example.com/www/protected/components/AdminGetData.php",
 		"/E/xampp/htdocs/example.com/www/protected/components/UserModifyData.php",
 		"/E/xampp/htdocs/example.com/www/protected/components/AdminModifyData.php",
 		"/E/xampp/htdocs/example.com/www/js/jqgrid/tables/admin_journal_jqgrid.js",
@@ -307,7 +306,6 @@
 		"/E/xampp/htdocs/example.com/www/protected/views/help/admin.php",
 		"/E/xampp/htdocs/example.com/www/js/enter.js",
 		"/E/xampp/htdocs/example.com/www/protected/components/UserLogOut.php",
-		"/E/xampp/htdocs/example.com/www/protected/controllers/EnterController.php",
 		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/E/Downloads/Google Диск/sublime settings/Preferences.sublime-settings",
 		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/User/ColorHighlighter.sublime-settings",
@@ -324,11 +322,9 @@
 		"/E/xampp/htdocs/example.com/www/protected/components/WebUser.php",
 		"/E/xampp/htdocs/example.com/www/protected/components/UserIdentity.php",
 		"/E/xampp/htdocs/example.com/www/css/enter.css",
-		"/E/xampp/htdocs/example.com/www/protected/config/main.php",
 		"/E/xampp/htdocs/example.com/www/protected/config/auth.php",
 		"/E/xampp/htdocs/example.com/www/protected/components/PhpAuthManager.php",
 		"/E/Downloads/Google Диск/Projects/u701794099_real.sql",
-		"/E/xampp/htdocs/example.com/www/protected/views/stats/index.php",
 		"/E/xampp/htdocs/example.com/www/index-test.php",
 		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
 		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
@@ -343,7 +339,6 @@
 		"/E/xampp/htdocs/example.com/www/protected/config/cron.php",
 		"/E/xampp/htdocs/example.com/www/protected/config/test.php",
 		"/E/xampp/htdocs/example.com/www/protected/views/layouts/mainadmin.php",
-		"/E/xampp/htdocs/example.com/www/protected/views/layouts/main.php",
 		"/E/xampp/htdocs/example.com/www/js/chart.js",
 		"/E/xampp/htdocs/example.com/www/protected/components/SystemOption.php",
 		"/E/xampp/htdocs/example.com/www/protected/controllers/HelpController.php",
@@ -412,10 +407,7 @@
 		"/E/xampp/htdocs/library.bfpnipu.com/www/app/admin/markunit/markunit6.js",
 		"/E/xampp/htdocs/library.bfpnipu.com/www/app/admin/markunit/markunit5.js",
 		"/E/xampp/htdocs/rhyme.ru/www/app/views/crash_view.php",
-		"/E/xampp/htdocs/rhyme.ru/www/app/bootstrap.php",
-		"/E/xampp/htdocs/rhyme.ru/www/app/scripts/auth/exit.php",
-		"/E/xampp/htdocs/rhyme.ru/www/app/scripts/auth/reg_class.php",
-		"/E/xampp/htdocs/rhyme.ru/www/css/phone.less"
+		"/E/xampp/htdocs/rhyme.ru/www/app/bootstrap.php"
 	],
 	"find":
 	{
@@ -490,7 +482,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -621,10 +613,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 385.0,
+						"translation.y": 99.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -758,7 +750,7 @@
 						"translation.y": 39.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -889,27 +881,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 52.0,
+						"translation.y": 169.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "css/styles.css",
+					"file": "protected/components/AdminGetData.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2123,
+						"buffer_size": 21568,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								296,
-								296
+								14319,
+								14319
 							]
 						],
 						"settings":
@@ -1019,23 +1011,23 @@
 							"codeintel_tooltips": "popup",
 							"color_scheme": "Packages/User/Color Highlighter/themes/Twilight (SL).tmTheme",
 							"sublime_auto_complete": true,
-							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 6084.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "protected/config/main.php",
+					"file": "protected/components/ExcelExport.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4268,
+						"buffer_size": 22603,
 						"regions":
 						{
 						},
@@ -1053,142 +1045,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "protected/views/stats/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8300,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5753,
-								5753
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"color_scheme": "Packages/User/Color Highlighter/themes/Twilight (SL).tmTheme",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 78.0,
+						"translation.y": 5928.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
