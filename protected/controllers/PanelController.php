@@ -6,7 +6,7 @@ class PanelController extends CController
 	 * This is the default 'index' action that is invoked
 	 * when an action is not explicitly requested by users.
 	 */
-	 
+
 	public $layout = 'main';
 
 	public function filters()
@@ -15,26 +15,26 @@ class PanelController extends CController
             'accessControl',
         );
     }
-	
+
 	public function accessRules()
     {
         return array(
 			array('allow',
                 'actions'=>array('index','autocomplete','checkclient','checklogin','checkobject','lists','notes','updatestatus','getclients','getobjects','getsubobjects'),
-                'roles'=>array(				
+                'roles'=>array(
 					User::ROLE_ADMIN,
 					User::ROLE_USER
 				),
             ),
 			array('allow',
                 'actions'=>array('getusers','adminmodifyobjects','adminmodifysubobject','adminmodifyclients','adminmodifyusers','adminexport'),
-                'roles'=>array(				
+                'roles'=>array(
 					User::ROLE_ADMIN
 				),
 			),
 			array('allow',
                 'actions'=>array('usermodifyclients','usermodifyobjects','usermodifysubobject','userexport'),
-                'roles'=>array(				
+                'roles'=>array(
 					User::ROLE_USER
 				),
 			),
@@ -44,7 +44,7 @@ class PanelController extends CController
             ),
         );
     }
-	
+
 	public function actionIndex()
 	{
 		// renders the view file 'protected/views/site/index.php'
@@ -77,7 +77,7 @@ class PanelController extends CController
     {
 		$system = new SystemOption();
 		$system->checkClient($_POST);
-    } 
+    }
 	public function actionCheckLogin()
     {
 		$system = new SystemOption();
@@ -92,7 +92,7 @@ class PanelController extends CController
     {
 		$system = new SystemOption();
 		$system->userLists();
-    }   
+    }
 	public function actionNotes()
     {
 		$system = new SystemOption();
@@ -112,7 +112,7 @@ class PanelController extends CController
 			$admin->getClients($_GET);
 		}
 		else if (Yii::app()->user->right == 'user')
-		{		
+		{
 			$user = new UserGetData();
 			$user->getClients($_POST);
 		}
@@ -144,7 +144,7 @@ class PanelController extends CController
 	public function actionUserModifyClients()
 	{
 		$user = new UserModifyData();
-		
+
 		switch ($_POST['oper'])
 		{
 			case "add":
@@ -172,7 +172,7 @@ class PanelController extends CController
 	public function actionUserModifyObjects()
 	{
 		$user = new UserModifyData();
-		
+
 		switch ($_POST['oper'])
 		{
 			case "add":
@@ -200,12 +200,12 @@ class PanelController extends CController
 	public function actionUserModifySubObject()
 	{
 		$arguments = array('id_object'=>$_GET['id_object']);
-		
+
 		foreach ($_POST as $key=>$value)
 		{
         	$arguments[$key]=$value;
     	}
-		
+
 		$user = new UserModifyData();
 		$user->editSubObject($arguments);
 	}
@@ -213,14 +213,14 @@ class PanelController extends CController
 	public function actionAdminModifyObjects()
 	{
 		$arguments = array();
-		
+
 		foreach ($_POST as $key=>$value)
 		{
         	$arguments[$key]=$value;
     	}
-		
+
 		$user = new AdminModifyData();
-		
+
 		switch ($_POST['oper'])
 		{
 			case "edit":
@@ -238,12 +238,12 @@ class PanelController extends CController
 	public function actionAdminModifySubObject()
 	{
 		$arguments = array('id_object'=>$_GET['id_object']);
-		
+
 		foreach ($_POST as $key=>$value)
 		{
         	$arguments[$key]=$value;
     	}
-		
+
 		$user = new AdminModifyData();
 		$user->editSubObject($arguments);
 	}
@@ -253,9 +253,9 @@ class PanelController extends CController
 		$user->editClient($_POST);
 	}
 	public function actionAdminModifyUsers()
-	{	
+	{
 		$user = new AdminModifyData();
-		
+
 		switch ($_POST['oper'])
 		{
 			case "add":
@@ -289,7 +289,7 @@ class PanelController extends CController
 	public function actionUserExport()
 	{
 		$export = new ExcelExport();
-		
+
 		switch ($_GET['q'])
 		{
 			case "objects":

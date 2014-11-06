@@ -27,15 +27,16 @@
                     <div class="checker">
                            <input type="checkbox" name="remeberMe" value="1"/>
                     </div>
-                     Запомнить меня 
+                     Запомнить меня
                 </label>
                 <button type="submit" class="btn">
                     <i class="enter-preloader"></i>
                     <div id="execute">Выполняется</div>
-                    <div id="entering">Войти</div> 
+                    <div id="entering">Войти</div>
                     <i class="icon-white"></i>
                 </button>
             </div>
+            <?php echo CHtml::hiddenField(Yii::app()->getRequest()->csrfTokenName, Yii::app()->getRequest()->getCsrfToken()); ?>
         </form>
     </div>
     <div class="display-error">

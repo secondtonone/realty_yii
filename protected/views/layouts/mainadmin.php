@@ -27,6 +27,7 @@
                 <?php echo CHtml::link('<div class="exit"><i class="icon icon-exit"></i>Выход</div>',array('enter/logout'));?>
             </div>
         </div>
-    </div><?php echo $content;?>
+    </div>
+    <?php echo $content;?>
 </body>
 </html>

@@ -5,7 +5,6 @@ $(document).ready(function(){
 		var lists = $.ajax({
 					type: "POST",
 					url: "/panel/lists",
-					data: "q=1",
 					async: false
 				}).responseText,
 			list = JSON.parse(lists);
@@ -17,7 +16,6 @@ $(document).ready(function(){
 		return $.ajax({
 					type: "POST",
 					url: "/panel/notes",
-					data: "q=1",
 					async: false
 				}).responseText;
 	}

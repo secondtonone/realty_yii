@@ -8142,3 +8142,382 @@ Stack trace:
 REQUEST_URI=/panel/getobjects
 HTTP_REFERER=http://example.com/panel/index
 ---
+2014/11/06 17:13:28 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/
+---
+2014/11/06 17:14:10 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/enter/login
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/11/06 17:20:59 [error] [php] Use of undefined constant id - assumed 'id' (E:\xampp\htdocs\example.com\www\protected\views\enter\index.php:7)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(869): EnterController->renderFile()
+#1 E:\xampp\htdocs\example.com\www\framework\web\CController.php(782): EnterController->renderPartial()
+#2 E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php(46): EnterController->render()
+#3 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): EnterController->actionIndex()
+#4 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): EnterController->runAction()
+#6 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#8 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): EnterController->filterAccessControl()
+#9 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#10 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#11 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): EnterController->runActionWithFilters()
+#12 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): EnterController->run()
+#13 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#15 E:\xampp\htdocs\example.com\www\index.php(14): CWebApplication->run()
+REQUEST_URI=/enter/index
+in E:\xampp\htdocs\example.com\www\protected\views\enter\index.php (7)
+in E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php (46)
+in E:\xampp\htdocs\example.com\www\index.php (14)
+2014/11/06 17:21:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/06 17:26:11 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/11/06 17:26:47 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/journal/getonlineusers
+HTTP_REFERER=http://example.com/journal/index
+---
+2014/11/06 17:26:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/lists
+HTTP_REFERER=http://example.com/journal/index
+---
+2014/11/06 17:26:50 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/journal/index
+---
+2014/11/06 17:26:55 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/updatestatus
+HTTP_REFERER=http://example.com/help/index
+---
+2014/11/06 17:28:12 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/11/06 17:28:28 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/11/06 18:57:09 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php:1247
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): CHttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/
+---
+2014/11/06 19:20:46 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/11/06 19:23:49 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel
+---
+2014/11/06 19:24:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel
+---
+2014/11/06 19:24:53 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel
+---
+2014/11/06 19:25:39 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel
+---
+2014/11/06 19:26:39 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/enter/login
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/11/06 19:56:23 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/11/06 19:57:47 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/journal/getonlineusers
+HTTP_REFERER=http://example.com/journal/index
+---
+2014/11/06 19:57:48 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/lists
+HTTP_REFERER=http://example.com/journal/index
+---
+2014/11/06 19:57:50 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/journal/index
+---
+2014/11/06 20:00:00 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/journal/getonlineusers
+HTTP_REFERER=http://example.com/journal/index
+---
+2014/11/06 20:00:01 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/lists
+HTTP_REFERER=http://example.com/journal/index
+---
+2014/11/06 20:00:03 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/journal/index
+---
+2014/11/06 20:00:07 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/updatestatus
+HTTP_REFERER=http://example.com/help/index
+---
+2014/11/06 20:02:29 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/11/06 20:04:19 [error] [exception.CHttpException.200] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/11/06 20:13:14 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/11/06 20:13:55 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/11/06 20:17:25 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/11/06 20:30:31 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/11/06 20:33:41 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/11/06 20:38:35 [error] [exception.CException] exception 'CException' with message 'Не определено свойство "PanelController.enableCsrfValidation".' in E:\xampp\htdocs\example.com\www\framework\base\CComponent.php:173
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php(14): CComponent->__set('enableCsrfValid...', false)
+#1 E:\xampp\htdocs\example.com\www\framework\web\CController.php(306): PanelController->beforeAction(Object(CInlineAction))
+#2 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#8 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): CController->run('index')
+#10 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('panel/index')
+#11 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#12 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#13 {main}
+REQUEST_URI=/panel/index
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/11/06 20:44:54 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:38
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/notes
+HTTP_REFERER=http://example.com/panel/index
+---
+2014/11/06 20:50:29 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Невозможно определить CSRF.' in E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php:55
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\base\CComponent.php(561): HttpRequest->validateCsrfToken(Object(CEvent))
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(207): CComponent->raiseEvent('onBeginRequest', Object(CEvent))
+#2 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(178): CApplication->onBeginRequest(Object(CEvent))
+#3 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#4 {main}
+REQUEST_URI=/panel/lists
+HTTP_REFERER=http://example.com/panel/index
+---

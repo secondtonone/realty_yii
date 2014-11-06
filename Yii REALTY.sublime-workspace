@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"CH",
+				"CHttpRequest  (class)"
+			],
+			[
 				"pa",
 				"padding-right"
 			],
@@ -108,10 +112,18 @@
 			}
 		},
 		{
+			"file": "js/chart.js",
+			"settings":
+			{
+				"buffer_size": 107015,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "protected/controllers/StatsController.php",
 			"settings":
 			{
-				"buffer_size": 2271,
+				"buffer_size": 2270,
 				"line_ending": "Windows"
 			}
 		},
@@ -119,23 +131,7 @@
 			"file": "protected/components/StatsGetDataset.php",
 			"settings":
 			{
-				"buffer_size": 15793,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "protected/components/AdminGetData.php",
-			"settings":
-			{
-				"buffer_size": 21568,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "protected/components/ExcelExport.php",
-			"settings":
-			{
-				"buffer_size": 22603,
+				"buffer_size": 15792,
 				"line_ending": "Windows"
 			}
 		}
@@ -146,6 +142,34 @@
 		"height": 398.0,
 		"selected_items":
 		[
+			[
+				"git",
+				"Git: Status"
+			],
+			[
+				"git push",
+				"Git: Push Current Branch"
+			],
+			[
+				"git add",
+				"Git: Add..."
+			],
+			[
+				"git qu",
+				"Git: Quick Commit"
+			],
+			[
+				"git co",
+				"Set Syntax: Git Commit Message"
+			],
+			[
+				"git c",
+				"Git: Commit"
+			],
+			[
+				"git a",
+				"Git: Add..."
+			],
 			[
 				"Package Control: ",
 				"Package Control: Install Package"
@@ -163,14 +187,6 @@
 				"Git: Status"
 			],
 			[
-				"git c",
-				"Git: Commit Selected Hunk"
-			],
-			[
-				"git add",
-				"Git: Add..."
-			],
-			[
 				"in",
 				"Package Control: Install Package"
 			],
@@ -181,10 +197,6 @@
 			[
 				"git push ",
 				"Git: Push Current Branch"
-			],
-			[
-				"git",
-				"Git: Status"
 			],
 			[
 				"git com",
@@ -276,37 +288,49 @@
 		"/E/xampp/htdocs/example.com/www/protected/views/enter",
 		"/E/xampp/htdocs/example.com/www/protected/views/help",
 		"/E/xampp/htdocs/example.com/www/protected/views/layouts",
+		"/E/xampp/htdocs/example.com/www/protected/views/panel",
 		"/E/xampp/htdocs/example.com/www/protected/views/stats"
 	],
 	"file_history":
 	[
-		"/E/xampp/htdocs/example.com/www/protected/components/UserGetData.php",
-		"/E/xampp/htdocs/example.com/www/protected/controllers/EnterController.php",
 		"/E/xampp/htdocs/example.com/www/protected/views/enter/index.php",
+		"/E/xampp/htdocs/example.com/www/protected/components/SystemOption.php",
+		"/E/xampp/htdocs/example.com/www/protected/controllers/PanelController.php",
+		"/E/xampp/htdocs/example.com/www/protected/components/HttpRequest.php",
 		"/E/xampp/htdocs/example.com/www/protected/config/main.php",
+		"/E/xampp/htdocs/example.com/www/protected/views/layouts/mainadmin.php",
+		"/E/xampp/htdocs/example.com/www/protected/views/panel/admin.php",
+		"/E/xampp/htdocs/example.com/www/js/jqgrid/tables/admin_panel_jqgrid.js",
 		"/E/xampp/htdocs/example.com/www/css/styles.css",
+		"/E/xampp/htdocs/example.com/www/css/panel.css",
+		"/E/xampp/htdocs/example.com/www/protected/views/stats/index.php",
+		"/E/xampp/htdocs/example.com/www/css/stats.css",
+		"/E/Qt/Projects/Second/formatdate.cpp",
+		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/User/Twilight New (SL).tmTheme",
+		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/E/xampp/htdocs/example.com/www/protected/components/UserGetData.php",
+		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/User/Twilight (SL).tmTheme",
+		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/User/Twilight New.tmTheme",
+		"/E/xampp/htdocs/example.com/www/protected/views/help/admin.php",
+		"/E/xampp/htdocs/example.com/www/protected/components/UserIdentity.php",
+		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/User/Twilight.tmTheme",
+		"/E/xampp/htdocs/example.com/www/protected/views/help/user.php",
+		"/E/xampp/htdocs/example.com/www/protected/components/StatsGetDataset.php",
 		"/E/xampp/htdocs/example.com/www/protected/components/AdminGetData.php",
 		"/E/xampp/htdocs/example.com/www/protected/components/ExcelExport.php",
+		"/E/xampp/htdocs/example.com/www/protected/controllers/EnterController.php",
 		"/E/xampp/htdocs/example.com/www/protected/views/layouts/main.php",
-		"/E/xampp/htdocs/example.com/www/protected/views/stats/index.php",
 		"/E/xampp/htdocs/example.com/www/.gitignore",
 		"/E/xampp/htdocs/example.com/www/.git/info/exclude",
 		"/E/xampp/htdocs/example.com/www/index.php",
 		"/E/xampp/htdocs/example.com/www/js/jqgrid/tables/user_panel_jqgrid.js",
-		"/E/xampp/htdocs/example.com/www/js/jqgrid/tables/admin_panel_jqgrid.js",
-		"/E/xampp/htdocs/example.com/www/css/stats.css",
-		"/E/xampp/htdocs/example.com/www/css/panel.css",
 		"/E/xampp/htdocs/example.com/www/protected/components/UserModifyData.php",
 		"/E/xampp/htdocs/example.com/www/protected/components/AdminModifyData.php",
 		"/E/xampp/htdocs/example.com/www/js/jqgrid/tables/admin_journal_jqgrid.js",
-		"/E/xampp/htdocs/example.com/www/protected/components/StatsGetDataset.php",
-		"/E/xampp/htdocs/example.com/www/protected/views/help/user.php",
 		"/E/xampp/htdocs/example.com/www/css/help.css",
 		"/E/xampp/htdocs/example.com/www/protected/controllers/StatsController.php",
-		"/E/xampp/htdocs/example.com/www/protected/views/help/admin.php",
 		"/E/xampp/htdocs/example.com/www/js/enter.js",
 		"/E/xampp/htdocs/example.com/www/protected/components/UserLogOut.php",
-		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
 		"/E/Downloads/Google Диск/sublime settings/Preferences.sublime-settings",
 		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/User/ColorHighlighter.sublime-settings",
 		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/sublimelinter.py",
@@ -320,7 +344,6 @@
 		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/User/Sublimall.sublime-settings",
 		"/C/Users/secondtonone/AppData/Roaming/Sublime Text 3/Packages/Sublimall/Sublimall.sublime-settings",
 		"/E/xampp/htdocs/example.com/www/protected/components/WebUser.php",
-		"/E/xampp/htdocs/example.com/www/protected/components/UserIdentity.php",
 		"/E/xampp/htdocs/example.com/www/css/enter.css",
 		"/E/xampp/htdocs/example.com/www/protected/config/auth.php",
 		"/E/xampp/htdocs/example.com/www/protected/components/PhpAuthManager.php",
@@ -338,14 +361,11 @@
 		"/E/xampp/htdocs/example.com/www/protected/commands/CheckUsers.php",
 		"/E/xampp/htdocs/example.com/www/protected/config/cron.php",
 		"/E/xampp/htdocs/example.com/www/protected/config/test.php",
-		"/E/xampp/htdocs/example.com/www/protected/views/layouts/mainadmin.php",
 		"/E/xampp/htdocs/example.com/www/js/chart.js",
-		"/E/xampp/htdocs/example.com/www/protected/components/SystemOption.php",
 		"/E/xampp/htdocs/example.com/www/protected/controllers/HelpController.php",
 		"/E/xampp/htdocs/example.com/www/js/sticky.full.js",
 		"/E/xampp/htdocs/example.com/www/css/journal.css",
 		"/E/xampp/htdocs/example.com/www/protected/controllers/JournalController.php",
-		"/E/xampp/htdocs/example.com/www/protected/controllers/PanelController.php",
 		"/E/xampp/htdocs/example.com/www/js/jquery-1.10.2.js",
 		"/E/xampp/htdocs/example.com/www/js/jquery.slimscroll.js",
 		"/E/xampp/htdocs/example.com/www/framework/messages/config.php",
@@ -400,14 +420,7 @@
 		"/E/xampp/htdocs/rhyme.ru/www/app/views/main_view.php",
 		"/E/xampp/htdocs/library.bfpnipu.com/www/app/admin/markunit/markunit1.js",
 		"/E/xampp/htdocs/library.bfpnipu.com/www/app/admin/markunit/markunit4.js",
-		"/E/xampp/htdocs/library.bfpnipu.com/www/app/admin/markunit/markunit3.js",
-		"/E/xampp/htdocs/library.bfpnipu.com/www/app/admin/markunit/markunit2.js",
-		"/E/xampp/htdocs/library.bfpnipu.com/www/app/admin/scripts/unit2/saverowunit21.php",
-		"/E/xampp/htdocs/library.bfpnipu.com/www/app/admin/scripts/unit2/saverowunit2.php",
-		"/E/xampp/htdocs/library.bfpnipu.com/www/app/admin/markunit/markunit6.js",
-		"/E/xampp/htdocs/library.bfpnipu.com/www/app/admin/markunit/markunit5.js",
-		"/E/xampp/htdocs/rhyme.ru/www/app/views/crash_view.php",
-		"/E/xampp/htdocs/rhyme.ru/www/app/bootstrap.php"
+		"/E/xampp/htdocs/library.bfpnipu.com/www/app/admin/markunit/markunit3.js"
 	],
 	"find":
 	{
@@ -482,7 +495,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -498,8 +511,8 @@
 						"selection":
 						[
 							[
-								1912,
-								1912
+								546,
+								546
 							]
 						],
 						"settings":
@@ -613,141 +626,37 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 99.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "protected/controllers/StatsController.php",
+					"file": "js/chart.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2271,
+						"buffer_size": 107015,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1686,
-								1686
+								519,
+								519
 							]
 						],
 						"settings":
 						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"color_scheme": "Packages/User/Color Highlighter/themes/Twilight (SL).tmTheme",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"color_scheme": "Packages/User/Color Highlighter/themes/Twilight New (SL).tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 39.0,
+						"translation.y": 481.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -755,19 +664,19 @@
 				},
 				{
 					"buffer": 2,
-					"file": "protected/components/StatsGetDataset.php",
+					"file": "protected/controllers/StatsController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15793,
+						"buffer_size": 2270,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								82,
-								82
+								1313,
+								2203
 							]
 						],
 						"settings":
@@ -881,27 +790,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 169.0,
+						"translation.y": 86.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "protected/components/AdminGetData.php",
+					"file": "protected/components/StatsGetDataset.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 21568,
+						"buffer_size": 15792,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14319,
-								14319
+								13980,
+								13980
 							]
 						],
 						"settings":
@@ -1015,40 +924,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 6084.0,
+						"translation.y": 281.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "protected/components/ExcelExport.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 22603,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"color_scheme": "Packages/User/Color Highlighter/themes/Twilight (SL).tmTheme",
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 5928.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1114,7 +993,7 @@
 		[
 			[
 				"",
-				"E:\\xampp\\htdocs\\esn.pro\\www\\isesn.ru.sublime-project"
+				"E:\\xampp\\htdocs\\example.com\\www\\Yii REALTY.sublime-project"
 			]
 		],
 		"width": 380.0

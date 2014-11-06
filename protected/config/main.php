@@ -34,6 +34,14 @@ return array(
 
 	// application components
 	'components'=>array(
+        'request'=>array(
+        	'enableCookieValidation'=>true,
+        	'class' => 'application.components.HttpRequest',
+            'enableCsrfValidation'=>true,
+            'noCsrfValidationRoutes'=>array(
+	        	'panel','journal','stats','help'
+	        ),
+        ),
 		'errorHandler'=>array(
             'errorAction'=>'enter/index',
         ),
@@ -50,7 +58,7 @@ return array(
 			'loginUrl'=>array('enter/index')
 		),
 		// uncomment the following to enable URLs in path-format
-		
+
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'showScriptName'=>false,
@@ -61,12 +69,12 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-		
+
 		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		),*/
 		// uncomment the following to use a MySQL database
-		
+
 		'db'=>array(
 			'class'=>'CDbConnection',
 			'connectionString' => 'mysql:host=localhost;dbname=u701794099_real',
@@ -76,7 +84,7 @@ return array(
 			'charset' => 'utf8',
 			'enableParamLogging'=>true,
 		),
-		
+
 		/*'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'enter/index',
@@ -102,60 +110,60 @@ return array(
 			   'mainjs' => array(
 					'baseUrl' => '/js/',
 					'js'=>array('jquery-1.10.2.js','sticky.full.js','jquery.slimscroll.js'),
-				  
+
 				),
 				'enterjs' => array(
 					'baseUrl' => '/js/',
 					'js'=>array('jquery.backstretch.min.js','enter.js'),
-				  
+
 				),
 				'jqgridjs' => array(
 					'baseUrl' => '/js/',
 					'js'=>array('jqgrid/themes/jquery-ui-1.9.2.custom.js','jqgrid/js/jquery.jqGrid.js','jqgrid/js/grid.locale-ru.js'),
-				  
+
 				),
 				'paneladminjs' => array(
 					'baseUrl' => '/js/',
 					'js'=>array('jqgrid/tables/admin_panel_jqgrid.js','panel.js'),
-				  
+
 				),
 				'paneluserjs' => array(
 					'baseUrl' => '/js/',
 					'js'=>array('jqgrid/tables/user_panel_jqgrid.js','panel.js'),
-				  
+
 				),
 				'journaljs' => array(
 					'baseUrl' => '/js/',
 					'js'=>array('jqgrid/tables/admin_journal_jqgrid.js','panel.js'),
-				  
+
 				),
 				'statsjs' => array(
 					'baseUrl' => '/js/',
 					'js'=>array('chart.js','legend.js','panel.js','stats.js'),
-				  
+
 				),
 				'helpjs' => array(
 					'baseUrl' => '/js/',
 					'js'=>array('jqgrid/themes/jquery-ui-1.9.2.custom.js','panel.js'),
-				  
+
 				),
 				'tooltip' => array(
 					'baseUrl' => '/js/',
 					'js'=>array('tooltip.js'),
-				  
+
 				),
 				'maincss' => array(
 					'baseUrl' => '/css/',
 					'css' => array('styles.css'),
 				)
 			),
-		
+
 		),
 	),
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'webmaster@example.com',
+		'adminEmail'=>'fixer40@bk.ru',
 	),
 );
