@@ -2,7 +2,7 @@
 class EventJournaling
 {
 	public $date;
-	
+
 	public function __construct()
 	{
 		$this->date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
@@ -60,6 +60,14 @@ class EventJournaling
 		$journal = new Journal;
 		$journal->id_user=$id_user;
 		$journal->id_type_event=7;
+		$journal->time_event=$this->date;
+		$journal->save();
+	}
+	public function userDataExport($id_user)
+    {
+		$journal = new Journal;
+		$journal->id_user=$id_user;
+		$journal->id_type_event=8;
 		$journal->time_event=$this->date;
 		$journal->save();
 	}

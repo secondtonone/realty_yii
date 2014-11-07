@@ -4,6 +4,10 @@ class ExcelExport
 	public function adminObjects($arguments)
 	{
 		$connection=Yii::app()->db;
+
+		$journal = new EventJournaling;
+		$journal->userDataExport(Yii::app()->user->getId());
+
 		$curPage = $arguments['page'];
 		$rowsPerPage = $arguments['rows'];
 		$sortingField = $arguments['sidx'];
@@ -164,6 +168,9 @@ class ExcelExport
 	public function userObjects($arguments)
 	{
 		$connection=Yii::app()->db;
+
+		$journal = new EventJournaling;
+		$journal->userDataExport(Yii::app()->user->getId());
 
 		$curPage = $arguments['page'];
 		$rowsPerPage = $arguments['rows'];
@@ -355,6 +362,9 @@ class ExcelExport
 	public function userClients($arguments)
 	{
 		$connection=Yii::app()->db;
+
+		$journal = new EventJournaling;
+		$journal->userDataExport(Yii::app()->user->getId());
 
 		$curPage = $arguments['page'];
 		$rowsPerPage = $arguments['rows'];
