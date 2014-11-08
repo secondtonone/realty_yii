@@ -411,8 +411,12 @@ class AdminGetData
 		$command->reset();
 			//получаем список из базы
 		$sql='SELECT  o.`id_object` , o.`id_owner`, ow.`name_owner`,ow.`number`,o.`id_city`,c.`name_city`, o.`id_floor_status`,o.`id_street`,st.`name_street` , o.`house_number` ,o.`id_building`, o.`id_category`, o.`room_count` , o.`id_planning` , o.`floor`,o.`number_of_floor` , o.`space` , o.`id_renovation` , o.`id_window`, o.`id_counter`,o.`comment`, o.`id_sell_out_status`, o.`id_time_status`, o.`price`, o.`market_price` ,o.`id_user`,u.`name` , o.`date` FROM `objects` o LEFT JOIN `objects_owners` ow ON o.`id_owner`= ow.`id_owner` LEFT JOIN `objects_street` st ON o.`id_street`= st.`id_street` LEFT JOIN `geo_city` c ON o.`id_city`= c.`id_city` LEFT JOIN `users` u ON o.`id_user`= u.`id_user` '.$qWhere.' ORDER BY '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage;
-		$command=$connection->createCommand($sql);
-		$rows=$command->queryAll();
+
+		$dependency = new CDbCacheDependency('SELECT  MAX(o.`date`) FROM `objects` o LEFT JOIN `objects_owners` ow ON o.`id_owner`= ow.`id_owner` LEFT JOIN `objects_street` st ON o.`id_street`= st.`id_street` LEFT JOIN `geo_city` c ON o.`id_city`= c.`id_city` LEFT JOIN `users` u ON o.`id_user`= u.`id_user` '.$qWhere.' ORDER BY '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage);
+		$rows = $connection->cache(500, $dependency)->createCommand($sql)->queryAll();
+
+		/*$command=$connection->createCommand($sql);
+		$rows=$command->queryAll();*/
 
 		//сохраняем номер текущей страницы, общее количество страниц и общее количество записей
 		$response = new stdClass();
@@ -557,8 +561,12 @@ class AdminGetData
 		$command->reset();
 
 		$sql='SELECT `id_user`,`login`,`password`,`active`,`id_right`,`name`,`number`,`online`,`time_activity` FROM `users`'.$qWhere.' ORDER BY '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage;
-		$command=$connection->createCommand($sql);
-		$rows=$command->queryAll();
+
+		$dependency = new CDbCacheDependency('SELECT MAX(`time_activity`) FROM `users`'.$qWhere.' ORDER BY '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage);
+		$rows = $connection->cache(500, $dependency)->createCommand($sql)->queryAll();
+
+		/*$command=$connection->createCommand($sql);
+		$rows=$command->queryAll();*/
 
 		//сохраняем номер текущей страницы, общее количество страниц и общее количество записей
 		$response = new stdClass();

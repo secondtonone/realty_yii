@@ -295,7 +295,7 @@ $("#objects").jqGrid({
 	   $("#objects").jqGrid('gridResize', { minWidth: 1150,maxWidth: 1800});
 
 
-$("#pager_left table.navtable tbody tr").append ('Передача объектов: <input id="id_user" type="hidden"/><input id="name_user" type="text" placeholder="Кому" name="user"/><button id="hand-over" title="Передать объекты другому менеджеру">Передать</button>');
+$("#pager_left table.navtable tbody tr").append ('<div class="fast-edit-wrapper">Передача объектов: <input id="id_user" type="hidden"/><input id="name_user" type="text" placeholder="Кому" name="user"/><button id="hand-over" title="Передать объекты другому менеджеру">Передать</button></div>');
 
 $("#users").jqGrid({
             url:"/panel/getusers",
@@ -444,7 +444,7 @@ $("#users").jqGrid({
 			}
 			}},{width:390,reloadAfterSubmit:true},{width:525,reloadAfterSubmit:true,multipleSearch:true,closeAfterSearch:true},{width:390,reloadAfterSubmit:true}).navSeparatorAdd("#pager2",{sepclass:"ui-separator",sepcontent: ''}).navSeparatorAdd("#"+pager_id,{sepclass:"ui-separator",sepcontent: ''});
 
-		$("#"+pager_id+"_left table.navtable tbody tr").append ('Передача покупателей: <input id="id_user_sub" type="hidden"/><input id="name_user_sub" type="text" placeholder="Кому" name="user"/><button id="hand-over-sub" title="Передать покупателей другому менеджеру">Передать</button>');
+		$("#"+pager_id+"_left table.navtable tbody tr").append ('<div class="fast-edit-wrapper">Передача покупателей: <input id="id_user_sub" type="hidden"/><input id="name_user_sub" type="text" placeholder="Кому" name="user"/><button id="hand-over-sub" title="Передать покупателей другому менеджеру">Передать</button></div>');
 
 		 $('#name_user_sub').autocomplete({
           source: "/panel/autocomplete?q=user",
@@ -584,7 +584,7 @@ $("#users").jqGrid({
 
 $("#users").jqGrid('gridResize', { minWidth: 1150,maxWidth: 1800});
 
-$("#pager2_left table.navtable tbody tr").append('Статус: <select class="active-status"><option value="0" selected="selected">выбрать...</option><option value="1">Активен</option><option value="2">Не активен</option></select>');
+$("#pager2_left table.navtable tbody tr").append('<div class="fast-edit-wrapper">Статус: <select class="active-status"><option value="0" selected="selected">выбрать...</option><option value="1">Активен</option><option value="2">Не активен</option></select></div>');
 
  $(".active-status").change(function() {
 

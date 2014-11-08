@@ -8521,3 +8521,224 @@ Stack trace:
 REQUEST_URI=/panel/lists
 HTTP_REFERER=http://example.com/panel/index
 ---
+2014/11/08 16:12:21 [error] [php] Undefined variable: id (E:\xampp\htdocs\example.com\www\protected\views\layouts\mainadmin.php:10)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(784): PanelController->renderFile()
+#1 E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php(60): PanelController->render()
+#2 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): PanelController->actionIndex()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): PanelController->runAction()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): PanelController->filterAccessControl()
+#8 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#10 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): PanelController->runActionWithFilters()
+#11 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): PanelController->run()
+#12 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 E:\xampp\htdocs\example.com\www\index.php(14): CWebApplication->run()
+REQUEST_URI=/panel/index
+in E:\xampp\htdocs\example.com\www\protected\views\layouts\mainadmin.php (10)
+in E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php (60)
+in E:\xampp\htdocs\example.com\www\index.php (14)
+2014/11/08 16:12:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/08 16:12:23 [error] [php] Undefined variable: id (E:\xampp\htdocs\example.com\www\protected\views\layouts\mainadmin.php:10)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(784): PanelController->renderFile()
+#1 E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php(60): PanelController->render()
+#2 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): PanelController->actionIndex()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): PanelController->runAction()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): PanelController->filterAccessControl()
+#8 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#10 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): PanelController->runActionWithFilters()
+#11 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): PanelController->run()
+#12 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 E:\xampp\htdocs\example.com\www\index.php(14): CWebApplication->run()
+REQUEST_URI=/panel/index
+in E:\xampp\htdocs\example.com\www\protected\views\layouts\mainadmin.php (10)
+in E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php (60)
+in E:\xampp\htdocs\example.com\www\index.php (14)
+2014/11/08 16:16:47 [error] [exception.CException] exception 'CException' with message 'CMemCache требуется загруженное расширение PHP memcache.' in E:\xampp\htdocs\example.com\www\framework\caching\CMemCache.php:116
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\caching\CMemCache.php(89): CMemCache->getMemCache()
+#1 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CMemCache->init()
+#2 E:\xampp\htdocs\example.com\www\framework\web\CUrlManager.php(216): CModule->getComponent('cache')
+#3 E:\xampp\htdocs\example.com\www\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#4 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CUrlManager->init()
+#5 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#6 E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php(15): CApplication->getUrlManager()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php(111): HttpRequest->normalizeRequest()
+#8 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CHttpRequest->init()
+#9 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(513): CModule->getComponent('request')
+#10 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(545): CApplication->getRequest()
+#11 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(165): CWebApplication->init()
+#12 E:\xampp\htdocs\example.com\www\framework\YiiBase.php(125): CApplication->__construct('E:\xampp\htdocs...')
+#13 E:\xampp\htdocs\example.com\www\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'E:\xampp\htdocs...')
+#14 E:\xampp\htdocs\example.com\www\index.php(14): YiiBase::createWebApplication('E:\xampp\htdocs...')
+#15 {main}
+REQUEST_URI=/panel/index
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/11/08 16:16:48 [error] [exception.CException] exception 'CException' with message 'CMemCache требуется загруженное расширение PHP memcache.' in E:\xampp\htdocs\example.com\www\framework\caching\CMemCache.php:116
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\caching\CMemCache.php(89): CMemCache->getMemCache()
+#1 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CMemCache->init()
+#2 E:\xampp\htdocs\example.com\www\framework\web\CUrlManager.php(216): CModule->getComponent('cache')
+#3 E:\xampp\htdocs\example.com\www\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#4 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CUrlManager->init()
+#5 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#6 E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php(15): CApplication->getUrlManager()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php(111): HttpRequest->normalizeRequest()
+#8 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CHttpRequest->init()
+#9 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(513): CModule->getComponent('request')
+#10 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(545): CApplication->getRequest()
+#11 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(165): CWebApplication->init()
+#12 E:\xampp\htdocs\example.com\www\framework\YiiBase.php(125): CApplication->__construct('E:\xampp\htdocs...')
+#13 E:\xampp\htdocs\example.com\www\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'E:\xampp\htdocs...')
+#14 E:\xampp\htdocs\example.com\www\index.php(14): YiiBase::createWebApplication('E:\xampp\htdocs...')
+#15 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/08 16:16:52 [error] [exception.CException] exception 'CException' with message 'CMemCache требуется загруженное расширение PHP memcache.' in E:\xampp\htdocs\example.com\www\framework\caching\CMemCache.php:116
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\caching\CMemCache.php(89): CMemCache->getMemCache()
+#1 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CMemCache->init()
+#2 E:\xampp\htdocs\example.com\www\framework\web\CUrlManager.php(216): CModule->getComponent('cache')
+#3 E:\xampp\htdocs\example.com\www\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#4 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CUrlManager->init()
+#5 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#6 E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php(15): CApplication->getUrlManager()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php(111): HttpRequest->normalizeRequest()
+#8 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CHttpRequest->init()
+#9 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(513): CModule->getComponent('request')
+#10 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(545): CApplication->getRequest()
+#11 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(165): CWebApplication->init()
+#12 E:\xampp\htdocs\example.com\www\framework\YiiBase.php(125): CApplication->__construct('E:\xampp\htdocs...')
+#13 E:\xampp\htdocs\example.com\www\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'E:\xampp\htdocs...')
+#14 E:\xampp\htdocs\example.com\www\index.php(14): YiiBase::createWebApplication('E:\xampp\htdocs...')
+#15 {main}
+REQUEST_URI=/panel/index
+---
+2014/11/08 16:16:52 [error] [exception.CException] exception 'CException' with message 'CMemCache требуется загруженное расширение PHP memcache.' in E:\xampp\htdocs\example.com\www\framework\caching\CMemCache.php:116
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\caching\CMemCache.php(89): CMemCache->getMemCache()
+#1 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CMemCache->init()
+#2 E:\xampp\htdocs\example.com\www\framework\web\CUrlManager.php(216): CModule->getComponent('cache')
+#3 E:\xampp\htdocs\example.com\www\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#4 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CUrlManager->init()
+#5 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#6 E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php(15): CApplication->getUrlManager()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php(111): HttpRequest->normalizeRequest()
+#8 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CHttpRequest->init()
+#9 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(513): CModule->getComponent('request')
+#10 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(545): CApplication->getRequest()
+#11 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(165): CWebApplication->init()
+#12 E:\xampp\htdocs\example.com\www\framework\YiiBase.php(125): CApplication->__construct('E:\xampp\htdocs...')
+#13 E:\xampp\htdocs\example.com\www\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'E:\xampp\htdocs...')
+#14 E:\xampp\htdocs\example.com\www\index.php(14): YiiBase::createWebApplication('E:\xampp\htdocs...')
+#15 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/08 16:16:59 [error] [exception.CException] exception 'CException' with message 'CMemCache требуется загруженное расширение PHP memcache.' in E:\xampp\htdocs\example.com\www\framework\caching\CMemCache.php:116
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\caching\CMemCache.php(89): CMemCache->getMemCache()
+#1 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CMemCache->init()
+#2 E:\xampp\htdocs\example.com\www\framework\web\CUrlManager.php(216): CModule->getComponent('cache')
+#3 E:\xampp\htdocs\example.com\www\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#4 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CUrlManager->init()
+#5 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#6 E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php(15): CApplication->getUrlManager()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php(111): HttpRequest->normalizeRequest()
+#8 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CHttpRequest->init()
+#9 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(513): CModule->getComponent('request')
+#10 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(545): CApplication->getRequest()
+#11 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(165): CWebApplication->init()
+#12 E:\xampp\htdocs\example.com\www\framework\YiiBase.php(125): CApplication->__construct('E:\xampp\htdocs...')
+#13 E:\xampp\htdocs\example.com\www\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'E:\xampp\htdocs...')
+#14 E:\xampp\htdocs\example.com\www\index.php(14): YiiBase::createWebApplication('E:\xampp\htdocs...')
+#15 {main}
+REQUEST_URI=/
+---
+2014/11/08 16:17:00 [error] [exception.CException] exception 'CException' with message 'CMemCache требуется загруженное расширение PHP memcache.' in E:\xampp\htdocs\example.com\www\framework\caching\CMemCache.php:116
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\caching\CMemCache.php(89): CMemCache->getMemCache()
+#1 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CMemCache->init()
+#2 E:\xampp\htdocs\example.com\www\framework\web\CUrlManager.php(216): CModule->getComponent('cache')
+#3 E:\xampp\htdocs\example.com\www\framework\web\CUrlManager.php(206): CUrlManager->processRules()
+#4 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CUrlManager->init()
+#5 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(522): CModule->getComponent('urlManager')
+#6 E:\xampp\htdocs\example.com\www\protected\components\HttpRequest.php(15): CApplication->getUrlManager()
+#7 E:\xampp\htdocs\example.com\www\framework\web\CHttpRequest.php(111): HttpRequest->normalizeRequest()
+#8 E:\xampp\htdocs\example.com\www\framework\base\CModule.php(387): CHttpRequest->init()
+#9 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(513): CModule->getComponent('request')
+#10 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(545): CApplication->getRequest()
+#11 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(165): CWebApplication->init()
+#12 E:\xampp\htdocs\example.com\www\framework\YiiBase.php(125): CApplication->__construct('E:\xampp\htdocs...')
+#13 E:\xampp\htdocs\example.com\www\framework\YiiBase.php(98): YiiBase::createApplication('CWebApplication', 'E:\xampp\htdocs...')
+#14 E:\xampp\htdocs\example.com\www\index.php(14): YiiBase::createWebApplication('E:\xampp\htdocs...')
+#15 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/08 16:18:37 [error] [php] Undefined variable: id (E:\xampp\htdocs\example.com\www\protected\views\layouts\mainadmin.php:10)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(784): PanelController->renderFile()
+#1 E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php(60): PanelController->render()
+#2 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): PanelController->actionIndex()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): PanelController->runAction()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): PanelController->filterAccessControl()
+#8 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#10 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): PanelController->runActionWithFilters()
+#11 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): PanelController->run()
+#12 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 E:\xampp\htdocs\example.com\www\index.php(14): CWebApplication->run()
+REQUEST_URI=/
+in E:\xampp\htdocs\example.com\www\protected\views\layouts\mainadmin.php (10)
+in E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php (60)
+in E:\xampp\htdocs\example.com\www\index.php (14)
+2014/11/08 16:18:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php:286
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController('favicon.ico')
+#1 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(14): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2014/11/08 16:18:39 [error] [php] Undefined variable: id (E:\xampp\htdocs\example.com\www\protected\views\layouts\mainadmin.php:10)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\web\CController.php(784): PanelController->renderFile()
+#1 E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php(60): PanelController->render()
+#2 E:\xampp\htdocs\example.com\www\framework\web\actions\CInlineAction.php(49): PanelController->actionIndex()
+#3 E:\xampp\htdocs\example.com\www\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(133): PanelController->runAction()
+#5 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 E:\xampp\htdocs\example.com\www\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#7 E:\xampp\htdocs\example.com\www\framework\web\filters\CInlineFilter.php(58): PanelController->filterAccessControl()
+#8 E:\xampp\htdocs\example.com\www\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#9 E:\xampp\htdocs\example.com\www\framework\web\CController.php(291): CFilterChain->run()
+#10 E:\xampp\htdocs\example.com\www\framework\web\CController.php(265): PanelController->runActionWithFilters()
+#11 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(282): PanelController->run()
+#12 E:\xampp\htdocs\example.com\www\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 E:\xampp\htdocs\example.com\www\framework\base\CApplication.php(180): CWebApplication->processRequest()
+#14 E:\xampp\htdocs\example.com\www\index.php(14): CWebApplication->run()
+REQUEST_URI=/panel/index
+in E:\xampp\htdocs\example.com\www\protected\views\layouts\mainadmin.php (10)
+in E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php (60)
+in E:\xampp\htdocs\example.com\www\index.php (14)

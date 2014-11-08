@@ -129,7 +129,12 @@
 .lower-content {
 	margin-top: 7px;
 }
-
+.fast-edit-wrapper {
+	vertical-align: middle;
+}
+.fast-edit-wrapper select {
+	margin-top: 2px;
+}
 .button-status,
 .cl-button-status,
 #hand-over,
@@ -142,7 +147,6 @@
 	font-family: "Segoe UI", "Helvetica", "Arial", sans-serif;
 	padding: 3px 5px;
 	text-align: center;
-	vertical-align: middle;
 	font-weight: 400;
 	margin-left:2px;
 }
@@ -157,8 +161,14 @@
 	color:#010011;
 }
 .select-wrap,
-.cl-select-wrap  {
+.cl-select-wrap {
 	display:none;
+	vertical-align: middle;
+	padding-left: 2px;
+}
+.select-wrap select,
+.cl-select-wrap select {
+	margin-top: 2px;
 }
 .icon-panel::after {
 	content: " ";

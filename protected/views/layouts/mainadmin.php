@@ -7,6 +7,7 @@
 	<title><?php echo CHtml::encode($this->pageTitle);?></title>
 </head>
 <body>
+    <?php if($this->beginCache('mainadmin',array('duration'=>3600*24))) { ?>
 	<div class="header">
     	<div class="navbar">
         	<div class="container">
@@ -28,6 +29,7 @@
             </div>
         </div>
     </div>
+    <?php $this->endCache(); } ?>
     <?php echo $content;?>
 </body>
 </html>

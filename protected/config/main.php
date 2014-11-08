@@ -34,6 +34,12 @@ return array(
 
 	// application components
 	'components'=>array(
+		'assetManager' => array(
+            'linkAssets' => true,
+        ),
+		'cache'=>array(
+            'class'=>'system.caching.CFileCache'
+        ),
         'request'=>array(
         	'enableCookieValidation'=>true,
         	'class' => 'application.components.HttpRequest',

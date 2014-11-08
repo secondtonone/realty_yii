@@ -119,8 +119,10 @@ class UserGetData
 		$firstRowIndex = $curPage * $rowsPerPage - $rowsPerPage;
 
 		$sql='SELECT c.`id_client`, c.`name` as clname, c.`number`,c.`id_city`,ct.`name_city`, c.`id_category`, c.`id_planning`, c.`id_floor_status`,c.`price`, c.`id_time_status`,c.`id_status`, c.`id_user`,u.`name`, c.`date` FROM `clients` c LEFT JOIN `users` u ON c.`id_user`= u.`id_user` LEFT JOIN `geo_city` ct ON c.`id_city`= ct.`id_city` WHERE c.`id_status`=1 '.$qWhere.' ORDER BY FIELD( c.`id_user` ,'.$array_id.'), '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage;
-		$command=$connection->createCommand($sql);
-		$rows=$command->queryAll();
+		$dependency = new CDbCacheDependency('SELECT MAX(c.`date`) FROM `clients` c LEFT JOIN `users` u ON c.`id_user`= u.`id_user` LEFT JOIN `geo_city` ct ON c.`id_city`= ct.`id_city` WHERE c.`id_status`=1 '.$qWhere.' ORDER BY FIELD( c.`id_user` ,'.$array_id.'), '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage);
+		$rows = $connection->cache(500, $dependency)->createCommand($sql)->queryAll();
+		/*$command=$connection->createCommand($sql);
+		$rows=$command->queryAll();*/
 
 		//сохраняем номер текущей страницы, общее количество страниц и общее количество записей
 		$response = new stdClass();
@@ -267,8 +269,11 @@ class UserGetData
 		$firstRowIndex = $curPage * $rowsPerPage - $rowsPerPage;
 		//получаем список из базы
 		$sql='SELECT o.`id_object`, o.`id_owner`, ow.`name_owner`,ow.`number`, o.`id_city`,ct.`name_city`,o.`id_street`, o.`id_floor_status`,st.`name_street` , o.`house_number` ,o.`id_building`, o.`id_category`, o.`room_count` , o.`id_planning` , o.`floor`,o.`number_of_floor` , o.`space` , o.`id_renovation` , o.`id_window`, o.`id_counter`, o.`comment`, o.`id_sell_out_status`, o.`id_time_status`, o.`price`, o.`market_price` ,o.`id_user`,u.`name` , o.`date` FROM `objects` o LEFT JOIN `objects_owners` ow ON o.`id_owner`= ow.`id_owner` LEFT JOIN `objects_street` st ON o.`id_street`= st.`id_street` LEFT JOIN `geo_city` ct ON o.`id_city`= ct.`id_city` LEFT JOIN `users` u ON o.`id_user`= u.`id_user` WHERE (o.`id_sell_out_status`=1 OR o.`id_sell_out_status`=4) '.$qWhere.' ORDER BY FIELD( o.`id_user` ,'.$array_id.'), '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage;
-		$command=$connection->createCommand($sql);
-		$rows=$command->queryAll();
+
+		$dependency = new CDbCacheDependency('SELECT MAX(o.`date`) FROM `objects` o LEFT JOIN `objects_owners` ow ON o.`id_owner`= ow.`id_owner` LEFT JOIN `objects_street` st ON o.`id_street`= st.`id_street` LEFT JOIN `geo_city` ct ON o.`id_city`= ct.`id_city` LEFT JOIN `users` u ON o.`id_user`= u.`id_user` WHERE (o.`id_sell_out_status`=1 OR o.`id_sell_out_status`=4) '.$qWhere.' ORDER BY FIELD( o.`id_user` ,'.$array_id.'), '.$sortingField.' '.$sortingOrder.' LIMIT '.$firstRowIndex.', '.$rowsPerPage);
+		$rows = $connection->cache(500, $dependency)->createCommand($sql)->queryAll();
+		/*$command=$connection->createCommand($sql);
+		$rows=$command->queryAll();*/
 
 			//сохраняем номер текущей страницы, общее количество страниц и общее количество записей
 		$response = new stdClass();

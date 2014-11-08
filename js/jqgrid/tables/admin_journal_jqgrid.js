@@ -138,7 +138,7 @@ $("#notifications").jqGrid({
 			}
 			}},{width:570,reloadAfterSubmit:true,zIndex:99},{width:570,reloadAfterSubmit:true,multipleSearch:true,zIndex:99,closeAfterSearch:true},{width:570,reloadAfterSubmit:true,zIndex:99}).navSeparatorAdd("#pager",{sepclass:"ui-separator",sepcontent: ''});
 
-$("#pager_left table.navtable tbody tr").append('Статус: <select class="active-status"><option value="0" selected="selected">выбрать...</option><option value="1">Активен</option><option value="2">Не активен</option></select>');
+$("#pager_left table.navtable tbody tr").append('<div class="fast-edit-wrapper">Статус: <select class="active-status"><option value="0" selected="selected">выбрать...</option><option value="1">Активен</option><option value="2">Не активен</option></select></div>');
 
  $(".active-status").change(function() {
 
