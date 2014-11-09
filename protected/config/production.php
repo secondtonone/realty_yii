@@ -34,9 +34,6 @@ return array(
 
 	// application components
 	'components'=>array(
-		'assetManager' => array(
-            'linkAssets' => true,
-        ),
 		'cache'=>array(
             'class'=>'system.caching.CFileCache'
         ),
@@ -83,10 +80,10 @@ return array(
 
 		'db'=>array(
 			'class'=>'CDbConnection',
-			'connectionString' => 'mysql:host=localhost;dbname=u701794099_real',
+			'connectionString' => 'mysql:host=localhost;dbname=xfb7908z_realty',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'xfb7908z_realty',
+			'password' => 'second',
 			'charset' => 'utf8',
 			'enableParamLogging'=>true,
 		),
@@ -125,7 +122,7 @@ return array(
 				),
 				'jqgridjs' => array(
 					'baseUrl' => '/js/',
-					'js'=>array('jqgrid/themes/jquery-ui-1.9.2.custom.js','jqgrid/js/jquery.jqGrid.js','jqgrid/js/grid.locale-ru.js'),
+					'js'=>array('jquery-ui-1.9.2.custom.js','jqgrid/js/jquery.jqGrid.js','jqgrid/js/grid.locale-ru.js'),
 
 				),
 				'paneladminjs' => array(
@@ -150,7 +147,7 @@ return array(
 				),
 				'helpjs' => array(
 					'baseUrl' => '/js/',
-					'js'=>array('jqgrid/themes/jquery-ui-1.9.2.custom.js','panel.js'),
+					'js'=>array('jquery-ui-1.9.2.custom.js','panel.js'),
 
 				),
 				'tooltip' => array(

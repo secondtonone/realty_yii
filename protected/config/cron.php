@@ -8,7 +8,7 @@ return array(
 
 	// preloading 'log' component
 	'preload'=>array('log'),
-	
+
 	'import'=>array(
 		'application.models.*',
 		'application.components.*',
@@ -32,15 +32,16 @@ return array(
             ),
         ),
 		// uncomment the following to use a MySQL database
-		
+
 		'db'=>array(
 			'class'=>'CDbConnection',
-			'connectionString' => 'mysql:host=localhost;dbname=u701794099_real',
+			'connectionString' => 'mysql:host=localhost;dbname=xfb7908z_realty',
 			'emulatePrepare' => true,
-			'username' => 'root',
-			'password' => '',
+			'username' => 'xfb7908z_realty',
+			'password' => 'second',
 			'charset' => 'utf8',
+			'enableParamLogging'=>true,
 		),
-		
+
 	),
 );

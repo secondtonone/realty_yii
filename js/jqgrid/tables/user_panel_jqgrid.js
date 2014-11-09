@@ -440,41 +440,48 @@ $("#objects").jqGrid({
 
 			$("option:selected", $(this)).each(function() {
 
-				var s= $("#objects").jqGrid('getGridParam','selarrrow'),
-				id_status=$(".sell-out-status :selected").val();
+				var selRow= $("#objects").jqGrid('getGridParam','selarrrow'),
+					id_status=$(".sell-out-status :selected").val(),
+					selObject,rowData,id_user,
+					matchObj={};
 
-				if (id_status===0)
+				if (!id_status)
 				{
 					showErrorDialog('Выберите значение!');
 
 				}
 
-				else if (s===false)
+				else if (!selRow.length)
 				{
 					showErrorDialog('Поля не отмечены!');
 
 				}
 				else
 				{
-					for(var i=0;i<s.length;i++)
+					for(var i=0;i<selRow.length;i++)
 					{
-						var cl = s[i],
-							rowData = $("#objects").jqGrid('getRowData',cl),
-							id_user = rowData.id_user;
-						$.ajax({
-						type: "POST",
-						url: "/panel/usermodifyobjects",
-						data: 'oper=selloutstatus&id_object='+cl+'&id_status='+id_status+'&id_user='+id_user,
-						success: function(msg){
-									$('#objects').trigger("reloadGrid");
-									if(!msg)
-									{
-										showErrorDialog('Вы не можите редактировать эту запись!');
-
-									}
-								}
-						});
+						selObject = selRow[i];
+						rowData = $("#objects").jqGrid('getRowData',selObject);
+						id_user = rowData.id_user;
+						matchObj[selObject]=id_user;
 					}
+
+					var selObjects = JSON.stringify(matchObj);
+
+					$.ajax({
+					type: "POST",
+					url: "/panel/usermodifyobjects",
+					data: 'oper=selloutstatus&match='+selObjects+'&id_status='+id_status,
+					success: function(msg){
+								$('#objects').trigger("reloadGrid");
+								if(!msg)
+								{
+									showErrorDialog('Вы не можите редактировать эту запись!');
+
+								}
+							}
+					});
+
 					$('.sell-out-status option').prop('selected', function() {
 							return this.defaultSelected;
 						});
@@ -485,43 +492,50 @@ $("#objects").jqGrid({
 
 			$("option:selected", $(this)).each(function() {
 
-	    		var s= $("#objects").jqGrid('getGridParam','selarrrow'),
-	    		id_status=$(".time-status :selected").val();
+	    		var selRow= $("#objects").jqGrid('getGridParam','selarrrow'),
+	    			id_status=$(".time-status :selected").val(),
+					selObject,rowData,id_user,
+					matchObj={};
 
-				if (id_status===0)
+				if (!id_status)
 				{
 
 					showErrorDialog('Выберите значение!');
 
 				}
 
-				else if (s===false){
+				else if (!selRow.length){
 
 					showErrorDialog('Поля не отмечены!');
 
 				}
 				else
 				{
-					for(var i=0;i<s.length;i++)
+					for(var i=0;i<selRow.length;i++)
 					{
-						var cl = s[i],
-							rowData = $("#objects").jqGrid('getRowData',cl),
-							id_user = rowData.id_user;
-						$.ajax({
-						type: "POST",
-						url: "/panel/usermodifyobjects",
-						data: 'oper=timestatus&id_object='+cl+'&id_status='+id_status+'&id_user='+id_user,
-						success: function(msg){
-									$('#objects').trigger("reloadGrid");
-
-									if(!msg)
-									{
-										showErrorDialog('Вы не можите редактировать эту запись!');
-									}
-
-							}
-						});
+						selObject = selRow[i];
+						rowData = $("#objects").jqGrid('getRowData',selObject);
+						id_user = rowData.id_user;
+						matchObj[selObject]=id_user;
 					}
+
+					var selObjects = JSON.stringify(matchObj);
+
+					$.ajax({
+					type: "POST",
+					url: "/panel/usermodifyobjects",
+					data: 'oper=timestatus&match='+selObjects+'&id_status='+id_status,
+					success: function(msg){
+								$('#objects').trigger("reloadGrid");
+
+								if(!msg)
+								{
+									showErrorDialog('Вы не можите редактировать эту запись!');
+								}
+
+						}
+					});
+
 					$('.time-status option').prop('selected', function() {
 							return this.defaultSelected;
 						});
@@ -530,7 +544,7 @@ $("#objects").jqGrid({
 		});
 
 $(document.body).on('change','#id_planning', function() {
-		if ($("#cl_price").val()=='')
+		if (!$("#cl_price").val())
 		{
 			var number=$("#number").val(),
 				id_category=$("#id_category :selected").val(),
@@ -734,44 +748,51 @@ $("#clients").jqGrid({
 
 			$("option:selected", $(this)).each(function() {
 
-				var s= $("#clients").jqGrid('getGridParam','selarrrow'),
-				id_status=$(".active-status :selected").val();
+				var selRow= $("#clients").jqGrid('getGridParam','selarrrow'),
+					id_status=$(".active-status :selected").val(),
+					selClient,rowData,id_user,
+					matchObj={};
 
-				if (id_status===0)
+				if (!id_status)
 				{
 
 					showErrorDialog('Выберите значение!');
 
 				}
 
-				else if (s===false){
+				else if (!selRow.length){
 
 					showErrorDialog('Поля не отмечены!');
 
 				}
 				else
 				{
-					for(var i=0;i<s.length;i++)
+					for(var i=0;i<selRow.length;i++)
 					{
-						var cl = s[i],
-							rowData = $("#clients").jqGrid('getRowData',cl),
-							id_user = rowData.id_user;
-						$.ajax({
-						type: "POST",
-						url: "/panel/usermodifyclients",
-						data: 'oper=activestatus&id_client='+cl+'&id_status='+id_status+'&id_user='+id_user,
-						success: function(msg){
-
-									$('#clients').trigger("reloadGrid");
-
-									if(!msg)
-									{
-
-										showErrorDialog('Вы не можите редактировать эту запись!');
-									}
-								}
-						});
+						selClient = selRow[i];
+						rowData = $("#clients").jqGrid('getRowData',selClient);
+						id_user = rowData.id_user;
+						matchObj[selClient]=id_user;
 					}
+
+					var selClients = JSON.stringify(matchObj);
+
+					$.ajax({
+					type: "POST",
+					url: "/panel/usermodifyclients",
+					data: 'oper=activestatus&match='+selClients+'&id_status='+id_status,
+					success: function(msg){
+
+								$('#clients').trigger("reloadGrid");
+
+								if(!msg)
+								{
+
+									showErrorDialog('Вы не можите редактировать эту запись!');
+								}
+							}
+					});
+
 
 					$('.active-status option').prop('selected', function() {
 							return this.defaultSelected;
@@ -784,42 +805,49 @@ $("#clients").jqGrid({
 
 			$("option:selected", $(this)).each(function() {
 
-	    		var s= $("#clients").jqGrid('getGridParam','selarrrow'),
-	    		id_status=$(".cl-time-status :selected").val();
+	    		var selRow= $("#clients").jqGrid('getGridParam','selarrrow'),
+	    			id_status=$(".cl-time-status :selected").val(),
+					selClient,rowData,id_user,
+					matchObj={};
 
-				if (id_status===0)
+				if (!id_status)
 				{
 
 					showErrorDialog('Выберите значение!');
 
 				}
 
-				else if (s===false){
+				else if (!selRow.length){
 
 					showErrorDialog('Поля не отмечены!');
 
 				}
 				else
 				{
-					for(var i=0;i<s.length;i++)
+					for(var i=0;i<selRow.length;i++)
 					{
-						var cl = s[i],
-							rowData = $("#clients").jqGrid('getRowData',cl),
-							id_user = rowData.id_user;
-						$.ajax({
-						type: "POST",
-						url: "/panel/usermodifyclients",
-						data: 'oper=timestatus&id_client='+cl+'&id_status='+id_status+'&id_user='+id_user,
-						success: function(msg){
-									$('#clients').trigger("reloadGrid");
-									if(!msg)
-									{
-										showErrorDialog('Вы не можите редактировать эту запись!');
-									}
-
-							}
-						});
+						selClient = selRow[i];
+						rowData = $("#clients").jqGrid('getRowData',selClient);
+						id_user = rowData.id_user;
+						matchObj[selClient]=id_user;
 					}
+
+					var selClients = JSON.stringify(matchObj);
+
+					$.ajax({
+					type: "POST",
+					url: "/panel/usermodifyclients",
+					data: 'oper=timestatus&match='+selClients+'&id_status='+id_status,
+					success: function(msg){
+								$('#clients').trigger("reloadGrid");
+								if(!msg)
+								{
+									showErrorDialog('Вы не можите редактировать эту запись!');
+								}
+
+						}
+					});
+
 					$('.cl-time-status option').prop('selected', function() {
 							return this.defaultSelected;
 						});

@@ -144,27 +144,27 @@ $("#pager_left table.navtable tbody tr").append('<div class="fast-edit-wrapper">
 
 			$("option:selected", $(this)).each(function() {
 
-				var s= $("#notifications").jqGrid('getGridParam','selarrrow'),
+				var selRow= $("#notifications").jqGrid('getGridParam','selarrrow'),
 				id_status=$(".active-status :selected").val();
 
-				if (id_status===0)
+				if (!id_status)
 				{
 					showErrorDialog('Выберите значение!');
 
 				}
 
-				else if (s===false){
+				else if (!selRow.length){
 					showErrorDialog('Поля не отмечены!');
 				}
 				else
 				{
-					for(var i=0;i<s.length;i++)
-					{
-						var cl = s[i];
+					/*for(var i=0;i<s.length;i++)
+					{*/
+						var selNotes = JSON.stringify(selRow);
 						$.ajax({
 						type: "POST",
 						url: "/journal/adminmodifynotes",
-						data: 'oper=activestatus&id_notification='+cl+'&id_status='+id_status,
+						data: 'oper=activestatus&notifications='+selNotes+'&id_status='+id_status,
 						success: function(msg){
 									$('#notifications').trigger("reloadGrid");
 									if(!msg)
@@ -174,7 +174,7 @@ $("#pager_left table.navtable tbody tr").append('<div class="fast-edit-wrapper">
 
 								}
 						});
-					}
+					/*}*/
 					$('.active-status option').prop('selected', function() {
 							return this.defaultSelected;
 						});

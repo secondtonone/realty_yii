@@ -1,6 +1,7 @@
-@import url("../js/jqgrid/css/ui.jqgrid.css");
-@import url("../js/jqgrid/themes/jquery-ui-1.9.2.custom.css");
-@import url("../js/jqgrid/plugins/ui.multiselect.css");
+@import url("ui.jqgrid.css");
+@import url("jquery-ui-1.9.2.custom.css");
+@import url("ui.multiselect.css");
+@import url("searchFilter.css");
 @import url("enter.css");
 @import url("panel.css");
 @import url("help.css");

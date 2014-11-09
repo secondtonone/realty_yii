@@ -450,7 +450,7 @@ $("#users").jqGrid({
           source: "/panel/autocomplete?q=user",
           minLength: 1,
           focus: function (event, ui) {
-            $(e).val(ui.item.label);
+            $('#name_user_sub').val(ui.item.label);
 			return false;
           },
           select: function (event, ui) {
@@ -462,36 +462,35 @@ $("#users").jqGrid({
 
 		$("#hand-over-sub").click(function() {
 
-				var s= $("#"+subgrid_table_id).jqGrid('getGridParam','selarrrow'),
+				var selRow= $("#"+subgrid_table_id).jqGrid('getGridParam','selarrrow'),
 				id_user=$("#id_user_sub").val();
 
-				if (id_user===0)
+				if (!id_user)
 				{
-					showErrorDialog('Выберите значение!');
+					showErrorDialog('Выберите сотрудника!');
 
 				}
 
-				else if (s===false){
+				else if (!selRow.length){
 					showErrorDialog('Поля не отмечены!');
 				}
 				else
 				{
-					for(var i=0;i<s.length;i++)
-					{
-						var cl = s[i];
-						$.ajax({
-						type: "POST",
-						url: "/panel/adminmodifyusers",
-						data: 'oper=handcl&id_client='+cl+'&id_user='+id_user,
-						success: function(msg){
-									$("#"+subgrid_table_id).trigger("reloadGrid");
-									if(!msg)
-									{
-										showErrorDialog('Вы не можите редактировать эту запись!');
-									}
+
+					var selClients = JSON.stringify(selRow);
+					$.ajax({
+					type: "POST",
+					url: "/panel/adminmodifyusers",
+					data: 'oper=handcl&clients='+selClients+'&id_user='+id_user,
+					success: function(msg){
+								$("#"+subgrid_table_id).trigger("reloadGrid");
+								if(!msg)
+								{
+									showErrorDialog('Вы не можите редактировать эту запись!');
 								}
-						});
-					}
+							}
+					});
+
 				}
 
 		});
@@ -590,94 +589,88 @@ $("#pager2_left table.navtable tbody tr").append('<div class="fast-edit-wrapper"
 
 			$("option:selected", $(this)).each(function() {
 
-				var s= $("#users").jqGrid('getGridParam','selarrrow'),
+				var selRow= $("#users").jqGrid('getGridParam','selarrrow'),
 				id_status=$(".active-status :selected").val();
 
-				if (id_status===0)
+				if (!id_status)
 				{
 					showErrorDialog('Выберите значение!');
 
 				}
 
-				else if (s===false){
+				else if (!selRow.length){
 					showErrorDialog('Поля не отмечены!');
 				}
 				else
 				{
-					for(var i=0;i<s.length;i++)
-					{
-						var cl = s[i];
-						$.ajax({
-						type: "POST",
-						url: "/panel/adminmodifyusers",
-						data: 'oper=activestatus&id_user='+cl+'&active='+id_status,
-						success: function(msg){
-									$('#users').trigger("reloadGrid");
-									if(!msg)
-									{
-										showErrorDialog('Вы не можите редактировать эту запись!');
-									}
-
+					var selUsers = JSON.stringify(selRow);
+					$.ajax({
+					type: "POST",
+					url: "/panel/adminmodifyusers",
+					data: 'oper=activestatus&users='+selUsers+'&active='+id_status,
+					success: function(msg){
+								$('#users').trigger("reloadGrid");
+								if(!msg)
+								{
+									showErrorDialog('Вы не можите редактировать эту запись!');
 								}
-						});
-					}
+
+							}
+					});
+
 					$('.active-status option').prop('selected', function() {
-							return this.defaultSelected;
-						});
+						return this.defaultSelected;
+					});
 				}
 			});
 		});
 
- $('#pager_left #name_user').autocomplete({
-          source: "/panel/autocomplete?q=user",
-          minLength: 1,
-          focus: function (event, ui) {
-            $(e).val(ui.item.label);
-			return false;
-          },
-          select: function (event, ui) {
-            $('#pager_left #name_user').val(ui.item.label);
-            $("#pager_left #id_user").val(ui.item.value);
-			return false;
-          }
-});
-$("#hand-over").click(function() {
+	$('#pager_left #name_user').autocomplete({
+	          source: "/panel/autocomplete?q=user",
+	          minLength: 1,
+	          focus: function (event, ui) {
+	            $('#pager_left #name_user').val(ui.item.label);
+				return false;
+	          },
+	          select: function (event, ui) {
+	            $('#pager_left #name_user').val(ui.item.label);
+	            $("#pager_left #id_user").val(ui.item.value);
+				return false;
+	          }
+	});
 
-				var s= $("#objects").jqGrid('getGridParam','selarrrow'),
-				id_user=$("#pager_left #id_user").val();
+	$("#hand-over").click(function() {
 
-				if (id_user===0)
-				{
-					showErrorDialog('Выберите значение!');
+		var selRow=$("#objects").jqGrid('getGridParam','selarrrow'),
+		id_user=$("#pager_left #id_user").val();
 
+		if (!id_user)
+		{
+			showErrorDialog('Выберите сотрудника!');
+
+		}
+		else if (!selRow.length){
+			showErrorDialog('Поля не отмечены!');
+		}
+		else
+		{
+			var selObjects = JSON.stringify(selRow);
+			$.ajax({
+			type: "POST",
+			url: "/panel/adminmodifyobjects",
+			data: 'oper=handobj&objects='+selObjects+'&id_user='+id_user,
+			success: function(msg){
+						$('#objects').trigger("reloadGrid");
+						if(!msg)
+						{
+							showErrorDialog('Вы не можите редактировать эту запись!');
+						}
 				}
+			});
+		}
+	});
 
-				else if (s===false){
-					showErrorDialog('Поля не отмечены!');
-				}
-				else
-				{
-					for(var i=0;i<s.length;i++)
-					{
-						var cl = s[i];
-						$.ajax({
-						type: "POST",
-						url: "/panel/adminmodifyobjects",
-						data: 'oper=handobj&id_object='+cl+'&id_user='+id_user,
-						success: function(msg){
-									$('#objects').trigger("reloadGrid");
-									if(!msg)
-									{
-										showErrorDialog('Вы не можите редактировать эту запись!');
-									}
-							}
-						});
-					}
-
-				}
-
-		});
-$(document.body).on('keyup','#login', function() {
+	$(document.body).on('keyup','#login', function() {
 
 		var login=$("#login").val();
 

@@ -94,12 +94,15 @@ class AdminModifyData
 		$connection=Yii::app()->db;
 		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
 
-		$sql='UPDATE `objects` SET `id_user`=:id_user,`date`=:date WHERE `id_object`=:id_object';
-		$command=$connection->createCommand($sql);
-		$command->bindParam(':id_user',$arguments['id_user'],PDO::PARAM_STR);
-		$command->bindParam(':date',$date,PDO::PARAM_STR);
-		$command->bindParam(':id_object',$arguments['id_object'],PDO::PARAM_STR);
-		$command->execute();
+		foreach(json_decode($arguments['objects']) as $id_object)
+		{
+			$sql='UPDATE `objects` SET `id_user`=:id_user,`date`=:date WHERE `id_object`=:id_object';
+			$command=$connection->createCommand($sql);
+			$command->bindParam(':id_user',$arguments['id_user'],PDO::PARAM_STR);
+			$command->bindParam(':date',$date,PDO::PARAM_STR);
+			$command->bindParam(':id_object',$id_object,PDO::PARAM_STR);
+			$command->execute();
+		}
 
 		echo "Объект передан!";
 	}
@@ -221,13 +224,15 @@ class AdminModifyData
 	public function editActiveStatus($arguments)
     {
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
 
-		$sql='UPDATE `users` SET `active`=:active WHERE `id_user`=:id_user';
-		$command=$connection->createCommand($sql);
-		$command->bindParam(':active',$arguments['active'],PDO::PARAM_STR);
-		$command->bindParam(':id_user',$arguments['id_user'],PDO::PARAM_STR);
-		$command->execute();
+		foreach(json_decode($arguments['users']) as $id_user)
+		{
+			$sql='UPDATE `users` SET `active`=:active WHERE `id_user`=:id_user';
+			$command=$connection->createCommand($sql);
+			$command->bindParam(':active',$arguments['active'],PDO::PARAM_STR);
+			$command->bindParam(':id_user',$id_user,PDO::PARAM_STR);
+			$command->execute();
+		}
 
 		echo "Статус изменен!";
 	}
@@ -259,12 +264,15 @@ class AdminModifyData
 		$connection=Yii::app()->db;
 		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
 
-		$sql='UPDATE `clients` SET `id_user`=:id_user,`date`=:date WHERE `id_client`=:id_client';
-		$command=$connection->createCommand($sql);
-		$command->bindParam(':id_user',$arguments['id_user'],PDO::PARAM_STR);
-		$command->bindParam(':date',$date,PDO::PARAM_STR);
-		$command->bindParam(':id_client',$arguments['id_client'],PDO::PARAM_STR);
-		$command->execute();
+		foreach(json_decode($arguments['clients']) as $id_client)
+		{
+			$sql='UPDATE `clients` SET `id_user`=:id_user,`date`=:date WHERE `id_client`=:id_client';
+			$command=$connection->createCommand($sql);
+			$command->bindParam(':id_user',$arguments['id_user'],PDO::PARAM_STR);
+			$command->bindParam(':date',$date,PDO::PARAM_STR);
+			$command->bindParam(':id_client',$id_client,PDO::PARAM_STR);
+			$command->execute();
+		}
 
 		echo "Покупатель передан!";
 	}
@@ -322,11 +330,14 @@ class AdminModifyData
     {
 		$connection=Yii::app()->db;
 
-		$sql='UPDATE `notifications` SET `id_status`=:id_status WHERE `id_notification`=:id_notification';
-		$command=$connection->createCommand($sql);
-		$command->bindParam(':id_status',$arguments['id_status'],PDO::PARAM_STR);
-		$command->bindParam(':id_notification',$arguments['id_notification'],PDO::PARAM_STR);
-		$command->execute();
+		foreach(json_decode($arguments['notifications']) as $id_notification)
+		{
+			$sql='UPDATE `notifications` SET `id_status`=:id_status WHERE `id_notification`=:id_notification';
+			$command=$connection->createCommand($sql);
+			$command->bindParam(':id_status',$arguments['id_status'],PDO::PARAM_STR);
+			$command->bindParam(':id_notification',$id_notification,PDO::PARAM_STR);
+			$command->execute();
+		}
 
 		echo "Статус изменен!";
 	}

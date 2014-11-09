@@ -8742,3 +8742,18 @@ REQUEST_URI=/panel/index
 in E:\xampp\htdocs\example.com\www\protected\views\layouts\mainadmin.php (10)
 in E:\xampp\htdocs\example.com\www\protected\controllers\PanelController.php (60)
 in E:\xampp\htdocs\example.com\www\index.php (14)
+2014/11/09 18:57:39 [error] [php] Undefined index: match (E:\xampp\htdocs\example.com\www\protected\components\UserModifyData.php:103)
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3570): CInlineAction->runWithParams()
+#1 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6743): PanelController->runAction()
+#2 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6752): CFilterChain->run()
+#3 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3948): CAccessControlFilter->filter()
+#4 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6785): PanelController->filterAccessControl()
+#5 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6740): CInlineFilter->filter()
+#6 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3560): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3545): PanelController->runActionWithFilters()
+#8 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1746): PanelController->run()
+#9 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1666): CWebApplication->runController()
+#10 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#11 E:\xampp\htdocs\example.com\www\index.php(28): CWebApplication->run()
+REQUEST_URI=/panel/usermodifyclients

@@ -80,20 +80,19 @@ class UserModifyData
 		$connection=Yii::app()->db;
 		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
 
-		if (Yii::app()->user->getId()==$arguments['id_user'])
+		foreach(json_decode($arguments['match']) as $id_client=>$id_user)
 		{
-			$sql='UPDATE `clients` SET `id_status`=:id_status,`date`=:date WHERE `id_client`=:id_client';
-			$command=$connection->createCommand($sql);
-			$command->bindParam(':id_status',$arguments['id_status'],PDO::PARAM_STR);
-			$command->bindParam(':date',$date,PDO::PARAM_STR);
-			$command->bindParam(':id_client',$arguments['id_client'],PDO::PARAM_STR);
-			$command->execute();
+			if (Yii::app()->user->getId()==$id_user)
+			{
+				$sql='UPDATE `clients` SET `id_status`=:id_status,`date`=:date WHERE `id_client`=:id_client';
+				$command=$connection->createCommand($sql);
+				$command->bindParam(':id_status',$arguments['id_status'],PDO::PARAM_STR);
+				$command->bindParam(':date',$date,PDO::PARAM_STR);
+				$command->bindParam(':id_client',$id_client,PDO::PARAM_STR);
+				$command->execute();
 
-			echo "Статус изменен!";
-		}
-		else
-		{
-			return false;
+				echo "Статус изменен!";
+			}
 		}
 	}
 	public function editClientTimeStatus($arguments)
@@ -101,21 +100,19 @@ class UserModifyData
 		$connection=Yii::app()->db;
 		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
 
-		if (Yii::app()->user->getId()==$arguments['id_user'])
+		foreach(json_decode($arguments['match']) as $id_client=>$id_user)
 		{
-			$sql='UPDATE `clients` SET `id_time_status`=:id_time_status,`date`=:date WHERE `id_client`=:id_client';
+			if (Yii::app()->user->getId()==$id_user)
+			{
+				$sql='UPDATE `clients` SET `id_time_status`=:id_time_status,`date`=:date WHERE `id_client`=:id_client';
+				$command=$connection->createCommand($sql);
+				$command->bindParam(':id_time_status',$arguments['id_status'],PDO::PARAM_STR);
+				$command->bindParam(':date',$date,PDO::PARAM_STR);
+				$command->bindParam(':id_client',$id_client,PDO::PARAM_STR);
+				$command->execute();
 
-			$command=$connection->createCommand($sql);
-			$command->bindParam(':id_time_status',$arguments['id_status'],PDO::PARAM_STR);
-			$command->bindParam(':date',$date,PDO::PARAM_STR);
-			$command->bindParam(':id_client',$arguments['id_client'],PDO::PARAM_STR);
-			$command->execute();
-
-			echo "Статус изменен!";
-		}
-		else
-		{
-			return false;
+				echo "Статус изменен!";
+			}
 		}
 	}
 	//-----------------------------For Object
@@ -312,27 +309,24 @@ class UserModifyData
 		$connection=Yii::app()->db;
 		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
 
-		if (Yii::app()->user->getId()==$arguments['id_user'])
+		foreach(json_decode($arguments['match']) as $id_object=>$id_user)
 		{
-			$sql='UPDATE `objects` SET `id_sell_out_status`=:id_sell_out_status,`date`=:date WHERE `id_object`=:id_object';
-			$command=$connection->createCommand($sql);
-			$command->bindParam(':id_sell_out_status',$arguments['id_status'],PDO::PARAM_STR);
-			$command->bindParam(':date',$date,PDO::PARAM_STR);
-			$command->bindParam(':id_object',$arguments['id_object'],PDO::PARAM_STR);
-			$command->execute();
+			if (Yii::app()->user->getId()==$id_user)
+			{
+				$sql='UPDATE `objects` SET `id_sell_out_status`=:id_sell_out_status,`date`=:date WHERE `id_object`=:id_object';
+				$command=$connection->createCommand($sql);
+				$command->bindParam(':id_sell_out_status',$arguments['id_status'],PDO::PARAM_STR);
+				$command->bindParam(':date',$date,PDO::PARAM_STR);
+				$command->bindParam(':id_object',$id_object,PDO::PARAM_STR);
+				$command->execute();
 
-		if($arguments['id_status']==2)
-		{
-			$journal = new EventJournaling;
-			$journal->userSellsObject(Yii::app()->user->getId());
-		}
-
-			echo "Статус изменен!";
-
-		}
-		else
-		{
-			return false;
+				if($arguments['id_status']==2)
+				{
+					$journal = new EventJournaling;
+					$journal->userSellsObject(Yii::app()->user->getId());
+				}
+				echo "Статус изменен!";
+			}
 		}
 	}
 	public function editTimeStatus($arguments)
@@ -340,20 +334,19 @@ class UserModifyData
 		$connection=Yii::app()->db;
 		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
 
-		if (Yii::app()->user->getId()==$arguments['id_user'])
+		foreach(json_decode($arguments['match']) as $id_object=>$id_user)
 		{
-			$sql='UPDATE `objects` SET `id_time_status`=:id_time_status,`date`=:date WHERE `id_object`=:id_object';
-			$command=$connection->createCommand($sql);
-			$command->bindParam(':id_time_status',$arguments['id_status'],PDO::PARAM_STR);
-			$command->bindParam(':date',$date,PDO::PARAM_STR);
-			$command->bindParam(':id_object',$arguments['id_object'],PDO::PARAM_STR);
-			$command->execute();
+			if (Yii::app()->user->getId()==$id_user)
+			{
+				$sql='UPDATE `objects` SET `id_time_status`=:id_time_status,`date`=:date WHERE `id_object`=:id_object';
+				$command=$connection->createCommand($sql);
+				$command->bindParam(':id_time_status',$arguments['id_status'],PDO::PARAM_STR);
+				$command->bindParam(':date',$date,PDO::PARAM_STR);
+				$command->bindParam(':id_object',$id_object,PDO::PARAM_STR);
+				$command->execute();
 
-			echo "Статус изменен!";
-		}
-		else
-		{
-			return false;
+				echo "Статус изменен!";
+			}
 		}
 	}
 }
