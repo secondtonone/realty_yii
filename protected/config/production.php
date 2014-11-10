@@ -72,12 +72,6 @@ return array(
 				'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
 			),
 		),
-
-		/*'db'=>array(
-			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		),*/
-		// uncomment the following to use a MySQL database
-
 		'db'=>array(
 			'class'=>'CDbConnection',
 			'connectionString' => 'mysql:host=localhost;dbname=xfb7908z_realty',
@@ -87,11 +81,10 @@ return array(
 			'charset' => 'utf8',
 			'enableParamLogging'=>true,
 		),
-
-		/*'errorHandler'=>array(
+		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'enter/index',
-		),*/
+		),
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
@@ -111,53 +104,53 @@ return array(
 			'packages' => array(
 			   // Уникальное имя пакета
 			   'mainjs' => array(
-					'baseUrl' => '/js/',
-					'js'=>array('jquery-1.10.2.js','sticky.full.js','jquery.slimscroll.js'),
+					'baseUrl' => '/js/min/',
+					'js'=>array('main.min.js'),
 
 				),
 				'enterjs' => array(
-					'baseUrl' => '/js/',
-					'js'=>array('jquery.backstretch.min.js','enter.js'),
+					'baseUrl' => '/js/min/',
+					'js'=>array('enter.min.js'),
 
 				),
 				'jqgridjs' => array(
-					'baseUrl' => '/js/',
-					'js'=>array('jquery-ui-1.9.2.custom.js','jqgrid/js/jquery.jqGrid.js','jqgrid/js/grid.locale-ru.js'),
+					'baseUrl' => '/js/min/',
+					'js'=>array('jqgrid.min.js'),
 
 				),
 				'paneladminjs' => array(
-					'baseUrl' => '/js/',
-					'js'=>array('jqgrid/tables/admin_panel_jqgrid.js','panel.js'),
+					'baseUrl' => '/js/min/',
+					'js'=>array('paneladmin.min.js'),
 
 				),
 				'paneluserjs' => array(
-					'baseUrl' => '/js/',
-					'js'=>array('jqgrid/tables/user_panel_jqgrid.js','panel.js'),
+					'baseUrl' => '/js/min/',
+					'js'=>array('paneluser.min.js'),
 
 				),
 				'journaljs' => array(
-					'baseUrl' => '/js/',
-					'js'=>array('jqgrid/tables/admin_journal_jqgrid.js','panel.js'),
+					'baseUrl' => '/js/min/',
+					'js'=>array('journal.min.js'),
 
 				),
 				'statsjs' => array(
-					'baseUrl' => '/js/',
-					'js'=>array('chart.js','legend.js','panel.js','stats.js'),
+					'baseUrl' => '/js/min/',
+					'js'=>array('stats.min.js'),
 
 				),
 				'helpjs' => array(
-					'baseUrl' => '/js/',
-					'js'=>array('jquery-ui-1.9.2.custom.js','panel.js'),
+					'baseUrl' => '/js/min/',
+					'js'=>array('help.min.js'),
 
 				),
 				'tooltip' => array(
-					'baseUrl' => '/js/',
+					'baseUrl' => '/js/min/',
 					'js'=>array('tooltip.js'),
 
 				),
 				'maincss' => array(
 					'baseUrl' => '/css/',
-					'css' => array('styles.css'),
+					'css' => array('production.css'),
 				)
 			),
 

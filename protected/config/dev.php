@@ -157,7 +157,7 @@ return array(
 				),
 				'maincss' => array(
 					'baseUrl' => '/css/',
-					'css' => array('styles.css'),
+					'css' => array('styles.css','ui.jqgrid.css','jquery-ui-1.9.2.custom.css','ui.multiselect.css','searchFilter.css','enter.css','panel.css','help.css','journal.css','stats.css','font-awesome.css'),
 				)
 			),
 
