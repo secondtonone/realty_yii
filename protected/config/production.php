@@ -45,9 +45,6 @@ return array(
 	        	'panel','journal','stats','help'
 	        ),
         ),
-		'errorHandler'=>array(
-            'errorAction'=>'enter/index',
-        ),
 		'authManager' => array(
             // Будем использовать свой менеджер авторизации
             'class' => 'PhpAuthManager',
@@ -145,7 +142,7 @@ return array(
 				),
 				'tooltip' => array(
 					'baseUrl' => '/js/min/',
-					'js'=>array('tooltip.js'),
+					'js'=>array('tooltip.min.js'),
 
 				),
 				'maincss' => array(

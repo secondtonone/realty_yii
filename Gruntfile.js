@@ -10,8 +10,8 @@ module.exports = function(grunt) {
                     'js/jquery-1.10.2.js',
                     'js/sticky.full.js',
                     'js/jquery.slimscroll.js',
-                    ],
-                    dest: 'js/prod/main.js',
+                ],
+                    dest: 'js/min/main.min.js',
             },
             enterjs:{
 
@@ -28,7 +28,7 @@ module.exports = function(grunt) {
                     'js/jquery-ui-1.9.2.custom.js',
                     'js/jqgrid/js/jquery.jqGrid.js',
                     'js/jqgrid/js/grid.locale-ru.js'
-                    ],
+                ],
                     dest: 'js/prod/jqgrid.js',
 
             },
@@ -79,10 +79,28 @@ module.exports = function(grunt) {
                 dest: 'js/prod/help.js',
 
             },
+            tooltip:{
+
+                src: [
+                    'js/tooltip.js',
+                ],
+                dest: 'js/prod/tooltip.js',
+
+            },
             maincss:{
 
                 src: [
-                    'css/*.css',
+                    'css/jquery-ui-1.9.2.custom.css',
+                    'css/ui.jqgrid.css',
+                    'css/ui.multiselect.css',
+                    'css/searchFilter.css',
+                    'css/font-awesome.css',
+                    'css/styles.css',
+                    'css/enter.css',
+                    'css/panel.css',
+                    'css/journal.css',
+                    'css/stats.css',
+                    'css/help.css'
                 ],
                 dest: 'css/production.css',
 
@@ -98,6 +116,16 @@ module.exports = function(grunt) {
                     ext: '.min.js'
                 }]
               }
+        },
+        imagemin: {
+            dynamic: {
+                files: [{
+                    expand: true,
+                    cwd: 'img/',
+                    src: ['*.{png,jpg,gif}'],
+                    dest: 'img/build/'
+                }]
+            }
         }
 
     });

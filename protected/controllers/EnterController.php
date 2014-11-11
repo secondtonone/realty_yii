@@ -6,20 +6,20 @@ class EnterController extends CController
 	 * when an action is not explicitly requested by users.
 	 */
 	public $layout = 'main';
-	
+
 	public function filters()
     {
         return array(
             'accessControl',
         );
     }
-	
+
 	public function accessRules()
     {
         return array(
 			array('allow',
                 'actions'=>array('logout'),
-                'roles'=>array(				
+                'roles'=>array(
 					User::ROLE_ADMIN,
 					User::ROLE_USER
 				),
@@ -30,7 +30,7 @@ class EnterController extends CController
             )
         );
     }
-	
+
 	public function actionIndex()
 	{
 		// renders the view file 'protected/views/site/index.php'
@@ -46,26 +46,26 @@ class EnterController extends CController
 			$this->render('index');
 		}
 	}
-	
+
 	public function actionLogin()
     {
 		 $form = new User('login');
-         
-         if (!empty($_POST['login'])) 
+
+         if (!empty($_POST['login']))
 		 {
 			$form->login = $_POST['login'];
 			$form->password = $_POST['password'];
-				
+
 			if (isset($_POST['rememberMe']))
 			{
 				$form->rememberMe = $_POST['rememberMe'];
 			}
-            if($form->validate()) 
+            if($form->validate())
 			{
-				$response=array('redirect' => '/panel/index','error' =>'');			
+				$response=array('redirect' => '/panel/index','error' =>'');
 				echo json_encode($response);
-            } 
-			else 
+            }
+			else
 			{
 				$this->renderPartial('/enter/error', array('form' => $form));
 			}
@@ -82,10 +82,10 @@ class EnterController extends CController
 		{
 			$this->redirect(Yii::app()->getHomeUrl());
 		}
-	}   */ 
+	}   */
 
 	/**
 	 * This is the action to handle external exceptions.
 	 */
-	
+
 }

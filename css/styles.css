@@ -36,6 +36,9 @@ body {
 .ui-front {
 	z-index: 1000;
 }
+.ui-widget {
+	font-size: 1em;
+}
 
 div.sticky-queue {
 	position:fixed;

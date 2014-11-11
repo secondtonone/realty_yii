@@ -1,13 +1,13 @@
-a:2:{i:0;a:2:{i:0;s:1026:"	<div class="header">
-    	<div class="navbar">
-        	<div class="container">
-            	<ul class="nav">
-                	<li>
+a:2:{i:0;a:2:{i:0;s:1044:"    <div class="header">
+        <div class="navbar">
+            <div class="container">
+                <ul class="nav">
+                    <li>
                         <a href="/panel/index"><div id="panel"><i class="icon icon-panel"></i>Панель управления</div></a>                    </li>
                     <li>
                         <a href="/journal/index"><div id="journal"><i class="icon icon-journal"></i>Журнал событий</div></a>                    </li>
                     <li>
-                    	<a href="/stats/index"><div id="stats"><i class="icon icon-stats"></i>Бизнес-аналитика</div></a>                    </li>
+                        <a href="/stats/index"><div id="stats"><i class="icon icon-stats"></i>Бизнес-аналитика</div></a>                    </li>
                     <li>
                         <a href="/help/index"><div id="help"><i class="icon icon-help"></i>Помощь</div></a>                    </li>
                 </ul>

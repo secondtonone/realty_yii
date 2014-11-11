@@ -10730,3 +10730,186 @@ Stack trace:
 REQUEST_URI=/js/min/tooltip.js
 HTTP_REFERER=http://example.com/help/index
 ---
+2014/11/11 08:24:18 [error] [exception.CDbException] SQLSTATE[HY000] [1045] Access denied for user 'xfb7908z_realty'@'localhost' (using password: YES)
+2014/11/11 08:24:18 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in E:\xampp\htdocs\example.com\www\framework\yiilite.php:8433
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8399): CDbConnection->open()
+#1 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8388): CDbConnection->setActive(true)
+#2 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1060): CDbConnection->init()
+#3 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1312): CModule->getComponent('db')
+#4 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7450): CApplication->getDb()
+#5 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8288): CActiveRecord->getDbConnection()
+#6 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7392): CActiveRecordMetaData->__construct(Object(User))
+#7 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7221): CActiveRecord->getMetaData()
+#8 E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php(52): CActiveRecord->__construct('login')
+#9 E:\xampp\htdocs\example.com\www\framework\yiilite.php(4058): EnterController->actionLogin()
+#10 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3570): CInlineAction->runWithParams(Array)
+#11 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6743): CController->runAction(Object(CInlineAction))
+#12 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6752): CFilterChain->run()
+#13 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3948): CFilter->filter(Object(CFilterChain))
+#14 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6785): CController->filterAccessControl(Object(CFilterChain))
+#15 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6740): CInlineFilter->filter(Object(CFilterChain))
+#16 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3560): CFilterChain->run()
+#17 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3545): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1746): CController->run('login')
+#19 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1666): CWebApplication->runController('enter/login')
+#20 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#21 E:\xampp\htdocs\example.com\www\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/enter/login
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/11/11 08:26:39 [error] [exception.CDbException] SQLSTATE[HY000] [1045] Access denied for user 'xfb7908z_realty'@'localhost' (using password: YES)
+2014/11/11 08:26:39 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in E:\xampp\htdocs\example.com\www\framework\yiilite.php:8433
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8399): CDbConnection->open()
+#1 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8388): CDbConnection->setActive(true)
+#2 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1060): CDbConnection->init()
+#3 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1312): CModule->getComponent('db')
+#4 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7450): CApplication->getDb()
+#5 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8288): CActiveRecord->getDbConnection()
+#6 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7392): CActiveRecordMetaData->__construct(Object(User))
+#7 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7221): CActiveRecord->getMetaData()
+#8 E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php(52): CActiveRecord->__construct('login')
+#9 E:\xampp\htdocs\example.com\www\framework\yiilite.php(4058): EnterController->actionLogin()
+#10 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3570): CInlineAction->runWithParams(Array)
+#11 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6743): CController->runAction(Object(CInlineAction))
+#12 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6752): CFilterChain->run()
+#13 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3948): CFilter->filter(Object(CFilterChain))
+#14 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6785): CController->filterAccessControl(Object(CFilterChain))
+#15 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6740): CInlineFilter->filter(Object(CFilterChain))
+#16 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3560): CFilterChain->run()
+#17 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3545): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1746): CController->run('login')
+#19 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1666): CWebApplication->runController('enter/login')
+#20 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#21 E:\xampp\htdocs\example.com\www\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/enter/login
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/11/11 08:50:43 [error] [exception.CDbException] SQLSTATE[HY000] [1045] Access denied for user 'xfb7908z_realty'@'localhost' (using password: YES)
+2014/11/11 08:50:43 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in E:\xampp\htdocs\example.com\www\framework\yiilite.php:8433
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8399): CDbConnection->open()
+#1 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8388): CDbConnection->setActive(true)
+#2 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1060): CDbConnection->init()
+#3 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1312): CModule->getComponent('db')
+#4 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7450): CApplication->getDb()
+#5 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8288): CActiveRecord->getDbConnection()
+#6 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7392): CActiveRecordMetaData->__construct(Object(User))
+#7 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7221): CActiveRecord->getMetaData()
+#8 E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php(52): CActiveRecord->__construct('login')
+#9 E:\xampp\htdocs\example.com\www\framework\yiilite.php(4058): EnterController->actionLogin()
+#10 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3570): CInlineAction->runWithParams(Array)
+#11 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6743): CController->runAction(Object(CInlineAction))
+#12 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6752): CFilterChain->run()
+#13 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3948): CFilter->filter(Object(CFilterChain))
+#14 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6785): CController->filterAccessControl(Object(CFilterChain))
+#15 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6740): CInlineFilter->filter(Object(CFilterChain))
+#16 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3560): CFilterChain->run()
+#17 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3545): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1746): CController->run('login')
+#19 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1666): CWebApplication->runController('enter/login')
+#20 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#21 E:\xampp\htdocs\example.com\www\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/enter/login
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/11/11 08:58:45 [error] [exception.CDbException] SQLSTATE[HY000] [1045] Access denied for user 'xfb7908z_realty'@'localhost' (using password: YES)
+2014/11/11 08:58:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in E:\xampp\htdocs\example.com\www\framework\yiilite.php:8433
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8399): CDbConnection->open()
+#1 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8388): CDbConnection->setActive(true)
+#2 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1060): CDbConnection->init()
+#3 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1312): CModule->getComponent('db')
+#4 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7450): CApplication->getDb()
+#5 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8288): CActiveRecord->getDbConnection()
+#6 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7392): CActiveRecordMetaData->__construct(Object(User))
+#7 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7221): CActiveRecord->getMetaData()
+#8 E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php(52): CActiveRecord->__construct('login')
+#9 E:\xampp\htdocs\example.com\www\framework\yiilite.php(4058): EnterController->actionLogin()
+#10 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3570): CInlineAction->runWithParams(Array)
+#11 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6743): CController->runAction(Object(CInlineAction))
+#12 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6752): CFilterChain->run()
+#13 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3948): CFilter->filter(Object(CFilterChain))
+#14 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6785): CController->filterAccessControl(Object(CFilterChain))
+#15 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6740): CInlineFilter->filter(Object(CFilterChain))
+#16 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3560): CFilterChain->run()
+#17 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3545): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1746): CController->run('login')
+#19 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1666): CWebApplication->runController('enter/login')
+#20 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#21 E:\xampp\htdocs\example.com\www\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/enter/login
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/11/11 09:02:05 [error] [exception.CDbException] SQLSTATE[HY000] [1045] Access denied for user 'xfb7908z_realty'@'localhost' (using password: YES)
+2014/11/11 09:02:05 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in E:\xampp\htdocs\example.com\www\framework\yiilite.php:8433
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8399): CDbConnection->open()
+#1 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8388): CDbConnection->setActive(true)
+#2 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1060): CDbConnection->init()
+#3 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1312): CModule->getComponent('db')
+#4 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7450): CApplication->getDb()
+#5 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8288): CActiveRecord->getDbConnection()
+#6 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7392): CActiveRecordMetaData->__construct(Object(User))
+#7 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7221): CActiveRecord->getMetaData()
+#8 E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php(52): CActiveRecord->__construct('login')
+#9 E:\xampp\htdocs\example.com\www\framework\yiilite.php(4058): EnterController->actionLogin()
+#10 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3570): CInlineAction->runWithParams(Array)
+#11 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6743): CController->runAction(Object(CInlineAction))
+#12 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6752): CFilterChain->run()
+#13 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3948): CFilter->filter(Object(CFilterChain))
+#14 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6785): CController->filterAccessControl(Object(CFilterChain))
+#15 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6740): CInlineFilter->filter(Object(CFilterChain))
+#16 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3560): CFilterChain->run()
+#17 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3545): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1746): CController->run('login')
+#19 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1666): CWebApplication->runController('enter/login')
+#20 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#21 E:\xampp\htdocs\example.com\www\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/enter/login
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/11/11 09:02:57 [error] [exception.CDbException] SQLSTATE[HY000] [1045] Access denied for user 'xfb7908z_realty'@'localhost' (using password: YES)
+2014/11/11 09:02:57 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in E:\xampp\htdocs\example.com\www\framework\yiilite.php:8433
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8399): CDbConnection->open()
+#1 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8388): CDbConnection->setActive(true)
+#2 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1060): CDbConnection->init()
+#3 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1312): CModule->getComponent('db')
+#4 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7450): CApplication->getDb()
+#5 E:\xampp\htdocs\example.com\www\framework\yiilite.php(8288): CActiveRecord->getDbConnection()
+#6 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7392): CActiveRecordMetaData->__construct(Object(User))
+#7 E:\xampp\htdocs\example.com\www\framework\yiilite.php(7221): CActiveRecord->getMetaData()
+#8 E:\xampp\htdocs\example.com\www\protected\controllers\EnterController.php(52): CActiveRecord->__construct('login')
+#9 E:\xampp\htdocs\example.com\www\framework\yiilite.php(4058): EnterController->actionLogin()
+#10 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3570): CInlineAction->runWithParams(Array)
+#11 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6743): CController->runAction(Object(CInlineAction))
+#12 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6752): CFilterChain->run()
+#13 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3948): CFilter->filter(Object(CFilterChain))
+#14 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6785): CController->filterAccessControl(Object(CFilterChain))
+#15 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6740): CInlineFilter->filter(Object(CFilterChain))
+#16 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3560): CFilterChain->run()
+#17 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3545): CController->runActionWithFilters(Object(CInlineAction), Array)
+#18 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1746): CController->run('login')
+#19 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1666): CWebApplication->runController('enter/login')
+#20 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#21 E:\xampp\htdocs\example.com\www\index.php(15): CApplication->run()
+#22 {main}
+REQUEST_URI=/enter/login
+HTTP_REFERER=http://example.com/enter/index
+---
+2014/11/11 09:04:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "js/min/tooltip.js".' in E:\xampp\htdocs\example.com\www\framework\yiilite.php:1750
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1666): CWebApplication->runController('js/min/tooltip....')
+#1 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/js/min/tooltip.js
+HTTP_REFERER=http://example.com/panel/index
+---

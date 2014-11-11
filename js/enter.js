@@ -1,29 +1,28 @@
 $(document).ready(function () {
-	
-	 $('.login').attr('style', '');
-		$.backstretch(['/img/page-4.jpg','/img/page-7.jpg'],
-		{fade: 2000,duration: 800});
-	
-	
+
+	$('.login').attr('style', '');
+	$.backstretch(['/img/page-4.jpg','/img/page-7.jpg'],{fade: 2000,duration: 800});
+
+
 	$('#enter-form').submit(function(){
-		
+
 		var	formData=$(this).serialize(),
 			site=window.location.hostname;
-			
+
 		$('#entering').hide();
 		$(".enter-preloader").css({'display' : 'inline-block'});
 		$("#execute").css({'display' : 'inline-block'});
-								
+
 		$.ajax({
 			type: "POST",
 			url: "/enter/login",
 			data: formData,
 			success: function(msg){
-				
+
 				var response=JSON.parse(msg),
 					error=response.error,
 					redirect=response.redirect;
-				
+
 				if (error)
 				{
 					$(".enter-preloader").hide();
@@ -36,28 +35,13 @@ $(document).ready(function () {
 				{
 					window.location = redirect;
 				}
-				
+
 			}
        });
 	   return false;
 	});
-	
+
 	$('.login').on('click','.close-button', function() {
 		$(".display-error").hide();
 	});
-	
-	$('#exit').submit(function(){
-		
-		var	site=window.location.hostname;
-							
-		$.ajax({
-			type: "POST",
-			url: "/app/scripts/auth/exit.php",
-			success: function(msg){
-					window.location = 'http://'+site+'/main';		
-			}
-       });
-	   return false;
-	});
-	
 });

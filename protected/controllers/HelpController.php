@@ -7,20 +7,20 @@ class HelpController extends CController
 	 * when an action is not explicitly requested by users.
 	 */
 	public $layout = 'main';
-	
+
 	public function filters()
     {
         return array(
             'accessControl',
         );
     }
-	
+
 	public function accessRules()
     {
         return array(
 			array('allow',
                 'actions'=>array(),
-                'roles'=>array(				
+                'roles'=>array(
 					User::ROLE_ADMIN,
 					User::ROLE_USER
 				),
@@ -31,7 +31,7 @@ class HelpController extends CController
             ),
         );
     }
-	
+
 	public function actionIndex()
 	{
 		// renders the view file 'protected/views/site/index.php'
