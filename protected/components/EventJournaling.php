@@ -1,12 +1,6 @@
 <?php
-class EventJournaling
+class EventJournaling extends ModifyComponent
 {
-	public $date;
-
-	public function __construct()
-	{
-		$this->date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
-	}
 	public function userEntering($id_user)
     {
 		$journal = new Journal;

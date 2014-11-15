@@ -1,11 +1,11 @@
 <?php
-class AdminModifyData
+class AdminModifyData extends ModifyComponent
 {
 	//-------------------------------For Object----------------------------------
 	public function editObject($arguments)
     {
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		if($arguments['floor']==1)
 		{
@@ -77,7 +77,7 @@ class AdminModifyData
 	public function editSubObject($arguments)
 	{
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		$sql='UPDATE `objects` SET `id_renovation`=:id_renovation,`id_window`=:id_window,`id_counter`=:id_counter,`comment`=:comment,`date`=:date WHERE `id_object`=:id_object';
 		$command=$connection->createCommand($sql);
@@ -92,7 +92,7 @@ class AdminModifyData
 	public function handOverObject($arguments)
 	{
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		foreach(json_decode($arguments['objects']) as $id_object)
 		{
@@ -110,7 +110,7 @@ class AdminModifyData
 	public function addUser($arguments)
     {
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		$sql='SELECT `id_user` FROM `users` WHERE `login`=:login';
 
@@ -160,7 +160,7 @@ class AdminModifyData
 	public function editUser($arguments)
     {
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		if (!empty($arguments['password']))
 		{
@@ -239,7 +239,7 @@ class AdminModifyData
 	public function editClient($arguments)
     {
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		$sql='UPDATE `clients` SET `name`=:name,`number`=:number,`id_city`=:id_city,`id_category`=:id_category,`id_planning`=:id_planning,`id_floor_status`=:id_floor_status,`price`=:price,`id_time_status`=:id_time_status,`id_status`=:id_status,`date`=:date WHERE `id_client`=:id_client';
 		$command=$connection->createCommand($sql);
@@ -262,7 +262,7 @@ class AdminModifyData
 	public function handOverClient($arguments)
 	{
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		foreach(json_decode($arguments['clients']) as $id_client)
 		{

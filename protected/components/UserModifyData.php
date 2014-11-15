@@ -1,10 +1,10 @@
 <?php
-class UserModifyData
+class UserModifyData extends ModifyComponent
 {
 	public function addClient($arguments)
     {
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		$sql='SELECT `id_client` FROM `clients` WHERE `number`=:number AND `id_category`=:id_category AND `id_planning`=:id_planning AND `id_status`=:id_status';
 
@@ -48,7 +48,7 @@ class UserModifyData
 	public function editClient($arguments)
     {
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		if (Yii::app()->user->getId()==$arguments['id_user'])
 		{
@@ -78,7 +78,7 @@ class UserModifyData
 	public function editActiveStatus($arguments)
     {
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		foreach(json_decode($arguments['match']) as $id_client=>$id_user)
 		{
@@ -98,7 +98,7 @@ class UserModifyData
 	public function editClientTimeStatus($arguments)
     {
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		foreach(json_decode($arguments['match']) as $id_client=>$id_user)
 		{
@@ -119,7 +119,7 @@ class UserModifyData
 	public function addObject($arguments)
     {
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		if($arguments['floor']==1)
 		{
@@ -205,7 +205,7 @@ class UserModifyData
 	public function editObject($arguments)
     {
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		if($arguments['floor']==1)
 		{
@@ -285,7 +285,7 @@ class UserModifyData
 	public function editSubObject($arguments)
 	{
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		if (Yii::app()->user->getId()==$arguments['id_user'])
 		{
@@ -307,7 +307,7 @@ class UserModifyData
 	public function editSellOutStatus($arguments)
     {
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		foreach(json_decode($arguments['match']) as $id_object=>$id_user)
 		{
@@ -332,7 +332,7 @@ class UserModifyData
 	public function editTimeStatus($arguments)
     {
 		$connection=Yii::app()->db;
-		$date=date('Y-m-d G:i:s', strtotime("+2 hours", strtotime(date('Y-m-d G:i:s'))));
+		$date=$this->date;
 
 		foreach(json_decode($arguments['match']) as $id_object=>$id_user)
 		{
