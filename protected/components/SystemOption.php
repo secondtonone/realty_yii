@@ -264,21 +264,6 @@ class SystemOption extends ModifyComponent
 		$response->rows['counter']=trim($result,';');
 		$command->reset();
 
-		$sql="SELECT `id_district`, `name_district` FROM `objects_district`";
-		$command=$connection->createCommand($sql);
-		$rows=$command->queryAll();
-
-		$result=':выбрать...';
-
-		foreach($rows as $row)
-		{
-			$result.=';'.$row['id_district'].':'.$row['name_district'];
-		}
-
-		$response->rows['district']=$result;
-		$command->reset();
-
-
 		$sql="SELECT `id_floor_status`, `name_floor_status` FROM `clients_floor_status`";
 		$command=$connection->createCommand($sql);
 		$rows=$command->queryAll();

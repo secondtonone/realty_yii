@@ -10913,3 +10913,43 @@ Stack trace:
 REQUEST_URI=/js/min/tooltip.js
 HTTP_REFERER=http://example.com/panel/index
 ---
+2014/11/18 19:43:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "run".' in E:\xampp\htdocs\example.com\www\framework\yiilite.php:3668
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3550): CController->missingAction('run')
+#1 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1746): CController->run('run')
+#2 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1666): CWebApplication->runController('stats/run')
+#3 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\example.com\www\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/stats/run
+HTTP_REFERER=http://example.com/stats/index
+---
+2014/11/18 19:44:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "run".' in E:\xampp\htdocs\example.com\www\framework\yiilite.php:3668
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3550): CController->missingAction('run')
+#1 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1746): CController->run('run')
+#2 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1666): CWebApplication->runController('stats/run')
+#3 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\example.com\www\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/stats/run
+HTTP_REFERER=http://example.com/stats/index
+---
+2014/11/18 19:45:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Системе не удалось найти запрашиваемое действие "run".' in E:\xampp\htdocs\example.com\www\framework\yiilite.php:3668
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3550): CController->missingAction('run')
+#1 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1746): CController->run('run')
+#2 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1666): CWebApplication->runController('stats/run')
+#3 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#4 E:\xampp\htdocs\example.com\www\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/stats/run
+---
+2014/11/18 19:45:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in E:\xampp\htdocs\example.com\www\framework\yiilite.php:1750
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1666): CWebApplication->runController('favicon.ico')
+#1 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#2 E:\xampp\htdocs\example.com\www\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---

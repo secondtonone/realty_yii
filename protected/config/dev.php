@@ -45,9 +45,9 @@ return array(
 	        	'panel','journal','stats','help'
 	        ),
         ),
-		'errorHandler'=>array(
+		/*'errorHandler'=>array(
             'errorAction'=>'enter/index',
-        ),
+        ),*/
 		'authManager' => array(
             // Будем использовать свой менеджер авторизации
             'class' => 'PhpAuthManager',

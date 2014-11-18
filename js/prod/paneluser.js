@@ -150,7 +150,6 @@ $(document).ready(function(){
 		selectPlanning={value:selectList.rows.planning,sopt:['eq']},
 		selectSellOutStatus={value:selectList.rows.sellstatus,sopt:['eq']},
 		selectTimeStatus={value:selectList.rows.timestatus,sopt:['eq']},
-		selectDistrict={value:selectList.rows.district,sopt:['eq']},
 		selectFloor={value:selectList.rows.floor,sopt:['eq'],searchhidden: true},
 		selectRenovation={value:selectList.rows.renovation,sopt:['eq'],searchhidden: true},
 		selectWindow={value:selectList.rows.window,sopt:['eq'],searchhidden: true},
