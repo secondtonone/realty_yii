@@ -10953,3 +10953,26 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2014/11/20 09:01:11 [error] [system.db.CDbCommand] Не удалось выполнить CDbCommand::fetchColumn(): SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.id_user' in 'where clause'. Выполнявшийся SQL-запрос: SELECT COUNT(*) FROM `users_journal` j WHERE u.id_user = '34'.
+2014/11/20 09:01:11 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand не удалось исполнить SQL-запрос: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'u.id_user' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `users_journal` j WHERE u.id_user = '34'' in E:\xampp\htdocs\example.com\www\framework\yiilite.php:9341
+Stack trace:
+#0 E:\xampp\htdocs\example.com\www\framework\yiilite.php(9272): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 E:\xampp\htdocs\example.com\www\protected\components\AdminGetData.php(192): CDbCommand->queryScalar()
+#2 E:\xampp\htdocs\example.com\www\protected\controllers\JournalController.php(46): AdminGetData->getEvents(Array)
+#3 E:\xampp\htdocs\example.com\www\framework\yiilite.php(4058): JournalController->actionGetEvents()
+#4 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3570): CInlineAction->runWithParams(Array)
+#5 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6743): CController->runAction(Object(CInlineAction))
+#6 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6752): CFilterChain->run()
+#7 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3948): CFilter->filter(Object(CFilterChain))
+#8 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6785): CController->filterAccessControl(Object(CFilterChain))
+#9 E:\xampp\htdocs\example.com\www\framework\yiilite.php(6740): CInlineFilter->filter(Object(CFilterChain))
+#10 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3560): CFilterChain->run()
+#11 E:\xampp\htdocs\example.com\www\framework\yiilite.php(3545): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1746): CController->run('getevents')
+#13 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1666): CWebApplication->runController('journal/geteven...')
+#14 E:\xampp\htdocs\example.com\www\framework\yiilite.php(1191): CWebApplication->processRequest()
+#15 E:\xampp\htdocs\example.com\www\index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/journal/getevents
+HTTP_REFERER=http://example.com/journal/index
+---

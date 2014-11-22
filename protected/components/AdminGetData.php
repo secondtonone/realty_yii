@@ -187,7 +187,7 @@ class AdminGetData
 			}
 		}
 
-		$sql='SELECT COUNT(*) FROM `users_journal` j'.$qWhere;
+		$sql='SELECT COUNT(*) FROM `users_journal` j LEFT JOIN `users` u ON j.`id_user`= u.`id_user` '.$qWhere;
 		$command=$connection->createCommand($sql);
 		$totalRows = $command->queryScalar();
 

@@ -732,7 +732,7 @@ div.sticky {
 	font-size:14px;
 	color:#FFF;
 	display:none;
-	padding:10px;
+	padding:10px 10px 20px;
 	position:relative;
 }
 .sticky-close {

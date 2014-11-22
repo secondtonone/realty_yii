@@ -3454,7 +3454,6 @@ $(document).ready(function () {
 });
 
 $(document).ready(function() {
-
     var today = new Date(),
         year = today.getFullYear(),
         month = today.getMonth() + 1,
