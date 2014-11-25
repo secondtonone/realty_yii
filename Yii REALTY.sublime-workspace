@@ -131,7 +131,7 @@
 			"file": "protected/components/StatsGetDataset.php",
 			"settings":
 			{
-				"buffer_size": 15792,
+				"buffer_size": 15806,
 				"line_ending": "Windows"
 			}
 		},
@@ -176,10 +176,10 @@
 			}
 		},
 		{
-			"file": "protected/components/AdminGetData.php",
+			"file": "protected/components/UserModifyData.php",
 			"settings":
 			{
-				"buffer_size": 22105,
+				"buffer_size": 15312,
 				"line_ending": "Windows"
 			}
 		}
@@ -352,6 +352,7 @@
 	],
 	"file_history":
 	[
+		"/E/xampp/htdocs/example.com/www/protected/components/AdminGetData.php",
 		"/E/xampp/htdocs/example.com/www/protected/commands/CheckUsersCommand.php",
 		"/E/xampp/htdocs/example.com/www/protected/commands/ClearEventsCommand.php",
 		"/E/xampp/htdocs/example.com/www/js/jqgrid/tables/user_panel_jqgrid.js",
@@ -360,7 +361,6 @@
 		"/E/xampp/htdocs/example.com/www/protected/components/AdminModifyData.php",
 		"/E/xampp/htdocs/example.com/www/protected/components/StatsGetDataset.php",
 		"/E/xampp/htdocs/example.com/www/protected/components/SystemOption.php",
-		"/E/xampp/htdocs/example.com/www/protected/components/AdminGetData.php",
 		"/E/xampp/htdocs/example.com/www/protected/components/UserModifyData.php",
 		"/E/xampp/htdocs/example.com/www/protected/config/dev.php",
 		"/E/xampp/htdocs/example.com/www/protected/views/stats/index.php",
@@ -568,7 +568,7 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -703,7 +703,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -837,7 +837,7 @@
 						"translation.y": 52.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -867,7 +867,7 @@
 						"translation.y": 26.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -876,15 +876,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15792,
+						"buffer_size": 15806,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								30,
-								30
+								7370,
+								7359
 							]
 						],
 						"settings":
@@ -998,10 +998,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 78.0,
+						"translation.y": 2093.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1135,7 +1135,7 @@
 						"translation.y": 247.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1269,7 +1269,7 @@
 						"translation.y": 26.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1403,7 +1403,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1537,7 +1537,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1564,144 +1564,40 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 416.0,
+						"translation.y": 364.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 9,
-					"file": "protected/components/AdminGetData.php",
+					"file": "protected/components/UserModifyData.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 22105,
+						"buffer_size": 15312,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6799,
-								6799
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
 							"color_scheme": "Packages/User/Color Highlighter/themes/Twilight New (SL).tmTheme",
-							"sublime_auto_complete": true,
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4628.0,
+						"translation.y": 3198.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1767,7 +1663,7 @@
 		[
 			[
 				"",
-				"E:\\xampp\\htdocs\\esn.pro\\www\\isesn.ru.sublime-project"
+				"E:\\Program Files\\nodejs\\project\\nodejs.sublime-project"
 			]
 		],
 		"width": 380.0

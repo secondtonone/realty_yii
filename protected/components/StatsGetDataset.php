@@ -121,8 +121,8 @@ class StatsGetDataset
 		$response=array();
 		$rowJSON=array();
 		$connection=Yii::app()->db;
-		$year = new CDbExpression('YEAR(date)');
-		$month = new CDbExpression('MONTH(date)');
+		$year = new CDbExpression('YEAR(date_change)');
+		$month = new CDbExpression('MONTH(date_change)');
 
 		for ($i=1;$i<15;$i++)
 		{
