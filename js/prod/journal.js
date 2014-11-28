@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	function getList()
 	{
 		var lists = $.ajax({
