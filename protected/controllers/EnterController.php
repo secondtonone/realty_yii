@@ -6,30 +6,30 @@ class EnterController extends CController
 	 * when an action is not explicitly requested by users.
 	 */
 	public $layout = 'main';
-
 	public function filters()
-    {
-        return array(
-            'accessControl',
-        );
-    }
+	{
+		return array(
+			'accessControl',
+		);
+	}
 
 	public function accessRules()
-    {
-        return array(
+	{
+		return array(
 			array('allow',
-                'actions'=>array('logout'),
-                'roles'=>array(
+				'actions'=>array('logout'),
+				'roles'=>array(
 					User::ROLE_ADMIN,
 					User::ROLE_USER
 				),
-            ),
-            array('deny',
-                'actions'=>array('logout'),
-                'users'=>array('?'),
-            )
-        );
-    }
+			),
+			array('deny',
+				'actions'=>array('logout'),
+				'users'=>array('?'),
+			)
+		);
+	}
+
 
 	public function actionIndex()
 	{
@@ -48,10 +48,10 @@ class EnterController extends CController
 	}
 
 	public function actionLogin()
-    {
+	{
 		 $form = new User('login');
 
-         if (!empty($_POST['login']))
+		 if (!empty($_POST['login']))
 		 {
 			$form->login = $_POST['login'];
 			$form->password = $_POST['password'];
@@ -60,22 +60,22 @@ class EnterController extends CController
 			{
 				$form->rememberMe = $_POST['rememberMe'];
 			}
-            if($form->validate())
+			if($form->validate())
 			{
 				$response=array('redirect' => '/panel/index','error' =>'');
 				echo json_encode($response);
-            }
+			}
 			else
 			{
 				$this->renderPartial('/enter/error', array('form' => $form));
 			}
-        }
-    }
+		}
+	}
 	public function actionLogout()
-    {
+	{
 		$logout= new UserLogOut;
 		$logout->unauthenticate();
-    }
+	}
 	/*public function actionError()
 	{
 		if($error=Yii::app()->errorHandler->error)
