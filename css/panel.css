@@ -145,8 +145,9 @@
 	cursor: pointer;
 	filter: none;
 	font-family: "Segoe UI", "Helvetica", "Arial", sans-serif;
-	padding: 3px 5px;
+	padding: 4px 5px;
 	text-align: center;
+	vertical-align: top;
 	font-weight: 400;
 	margin-left:2px;
 }
